@@ -7,6 +7,9 @@ services:
     environment:
       SYNDICATION_API_KEY: ${SYNDICATION_API_KEY}
       ETL_SCHEDULE: ${ETL_SCHEDULE}
+    labels:
+      traefik.enable: stack
+      traefik.domain: ${TRAEFIK_DOMAIN}
     volumes:
       - pharmacy-etl-output:/code/output
 
