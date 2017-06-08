@@ -1,0 +1,48 @@
+version: '2.1'
+
+services:
+
+  base-etl:
+    build:
+      context: .
+    volumes:
+      - .:/code
+    environment:
+      SYNDICATION_API_KEY: ${SYNDICATION_API_KEY}
+      ETL_SCHEDULE: ${ETL_SCHEDULE}
+
+  full-etl:
+    extends:
+      service: base-etl
+    volumes:
+      - etl-node_modules:/code/node_modules
+      - pharmacy-etl-output:/code/output
+
+  full-etl-clear:
+    extends:
+      service: base-etl
+    command: yarn run start-clear
+    volumes:
+      - etl-node_modules:/code/node_modules
+      - pharmacy-etl-output:/code/output
+
+  partial-etl:
+    extends:
+      service: base-etl
+    command: yarn run start-small
+    volumes:
+      - etl-node_modules:/code/node_modules
+      - pharmacy-etl-partial-output:/code/output
+
+  partial-etl-clear:
+    extends:
+      service: base-etl
+    command: yarn run start-small-clear
+    volumes:
+      - etl-node_modules:/code/node_modules
+      - pharmacy-etl-partial-output:/code/output
+
+volumes:
+  etl-node_modules:
+  pharmacy-etl-output:
+  pharmacy-etl-partial-output:

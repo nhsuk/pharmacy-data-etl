@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+
+  etl:
+    image: nhsuk/pharmacy-data-etl:${DOCKER_IMAGE_TAG}
+    environment:
+      SYNDICATION_API_KEY: ${SYNDICATION_API_KEY}
+      ETL_SCHEDULE: ${ETL_SCHEDULE}
+    volumes:
+      - pharmacy-etl-output:/code/output
+
+volumes:
+  pharmacy-etl-output:
