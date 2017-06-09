@@ -1,17 +1,19 @@
 version: '2'
-
 services:
-
-  etl:
+  pharma-etl:
     image: nhsuk/pharmacy-data-etl:${DOCKER_IMAGE_TAG}
     environment:
       SYNDICATION_API_KEY: ${SYNDICATION_API_KEY}
       ETL_SCHEDULE: ${ETL_SCHEDULE}
+    stdin_open: true
+    tty: true
     labels:
-      traefik.enable: stack
-      traefik.domain: ${TRAEFIK_DOMAIN}
+      io.rancher.container.pull_image: always
     volumes:
       - pharmacy-etl-output:/code/output
 
 volumes:
   pharmacy-etl-output:
+
+
+version: '2'
