@@ -21,7 +21,7 @@
     "test": "NODE_ENV=test mocha --recursive test",
     "test-integration": "NODE_ENV=test mocha --recursive test/integration",
     "test-unit": "NODE_ENV=test mocha --recursive test/unit",
-    "test-watch": "yarn run test-unit -- --watch --reporter min",
+    "test-watch": "yarn run test -- --watch --reporter min",
     "test-watch-integration": "yarn run test-integration -- --watch --reporter min",
     "travis": "yarn run lint && yarn run generate-coverage && yarn run check-coverage && yarn run upload-coverage-coveralls && yarn run snyk-travis",
     "upload-coverage-coveralls": "cat ./coverage/lcov.info | coveralls"
@@ -63,6 +63,7 @@
   "dependencies": {
     "async": "^2.4.1",
     "bunyan": "^1.8.10",
+    "google-libphonenumber": "^2.0.18",
     "node-schedule": "^1.2.3",
     "require-environment-variables": "^1.1.2",
     "xml2js": "^0.4.17"

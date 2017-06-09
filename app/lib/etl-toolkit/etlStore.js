@@ -1,35 +1,40 @@
-// const log = require('../logger');
+const log = require('../logger');
 const fsHelper = require('../fsHelper');
+const config = require('../config');
 
 const ALL_TYPE = 'all';
-const SERVICES_TYPE = 'services';
-const FACILITIES_TYPE = 'facilities';
 
 let ids = [];
 let failedIds = {};
 let cache = {};
 
-// function getGPs() {
-//   return Object.values(cache);
-// }
+function addRecord(record) {
+  // eslint-disable-next-line no-underscore-dangle
+  cache[record._id] = record;
+  return record;
+}
 
-// function getGP(syndicationId) {
-//   return cache[syndicationId];
-// }
+function getRecords() {
+  return Object.values(cache);
+}
+
+function getRecord(syndicationId) {
+  return cache[syndicationId];
+}
 
 function getIds() {
   return ids;
 }
 
 function getFailedIds() {
-  return Object.keys(failedIds).map(n => Number(n));
+  return Object.keys(failedIds);
 }
 
 function getFailedIdsByType(type) {
   const failures = [];
   Object.keys(failedIds).forEach((key) => {
     if (failedIds[key][type]) {
-      failures.push(Number(key));
+      failures.push(key);
     }
   });
   return failures;
@@ -46,11 +51,6 @@ function clearFailedIds(failures) {
     failedIds = {};
   }
 }
-
-// function addGP(gp) {
-//   cache[gp.syndicationId] = gp;
-//   return gp;
-// }
 
 function addFailedId(id, area, message) {
   const failedId = failedIds[id] || {};
@@ -81,32 +81,22 @@ function loadState() {
   cache = fsHelper.loadJsonSync('cache') || {};
 }
 
-// function writeSubpageStatus(type) {
-//   const failedSubpageIds = getFailedIdsByType(type);
-//   if (failedSubpageIds.length > 0) {
-//     log.info(`${failedSubpageIds.length} have errors on the ${type} page`);
-//   }
-// }
 
-// function writeStatus() {
-//   const failedAllIds = getErorredIds();
-//   log.info(`${failedAllIds.length} syndication IDs failed: ${failedAllIds}`);
-//   writeSubpageStatus(FACILITIES_TYPE);
-//   writeSubpageStatus(SERVICES_TYPE);
-//   log.info('see summary.json file in \'site/json\' for full details');
-// }
+function writeStatus() {
+  const failedAllIds = getErorredIds();
+  log.info(`${failedAllIds.length} syndication IDs failed: ${failedAllIds}`);
+  log.info(`see summary.json file in '${config.outputDir}' for full details`);
+}
 
-// function saveGPs() {
-//   writeStatus();
-//   fsHelper.saveJsonSync(getGPs(), 'gp-data');
-// }
+function saveRecords() {
+  writeStatus();
+  fsHelper.saveJsonSync(getRecords(), config.outputFile);
+}
 
 function saveSummary() {
   const summary = {
     totalScanned: ids.length,
     totalErroredIds: getErorredIds().length,
-    totalFacilitiesMissing: getFailedIdsByType(FACILITIES_TYPE).length,
-    totalServicesMissing: getFailedIdsByType(SERVICES_TYPE).length,
     lastWritten: (new Date()).toLocaleString(),
     failedIds,
   };
@@ -116,11 +106,13 @@ function saveSummary() {
 loadState();
 
 module.exports = {
+  ALL_TYPE,
   getIds,
   addIds,
-  // getGP,
-  // addGP,
-  // saveGPs,
+  getRecord,
+  getRecords,
+  addRecord,
+  saveRecords,
   saveSummary,
   addFailedId,
   saveState,
