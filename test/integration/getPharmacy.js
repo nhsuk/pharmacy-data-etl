@@ -4,7 +4,8 @@ const getPharmacy = require('../../app/lib/actions/getPharmacy');
 const expect = chai.expect;
 
 describe('Get Pharmacy', () => {
-  it('should retrieve pharmacy data from organisation API', (done) => {
+  it('should retrieve pharmacy data from organisation API', function test(done) {
+    this.timeout(5000);
     const odsCode = 'FYY76';
     getPharmacy(odsCode).then((pharmacy) => {
       // eslint-disable-next-line no-unused-expressions

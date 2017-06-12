@@ -6,10 +6,14 @@ const populateRecordsFromIdsQueue = require('./etl-toolkit/queues/populateRecord
 const getOdsCodes = require('./actions/getOdsCodes');
 const getPharmacy = require('./actions/getPharmacy');
 const getTotalPages = require('./actions/getTotalPages');
+const uploadOutputToAzure = require('./uploadOutputToAzure');
 const log = require('./logger');
 const config = require('./config');
 
 requireEnv(['SYNDICATION_API_KEY']);
+requireEnv(['AZURE_STORAGE_ACCOUNT']);
+requireEnv(['AZURE_STORAGE_ACCESS_KEY']);
+requireEnv(['AZURE_STORAGE_CONNECTION_STRING']);
 
 const WORKERS = 1;
 let etlInProgress = false;
@@ -22,9 +26,10 @@ function handleError(err) {
   log.info(`processing failed: ${err}`);
 }
 
-function etlComplete() {
+async function etlComplete() {
   etlStore.saveRecords();
   etlStore.saveSummary();
+  await uploadOutputToAzure();
   clearState();
   etlInProgress = false;
 }

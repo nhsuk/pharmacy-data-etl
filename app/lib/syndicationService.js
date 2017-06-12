@@ -1,7 +1,7 @@
 const apiRequest = require('./etl-toolkit/apiRequest');
 const xmlParser = require('./etl-toolkit/xmlParser');
+const config = require('./config');
 
-const DEFAULT_URL = 'http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies';
 const API_KEY = process.env.SYNDICATION_API_KEY;
 const SYNDICATION_HTML_PAGE_ERROR = 'Syndication XML page is returning HTML - server error';
 
@@ -16,13 +16,12 @@ function rejectHtml(json) {
 }
 
 function getPharmacyAllPage(page) {
-  const url = `${DEFAULT_URL}/all.xml?apikey=${API_KEY}&page=${page}`;
+  const url = `${config.syndicationApiUrl}/all.xml?apikey=${API_KEY}&page=${page}`;
   return apiRequest(url).then(xmlParser).then(rejectHtml);
 }
 
 
 module.exports = {
-  DEFAULT_URL,
   SYNDICATION_HTML_PAGE_ERROR,
   getPharmacyAllPage,
 };

@@ -1,0 +1,103 @@
+{
+  "identifierType": "Pharmacy Contract",
+  "openingTimes": {
+    "general": {
+      "monday": [
+        {
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      ],
+      "tuesday": [
+        {
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      ],
+      "wednesday": [
+        {
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      ],
+      "thursday": [
+        {
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      ],
+      "friday": [
+        {
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      ],
+      "saturday": [],
+      "sunday": []
+    },
+    "alterations": {}
+  },
+  "outOfHours": null,
+  "hasEps": true,
+  "address": {
+    "line1": "9 High Street",
+    "line2": "Walsall Wood",
+    "line3": "Walsall",
+    "city": "West Midlands",
+    "county": "",
+    "postcode": "WS9 9LR"
+  },
+  "contacts": {
+    "website": "http://www.118pharmacy.com",
+    "additionalContacts": [
+      {
+        "name": "Pharmacy Mobile",
+        "description": null,
+        "telephoneNumber": "07711 811812",
+        "telephoneExtension": null,
+        "fax": null,
+        "email": null
+      }
+    ],
+    "telephoneNumber": "01543 379777",
+    "isNonGeographicPhoneNumber": false,
+    "phoneChargeMethod": "flat-rate",
+    "phoneChargeAmount": 0,
+    "telephoneExtension": null,
+    "fax": "01543 370753",
+    "email": "info@118pharmacy.com"
+  },
+  "directionsInformation": null,
+  "externalProfileUrl": null,
+  "identifier": "FWP52",
+  "name": "118 Pharmacy Ltd",
+  "organisationType": "Pharmacy",
+  "parkingInformation": null,
+  "provider": "Birmingham And The Black Country Area Team",
+  "summary": "<p>Home Delivery Pharmacy - Accepting new patients</p><br /><p>Delivering all medicines, nutritional drinks, dressings, and colostomy products&nbsp;for free.</p><br /><p>Free meds managment service... It's like having a personal assistant looking after your health.&nbsp;</p>",
+  "links": [
+    {
+      "rel": "NoFollow",
+      "href": "http://statse.webtrendslive.com/dcss9yzisf9xjyg74mgbihg8p_8d2u/njs.gif?dcsuri=%2Fexternalservices%2Forganisationapi%2Forganisations%2FFWP52&amp;wt.js=no&amp;wt.cg_n=InwardAPI&amp;wt.z_SyndicationDomain={YourDomainName}",
+      "name": "Tracking pixel"
+    },
+    {
+      "rel": "Self",
+      "href": "http://www.nhs.uk/externalservices/organisationapi/organisations/FWP52",
+      "name": "Link to self"
+    },
+    {
+      "rel": "Alternate",
+      "href": "http://www.nhs.uk/services/pharmacies/overview/defaultview.aspx?id=FWP52",
+      "name": "NHS Choices profile"
+    }
+  ],
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -1.9331103563308716,
+      52.625221252441406
+    ]
+  },
+  "_id": "FWP52"
+}

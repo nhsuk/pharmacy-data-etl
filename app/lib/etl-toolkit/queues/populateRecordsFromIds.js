@@ -10,8 +10,6 @@ let hitsPerWorker;
 let count = 0;
 let retryCount = 0;
 let totalRetries = 0;
-// todo move to parameter
-const numberOfSteps = 1;
 
 function handleError(err, id) {
   etlStore.addFailedId(id, etlStore.ALL_TYPE, err.message);
@@ -68,10 +66,14 @@ function queueErroredIds(q) {
   addToQueue(failedIds, q);
 }
 
+function setHitsPerWorker(options) {
+  hitsPerWorker = config.hitsPerHour / (options.workers * (options.numberOfSteps || 1));
+}
+
 function startRetryQueue(options) {
   retryCount = 0;
   populateRecordFromIdAction = options.populateRecordAction;
-  hitsPerWorker = config.hitsPerHour / (options.workers * numberOfSteps);
+  setHitsPerWorker(options);
   const q = async.queue(processRetryQueueItem, options.workers);
   queueErroredIds(q);
   q.drain = () => {
@@ -83,7 +85,7 @@ function startRetryQueue(options) {
 function start(options) {
   count = 0;
   populateRecordFromIdAction = options.populateRecordAction;
-  hitsPerWorker = config.hitsPerHour / (options.workers * numberOfSteps);
+  setHitsPerWorker(options);
   const q = async.queue(processQueueItem, options.workers);
   queueIds(q);
   q.drain = () => {
