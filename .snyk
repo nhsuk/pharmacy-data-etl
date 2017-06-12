@@ -1,0 +1,7 @@
+version: v1.5.2
+ignore:
+  'npm:validator:20150313':
+    - azure-storage > validator:
+        reason: no upgrade available
+        expires: '2017-07-12T14:26:04.895Z'
+patch: {}
