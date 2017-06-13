@@ -35,6 +35,22 @@ The small ETL can be run locally with the command `yarn run start-small` or `yar
 
 The output JSON will be an array of objects in the format shown in the [Sample Pharmacy Data](sample-pharmacy-data.json)
 
+## Environment variables
+
+Environment variables are expected to be managed by the environment in which
+the application is being run. This is best practice as described by
+[twelve-factor](https://12factor.net/config).
+
+| Variable                         | Description                                                        | Default               | Required |
+|:---------------------------------|:-------------------------------------------------------------------|-----------------------|:---------|
+| `NODE_ENV`                       | node environment                                                   | development           |          |
+| `LOG_LEVEL`                      | [log level](https://github.com/trentm/node-bunyan#levels)          | Depends on `NODE_ENV` |          |
+| `SYNDICATION_API_KEY`            | API key to access sydication                                       |                       | yes      |
+| `AZURE_STORAGE_ACCOUNT`          | Azure storage Account name                                         |                       | yes      |
+| `AZURE_STORAGE_ACCESS_KEY`       | Azure storage access key                                           |                       | yes      |
+| `AZURE_STORAGE_CONNECTION_STRING`| Azure storage connection string                                    |                       | yes      |
+| `CONTAINER_NAME`                 | Azure storage container name                                       | etl-output            | yes      |
+
 ## Architecture Decision Records
 
 This repo uses
