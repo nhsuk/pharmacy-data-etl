@@ -23,6 +23,7 @@
     "test-unit": "NODE_ENV=test mocha --recursive test/unit",
     "test-watch": "yarn run test -- --watch --reporter min",
     "test-watch-integration": "yarn run test-integration -- --watch --reporter min",
+    "test-watch-unit": "yarn run test-unit -- --watch --reporter min",
     "travis": "yarn run lint && yarn run generate-coverage && yarn run check-coverage && yarn run upload-coverage-coveralls && yarn run snyk-travis",
     "upload-coverage-coveralls": "cat ./coverage/lcov.info | coveralls"
   },
