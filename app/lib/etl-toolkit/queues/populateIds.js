@@ -23,7 +23,7 @@ function clearState() {
 
 function loadState() {
   // there is a possibility that the same page will be processed twice
-  // if the ETL is cancelled between adding the IDs to the gpStore, and
+  // if the ETL is cancelled between adding the IDs to the etlStore, and
   // setting the processedPages. Duplicate IDs in the list will be ignored in the next queue
   // so this will not cause problems
   processedPages = fsHelper.loadJsonSync('processedPages') || {};

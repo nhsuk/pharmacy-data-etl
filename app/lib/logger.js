@@ -1,6 +1,6 @@
 const bunyan = require('bunyan');
 
-const log = bunyan.createLogger({ name: 'pomi-etl' });
+const log = bunyan.createLogger({ name: 'pharmacy-data-etl' });
 
 function info(message) {
   log.info(message);
