@@ -46,10 +46,8 @@ the application is being run. This is best practice as described by
 | `NODE_ENV`                       | node environment                                                   | development           |          |
 | `LOG_LEVEL`                      | [log level](https://github.com/trentm/node-bunyan#levels)          | Depends on `NODE_ENV` |          |
 | `SYNDICATION_API_KEY`            | API key to access sydication                                       |                       | yes      |
-| `AZURE_STORAGE_ACCOUNT`          | Azure storage Account name                                         |                       | yes      |
-| `AZURE_STORAGE_ACCESS_KEY`       | Azure storage access key                                           |                       | yes      |
 | `AZURE_STORAGE_CONNECTION_STRING`| Azure storage connection string                                    |                       | yes      |
-| `CONTAINER_NAME`                 | Azure storage container name                                       | etl-output            | yes      |
+| `CONTAINER_NAME`                 | Azure storage container name                                       | etl-output            |          |
 
 ## Architecture Decision Records
 

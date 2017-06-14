@@ -11,8 +11,6 @@ const log = require('./logger');
 const config = require('./config');
 
 requireEnv(['SYNDICATION_API_KEY']);
-requireEnv(['AZURE_STORAGE_ACCOUNT']);
-requireEnv(['AZURE_STORAGE_ACCESS_KEY']);
 requireEnv(['AZURE_STORAGE_CONNECTION_STRING']);
 
 const WORKERS = 1;
