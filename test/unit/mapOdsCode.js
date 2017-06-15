@@ -1,4 +1,5 @@
 const chai = require('chai');
+
 const mapOdsCode = require('../../app/lib/mappers/mapOdsCode');
 const rawAll = require('../resources/all-page-1.json');
 const rawSingle = require('../resources/all-one-pharmacy.json');

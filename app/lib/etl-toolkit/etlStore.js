@@ -7,10 +7,19 @@ const ALL_TYPE = 'all';
 let ids = [];
 let failedIds = {};
 let cache = {};
+let idKey = '_id';
+
+function setIdKey(key) {
+  idKey = key;
+}
+
+function getRecordId(record) {
+  return record[idKey];
+}
 
 function addRecord(record) {
   // eslint-disable-next-line no-underscore-dangle
-  cache[record._id] = record;
+  cache[getRecordId(record)] = record;
   return record;
 }
 
@@ -18,8 +27,8 @@ function getRecords() {
   return Object.values(cache);
 }
 
-function getRecord(syndicationId) {
-  return cache[syndicationId];
+function getRecord(id) {
+  return cache[id];
 }
 
 function getIds() {
@@ -59,8 +68,8 @@ function addFailedId(id, area, message) {
   return id;
 }
 
-function addIds(gpsList) {
-  ids = ids.concat(gpsList);
+function addIds(idList) {
+  ids = ids.concat(idList);
   return ids;
 }
 
@@ -81,10 +90,9 @@ function loadState() {
   cache = fsHelper.loadJsonSync('cache') || {};
 }
 
-
 function writeStatus() {
   const failedAllIds = getErorredIds();
-  log.info(`${failedAllIds.length} syndication IDs failed: ${failedAllIds}`);
+  log.info(`${failedAllIds.length} IDs failed: ${failedAllIds}`);
   log.info(`see summary.json file in '${config.outputDir}' for full details`);
 }
 
@@ -107,6 +115,7 @@ loadState();
 
 module.exports = {
   ALL_TYPE,
+  setIdKey,
   getIds,
   addIds,
   getRecord,

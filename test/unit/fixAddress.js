@@ -1,10 +1,15 @@
 const chai = require('chai');
+
 const fixAddress = require('../../app/lib/fixAddress');
 
 const expect = chai.expect;
 
-
 describe('Fix Address', () => {
+  it('should gracefully handle undefined address', () => {
+    const address = undefined;
+    fixAddress(address);
+  });
+
   it('should blank duplicate line 1-2', () => {
     const address = {
       line1: '9 High Street',

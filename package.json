@@ -32,9 +32,9 @@
     "url": "git+https://github.com/nhsuk/pharmacy-data-etl.git"
   },
   "keywords": [
-    "GP",
+    "Pharmacy",
     "JSON",
-    "XML",
+    "Organisation",
     "Syndication"
   ],
   "author": "Mark Harrop",

@@ -20,7 +20,6 @@ function getPharmacyAllPage(page) {
   return apiRequest(url).then(xmlParser).then(rejectHtml);
 }
 
-
 module.exports = {
   SYNDICATION_HTML_PAGE_ERROR,
   getPharmacyAllPage,

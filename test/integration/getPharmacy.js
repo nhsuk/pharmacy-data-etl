@@ -1,4 +1,5 @@
 const chai = require('chai');
+
 const getPharmacy = require('../../app/lib/actions/getPharmacy');
 
 const expect = chai.expect;

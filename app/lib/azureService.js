@@ -29,4 +29,20 @@ function uploadToAzure(filePath, name) {
   });
 }
 
-module.exports = { uploadToAzure, listBlobs };
+function deleteFromAzure(name) {
+  return new Promise((resolve, reject) => {
+    blobSvc.deleteBlob(config.containerName, name, (error, result) => {
+      if (!error) {
+        // file deleted
+        resolve(result);
+      }
+      reject(error);
+    });
+  });
+}
+
+module.exports = {
+  uploadToAzure,
+  deleteFromAzure,
+  listBlobs,
+};

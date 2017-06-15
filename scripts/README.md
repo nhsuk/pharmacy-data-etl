@@ -14,10 +14,10 @@ Directs towards base development machine setup.
 Installs project's direct dependencies e.g. npm packages.
 
 [`start`](start)
-Starts the application a Docker container.
+Starts the application in a Docker container.
 
 [`start-small`](start)
-Starts a partial ETL that only processes 90 GPs in a Docker container.
+Starts a partial ETL that only processes 90 pharmacies in a Docker container.
 
 [`test`](test)
 Starts a Docker container specifically for continually running tests.

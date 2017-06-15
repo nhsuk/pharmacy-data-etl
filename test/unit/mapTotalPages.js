@@ -1,4 +1,5 @@
 const chai = require('chai');
+
 const mapTotalPages = require('../../app/lib/mappers/mapTotalPages');
 const rawAll = require('../resources/all-page-1.json');
 

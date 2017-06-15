@@ -1,4 +1,8 @@
 const requireEnv = require('require-environment-variables');
+// requireEnvs must be at the top of the file as the azure-storage module uses the
+// AZURE_STORAGE_CONNECTION_STRING variable on load
+requireEnv(['SYNDICATION_API_KEY']);
+requireEnv(['AZURE_STORAGE_CONNECTION_STRING']);
 
 const etlStore = require('./etl-toolkit/etlStore');
 const populateIdListQueue = require('./etl-toolkit/queues/populateIds');
@@ -10,11 +14,12 @@ const uploadOutputToAzure = require('./uploadOutputToAzure');
 const log = require('./logger');
 const config = require('./config');
 
-requireEnv(['SYNDICATION_API_KEY']);
-requireEnv(['AZURE_STORAGE_CONNECTION_STRING']);
-
 const WORKERS = 1;
+const RECORD_KEY = 'identifier';
 let etlInProgress = false;
+
+etlStore.setIdKey(RECORD_KEY);
+
 function clearState() {
   populateIdListQueue.clearState();
   etlStore.clearState();

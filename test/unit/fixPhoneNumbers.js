@@ -1,4 +1,5 @@
 const chai = require('chai');
+
 const fixPhoneNumbers = require('../../app/lib/fixPhoneNumbers');
 
 const expect = chai.expect;

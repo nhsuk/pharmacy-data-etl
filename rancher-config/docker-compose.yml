@@ -8,8 +8,6 @@ services:
       SYNDICATION_API_KEY: ${SYNDICATION_API_KEY}
       ETL_SCHEDULE: ${ETL_SCHEDULE}
       NODE_ENV: production
-    stdin_open: true
-    tty: true
     labels:
       io.rancher.container.pull_image: always
     volumes:

@@ -1,9 +1,9 @@
 const fs = require('fs');
+
 const log = require('./logger');
 const config = require('./config');
 
 const OUTPUT_DIR = config.outputDir;
-
 
 function createDirIfMissing(path) {
   if (!fs.existsSync(path)) {

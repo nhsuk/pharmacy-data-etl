@@ -22,10 +22,11 @@ function blankDuplicateFieldNames(address, fieldIndex) {
 }
 
 function fixAddress(address) {
-  for (let i = 0; i <= fields.length - 1; i++) {
-    blankDuplicateFieldNames(address, i);
+  if (address) {
+    for (let i = 0; i <= fields.length - 1; i++) {
+      blankDuplicateFieldNames(address, i);
+    }
   }
-  return address;
 }
 
 module.exports = fixAddress;

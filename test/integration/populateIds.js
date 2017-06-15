@@ -1,4 +1,5 @@
 const chai = require('chai');
+
 const populateIds = require('../../app/lib/etl-toolkit/queues/populateIds');
 const etlStore = require('../../app/lib/etl-toolkit/etlStore');
 
@@ -70,7 +71,6 @@ describe('Populate ID queue', () => {
       getIdsAction,
       queueComplete: restartQueue,
     };
-
 
     populateIds.start(restartOptions);
   });

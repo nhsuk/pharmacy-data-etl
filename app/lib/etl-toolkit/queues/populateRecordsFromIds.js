@@ -1,6 +1,6 @@
 const async = require('async');
-const log = require('../../logger');
 
+const log = require('../../logger');
 const etlStore = require('../etlStore');
 const limiter = require('../limiter');
 const config = require('../../config');
