@@ -1,4 +1,4 @@
-# 4. make ETL re-entrant
+# 4. Make ETL re-entrant
 
 Date: 2017-06-15
 
@@ -8,8 +8,7 @@ Accepted
 
 ## Context
 
-If the ETL if is interrupted it will need to start over again, i.e.
-If a 6 hour ETL is stopped in the 5th hour, restarting will take another 6 hours to finish.
+If the ETL if is interrupted it will need to start over again, i.e. a 6 hour ETL is stopped in the 5th hour, restarting will take another 6 hours to finish.
 
 ## Decision
 

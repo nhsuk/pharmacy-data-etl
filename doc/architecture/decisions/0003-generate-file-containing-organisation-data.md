@@ -23,4 +23,4 @@ enabling the whole dataset to be analysed and indexed.
 The Organisation data will be scraped every night. This amounts to approximately 12,000 requests against the API over
 the course of a 1 hour period.
 
-The Organisation API will not queried in real time, insulating the application against failure of the Organisation API.
+The Organisation API will not be queried in real time, insulating the application against failure of the Organisation API.

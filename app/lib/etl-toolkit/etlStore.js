@@ -18,7 +18,6 @@ function getRecordId(record) {
 }
 
 function addRecord(record) {
-  // eslint-disable-next-line no-underscore-dangle
   cache[getRecordId(record)] = record;
   return record;
 }
