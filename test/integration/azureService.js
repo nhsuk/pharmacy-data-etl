@@ -5,7 +5,6 @@ const azureService = require('../../app/lib/azureService');
 const expect = chai.expect;
 // writing to a shared area, timestamp file to avoid collisions
 const name = `${new Date().getTime()}test.json`;
-console.log(name);
 const timeout = 5000;
 
 describe('Azure Service', () => {
