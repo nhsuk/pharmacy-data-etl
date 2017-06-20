@@ -7,7 +7,11 @@ const expect = chai.expect;
 describe('Fix Address', () => {
   it('should gracefully handle undefined address', () => {
     const address = undefined;
-    fixAddress(address);
+    try {
+      fixAddress(address);
+    } catch (ex) {
+      chai.assert.fail('should not have thrown exception');
+    }
   });
 
   it('should blank duplicate line 1-2', () => {

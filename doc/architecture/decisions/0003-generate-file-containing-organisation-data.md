@@ -13,7 +13,7 @@ The [Connecting to Services](https://github.com/nhsuk/connecting-to-services) ap
 
 ## Decision
 
-The NHS Organisation API should be scraped nightly to generate a file containing pharmacy data.
+The NHS Organisation API will be scraped nightly to generate a file containing pharmacy data.
 
 ## Consequences
 

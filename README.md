@@ -7,7 +7,10 @@ and store as JSON.
 In order for the process to access the syndication feed an API key is required.
 Details of registration are available on
 [NHS Choices](http://www.nhs.uk/aboutNHSChoices/professionals/syndication/Pages/Webservices.aspx).
-The application needs the api key available within the environment as the variable `SYNDICATION_API_KEY`.
+The application needs the API key available within the environment as the variable `SYNDICATION_API_KEY`.
+
+THe output is uploaded to an Azure storage blob, a suitable connection string should be set in the `AZURE_STORAGE_CONNECTION_STRING` variable.
+For further details see [Azure Blob Storage](https://azure.microsoft.com/en-gb/services/storage/blobs/).
 
 The ETL retrieves the ODS codes for all Pharmacies from the Syndication API, then visits the organisation API to obtain full pharmacy information.
 
