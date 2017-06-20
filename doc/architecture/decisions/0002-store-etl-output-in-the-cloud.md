@@ -12,7 +12,7 @@ The output from the ETL is only available in the container and needs to be expos
 
 ## Decision
 
-When the ETL has complete the output will be stored in an Azure blob, Azure being the current preferred cloud platform.
+When the ETL has completed the output will be stored in an Azure blob, Azure being the current preferred cloud platform.
 The output file will be exposed on a publicly available URL.
 
 ## Consequences
