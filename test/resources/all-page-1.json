@@ -1,0 +1,1728 @@
+{
+  "feed": {
+    "$": {
+      "xmlns": "http://www.w3.org/2005/Atom"
+    },
+    "title": {
+      "_": "NHS Choices - All Pharmacies",
+      "$": {
+        "type": "text"
+      }
+    },
+    "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/all",
+    "rights": {
+      "_": "© Crown Copyright 2009",
+      "$": {
+        "type": "text"
+      }
+    },
+    "updated": "2017-06-08T10:38:02Z",
+    "category": {
+      "$": {
+        "term": "pharmacies"
+      }
+    },
+    "logo": "http://www.nhs.uk/nhscwebservices/documents/logo1.jpg",
+    "author": {
+      "name": "NHS Choices",
+      "uri": "http://www.nhs.uk",
+      "email": "webservices@nhschoices.nhs.uk"
+    },
+    "link": [
+      {
+        "$": {
+          "rel": "self",
+          "type": "application/xml",
+          "title": "NHS Choices - All Pharmacies",
+          "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/all?apikey=bbccdd"
+        }
+      },
+      {
+        "$": {
+          "rel": "first",
+          "type": "application/xml",
+          "title": "first",
+          "length": "1000",
+          "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/all?apikey=bbccdd&page=1"
+        }
+      },
+      {
+        "$": {
+          "rel": "next",
+          "type": "application/xml",
+          "title": "next",
+          "length": "1000",
+          "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/all?apikey=bbccdd&page=2"
+        }
+      },
+      {
+        "$": {
+          "rel": "last",
+          "type": "application/xml",
+          "title": "last",
+          "length": "1000",
+          "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/all?apikey=bbccdd&page=385"
+        }
+      },
+      {
+        "$": {
+          "rel": "alternate",
+          "title": "Find and choose services - Pharmacies",
+          "href": "http://www.nhs.uk/ServiceDirectories/pages/ServiceSearch.aspx?ServiceType=Pharmacy"
+        }
+      }
+    ],
+    "tracking": {
+      "_": "<img style=\"border: 0; width: 1px; height: 1px;\" alt=\"\" src=\"http://statse.webtrendslive.com/dcss9yzisf9xjyg74mgbihg8p_8d2u/njs.gif?dcsuri=/organisations%2fpharmacies%2fall&amp;wt.js=no&amp;wt.cg_n=syndication\"/>",
+      "$": {
+        "xmlns": "http://syndication.nhschoices.nhs.uk/services"
+      }
+    },
+    "entry": [
+      {
+        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/29581",
+        "title": {
+          "_": "Tesco Instore Pharmacy - Summary",
+          "$": {
+            "type": "text"
+          }
+        },
+        "published": "2014-02-12T03:31:19Z",
+        "updated": "2014-02-12T03:31:19Z",
+        "link": [
+          {
+            "$": {
+              "rel": "alternate",
+              "type": "application/xhtml",
+              "title": "Overview - Tesco Instore Pharmacy - NHS Choices",
+              "href": "http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=34574"
+            }
+          },
+          {
+            "$": {
+              "rel": "self",
+              "type": "application/xhtml+xml",
+              "title": "Overview - Tesco Instore Pharmacy - NHS Choices",
+              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/29581?apikey=bbccdd"
+            }
+          }
+        ],
+        "content": {
+          "$": {
+            "type": "application/xml"
+          },
+          "organisationSummary": {
+            "$": {
+              "xmlns:s": "http://syndication.nhschoices.nhs.uk/services"
+            },
+            "name": "Tesco Instore Pharmacy",
+            "odscode": "FJA60",
+            "address": {
+              "addressLine": [
+                "Tesco Pharmacy",
+                "Ashley Retail Park",
+                "Lugsdale Road",
+                "Widnes",
+                "Cheshire"
+              ],
+              "postcode": "WA8 7YT"
+            },
+            "phone": "0345 6719466",
+            "geographicCoordinates": {
+              "latitude": "53.3623695373535",
+              "longitude": "-2.72535586357117"
+            }
+          }
+        }
+      },
+      {
+        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/55554",
+        "title": {
+          "_": "118 Pharmacy Ltd - Summary",
+          "$": {
+            "type": "text"
+          }
+        },
+        "published": "2017-04-14T01:05:15+01:00",
+        "updated": "2017-04-14T01:05:15+01:00",
+        "link": [
+          {
+            "$": {
+              "rel": "alternate",
+              "type": "application/xhtml",
+              "title": "Overview - 118 Pharmacy Ltd - NHS Choices",
+              "href": "http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=84926"
+            }
+          },
+          {
+            "$": {
+              "rel": "self",
+              "type": "application/xhtml+xml",
+              "title": "Overview - 118 Pharmacy Ltd - NHS Choices",
+              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/55554?apikey=bbccdd"
+            }
+          }
+        ],
+        "content": {
+          "$": {
+            "type": "application/xml"
+          },
+          "organisationSummary": {
+            "$": {
+              "xmlns:s": "http://syndication.nhschoices.nhs.uk/services"
+            },
+            "name": "118 Pharmacy Ltd",
+            "odscode": "FWP52",
+            "address": {
+              "addressLine": [
+                "9 High Street",
+                "Walsall Wood",
+                "Walsall",
+                "West Midlands"
+              ],
+              "postcode": "WS9 9LR"
+            },
+            "phone": "01543 379777",
+            "email": "info@118pharmacy.com",
+            "geographicCoordinates": {
+              "latitude": "52.6252212524414",
+              "longitude": "-1.93311035633087"
+            }
+          }
+        }
+      },
+      {
+        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/32248",
+        "title": {
+          "_": "1st Pharmacy - Summary",
+          "$": {
+            "type": "text"
+          }
+        },
+        "published": "2017-04-23T01:37:07+01:00",
+        "updated": "2017-04-23T01:37:07+01:00",
+        "link": [
+          {
+            "$": {
+              "rel": "alternate",
+              "type": "application/xhtml",
+              "title": "Overview - 1st Pharmacy - NHS Choices",
+              "href": "http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=10184"
+            }
+          },
+          {
+            "$": {
+              "rel": "self",
+              "type": "application/xhtml+xml",
+              "title": "Overview - 1st Pharmacy - NHS Choices",
+              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/32248?apikey=bbccdd"
+            }
+          }
+        ],
+        "content": {
+          "$": {
+            "type": "application/xml"
+          },
+          "organisationSummary": {
+            "$": {
+              "xmlns:s": "http://syndication.nhschoices.nhs.uk/services"
+            },
+            "name": "1st Pharmacy",
+            "odscode": "FNM60",
+            "address": {
+              "addressLine": [
+                "Fountain Hall",
+                "Fountain Street",
+                "Bradford",
+                "West Yorkshire"
+              ],
+              "postcode": "BD1 3RA"
+            },
+            "phone": "01274 323877",
+            "email": "1stpharmacybradford@gmail.com",
+            "geographicCoordinates": {
+              "latitude": "53.7972755432129",
+              "longitude": "-1.75778746604919"
+            }
+          }
+        }
+      },
+      {
+        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31926",
+        "title": {
+          "_": "212 Pharmacy - Summary",
+          "$": {
+            "type": "text"
+          }
+        },
+        "published": "2017-01-13T01:37:08Z",
+        "updated": "2017-01-13T01:37:08Z",
+        "link": [
+          {
+            "$": {
+              "rel": "alternate",
+              "type": "application/xhtml",
+              "title": "Overview - 212 Pharmacy - NHS Choices",
+              "href": "http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=34876"
+            }
+          },
+          {
+            "$": {
+              "rel": "self",
+              "type": "application/xhtml+xml",
+              "title": "Overview - 212 Pharmacy - NHS Choices",
+              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31926?apikey=bbccdd"
+            }
+          }
+        ],
+        "content": {
+          "$": {
+            "type": "application/xml"
+          },
+          "organisationSummary": {
+            "$": {
+              "xmlns:s": "http://syndication.nhschoices.nhs.uk/services"
+            },
+            "name": "212 Pharmacy",
+            "odscode": "FN418",
+            "address": {
+              "addressLine": [
+                "Pharmacy 1st Limited",
+                "Pharmacy 1st",
+                "212 Canterbury Street",
+                "Gillingham",
+                "Kent"
+              ],
+              "postcode": "ME7 5XL"
+            },
+            "phone": "01634 850289",
+            "email": "pharmacy1st@outlook.com",
+            "geographicCoordinates": {
+              "latitude": "51.3800621032715",
+              "longitude": "0.54780900478363"
+            }
+          }
+        }
+      },
+      {
+        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/7758300",
+        "title": {
+          "_": "247Pharmacy - Summary",
+          "$": {
+            "type": "text"
+          }
+        },
+        "published": "2017-06-02T01:05:15+01:00",
+        "updated": "2017-06-02T01:05:15+01:00",
+        "link": [
+          {
+            "$": {
+              "rel": "alternate",
+              "type": "application/xhtml",
+              "title": "Overview - 247Pharmacy - NHS Choices",
+              "href": "http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=130533"
+            }
+          },
+          {
+            "$": {
+              "rel": "self",
+              "type": "application/xhtml+xml",
+              "title": "Overview - 247Pharmacy - NHS Choices",
+              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/7758300?apikey=bbccdd"
+            }
+          }
+        ],
+        "content": {
+          "$": {
+            "type": "application/xml"
+          },
+          "organisationSummary": {
+            "$": {
+              "xmlns:s": "http://syndication.nhschoices.nhs.uk/services"
+            },
+            "name": "247Pharmacy",
+            "odscode": "FTK81",
+            "address": {
+              "addressLine": [
+                "Unit 9A",
+                "Cranbourne Ind. Estate",
+                "Potters Bar",
+                "Hertfordshire"
+              ],
+              "postcode": "EN6 3JN"
+            },
+            "phone": "0808 1233247",
+            "geographicCoordinates": {
+              "latitude": "51.7045555114746",
+              "longitude": "-0.20194585621357"
+            }
+          }
+        }
+      },
+      {
+        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/28129",
+        "title": {
+          "_": "3q Pharmacy - Summary",
+          "$": {
+            "type": "text"
+          }
+        },
+        "published": "2013-08-14T03:31:19+01:00",
+        "updated": "2013-08-14T03:31:19+01:00",
+        "link": [
+          {
+            "$": {
+              "rel": "alternate",
+              "type": "application/xhtml",
+              "title": "Overview - 3q Pharmacy - NHS Choices",
+              "href": "http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=29196"
+            }
+          },
+          {
+            "$": {
+              "rel": "self",
+              "type": "application/xhtml+xml",
+              "title": "Overview - 3q Pharmacy - NHS Choices",
+              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/28129?apikey=bbccdd"
+            }
+          }
+        ],
+        "content": {
+          "$": {
+            "type": "application/xml"
+          },
+          "organisationSummary": {
+            "$": {
+              "xmlns:s": "http://syndication.nhschoices.nhs.uk/services"
+            },
+            "name": "3q Pharmacy",
+            "odscode": "FG039",
+            "address": {
+              "addressLine": [
+                "3 Queen Street",
+                "Wellingborough",
+                "Northamptonshire"
+              ],
+              "postcode": "NN8 4RW"
+            },
+            "phone": "01933 273373",
+            "geographicCoordinates": {
+              "latitude": "52.3033981323242",
+              "longitude": "-0.695552706718445"
+            }
+          }
+        }
+      },
+      {
+        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/35183",
+        "title": {
+          "_": "4court Pharmacy - Summary",
+          "$": {
+            "type": "text"
+          }
+        },
+        "published": "2017-02-05T01:37:13Z",
+        "updated": "2017-02-05T01:37:13Z",
+        "link": [
+          {
+            "$": {
+              "rel": "alternate",
+              "type": "application/xhtml",
+              "title": "Overview - 4court Pharmacy - NHS Choices",
+              "href": "http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=29396"
+            }
+          },
+          {
+            "$": {
+              "rel": "self",
+              "type": "application/xhtml+xml",
+              "title": "Overview - 4court Pharmacy - NHS Choices",
+              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/35183?apikey=bbccdd"
+            }
+          }
+        ],
+        "content": {
+          "$": {
+            "type": "application/xml"
+          },
+          "organisationSummary": {
+            "$": {
+              "xmlns:s": "http://syndication.nhschoices.nhs.uk/services"
+            },
+            "name": "4court Pharmacy",
+            "odscode": "FVG90",
+            "address": {
+              "addressLine": [
+                "Heybrook Service Station",
+                "Halifax Road",
+                "Rochdale",
+                "Lancashire"
+              ],
+              "postcode": "OL16 2NT"
+            },
+            "phone": "01706 646262",
+            "email": "4courtrochdale@gmail.com",
+            "geographicCoordinates": {
+              "latitude": "53.6236000061035",
+              "longitude": "-2.14388132095337"
+            }
+          }
+        }
+      },
+      {
+        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/32953",
+        "title": {
+          "_": "4Court Pharmacy - Summary",
+          "$": {
+            "type": "text"
+          }
+        },
+        "published": "2017-04-20T01:37:05+01:00",
+        "updated": "2017-04-20T01:37:05+01:00",
+        "link": [
+          {
+            "$": {
+              "rel": "alternate",
+              "type": "application/xhtml",
+              "title": "Overview - 4Court Pharmacy - NHS Choices",
+              "href": "http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=10825"
+            }
+          },
+          {
+            "$": {
+              "rel": "self",
+              "type": "application/xhtml+xml",
+              "title": "Overview - 4Court Pharmacy - NHS Choices",
+              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/32953?apikey=bbccdd"
+            }
+          }
+        ],
+        "content": {
+          "$": {
+            "type": "application/xml"
+          },
+          "organisationSummary": {
+            "$": {
+              "xmlns:s": "http://syndication.nhschoices.nhs.uk/services"
+            },
+            "name": "4Court Pharmacy",
+            "odscode": "FPT24",
+            "address": {
+              "addressLine": [
+                "4Court Pharmacy",
+                "Blackburn Service Station",
+                "Whalley Banks",
+                "Blackburn"
+              ],
+              "postcode": "BB2 1NT"
+            },
+            "phone": "01254 677447",
+            "email": "4courtltd@gmail.com",
+            "geographicCoordinates": {
+              "latitude": "53.7434997558594",
+              "longitude": "-2.49203658103943"
+            }
+          }
+        }
+      },
+      {
+        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/32147",
+        "title": {
+          "_": "7 - 11 Pharmacy - Summary",
+          "$": {
+            "type": "text"
+          }
+        },
+        "published": "2017-04-13T01:37:45+01:00",
+        "updated": "2017-04-13T01:37:45+01:00",
+        "link": [
+          {
+            "$": {
+              "rel": "alternate",
+              "type": "application/xhtml",
+              "title": "Overview - 7 - 11 Pharmacy - NHS Choices",
+              "href": "http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=10089"
+            }
+          },
+          {
+            "$": {
+              "rel": "self",
+              "type": "application/xhtml+xml",
+              "title": "Overview - 7 - 11 Pharmacy - NHS Choices",
+              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/32147?apikey=bbccdd"
+            }
+          }
+        ],
+        "content": {
+          "$": {
+            "type": "application/xml"
+          },
+          "organisationSummary": {
+            "$": {
+              "xmlns:s": "http://syndication.nhschoices.nhs.uk/services"
+            },
+            "name": "7 - 11 Pharmacy",
+            "odscode": "FNG62",
+            "address": {
+              "addressLine": [
+                "84 Berners Street",
+                "Leicester",
+                "Leicestershire"
+              ],
+              "postcode": "LE2 0FS"
+            },
+            "phone": "0116 2511333",
+            "geographicCoordinates": {
+              "latitude": "52.6343765258789",
+              "longitude": "-1.11219882965088"
+            }
+          }
+        }
+      },
+      {
+        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31995",
+        "title": {
+          "_": "8 Pm Chemist Ltd - Summary",
+          "$": {
+            "type": "text"
+          }
+        },
+        "published": "2013-01-18T05:55:04Z",
+        "updated": "2013-01-18T05:55:04Z",
+        "link": [
+          {
+            "$": {
+              "rel": "alternate",
+              "type": "application/xhtml",
+              "title": "Overview - 8 Pm Chemist Ltd - NHS Choices",
+              "href": "http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=9949"
+            }
+          },
+          {
+            "$": {
+              "rel": "self",
+              "type": "application/xhtml+xml",
+              "title": "Overview - 8 Pm Chemist Ltd - NHS Choices",
+              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31995?apikey=bbccdd"
+            }
+          }
+        ],
+        "content": {
+          "$": {
+            "type": "application/xml"
+          },
+          "organisationSummary": {
+            "$": {
+              "xmlns:s": "http://syndication.nhschoices.nhs.uk/services"
+            },
+            "name": "8 Pm Chemist Ltd",
+            "odscode": "FN736",
+            "address": {
+              "addressLine": [
+                "61 Wolverhampton Street",
+                "Willenhall",
+                "West Midlands"
+              ],
+              "postcode": "WV13 2NF"
+            },
+            "phone": "01902 633310",
+            "geographicCoordinates": {
+              "latitude": "52.5842361450195",
+              "longitude": "-2.0568675994873"
+            }
+          }
+        }
+      },
+      {
+        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/5065279",
+        "title": {
+          "_": "A & S Shillam Limited - Summary",
+          "$": {
+            "type": "text"
+          }
+        },
+        "published": "2016-04-21T01:37:02+01:00",
+        "updated": "2016-04-21T01:37:02+01:00",
+        "link": [
+          {
+            "$": {
+              "rel": "alternate",
+              "type": "application/xhtml",
+              "title": "Overview - A & S Shillam Limited - NHS Choices",
+              "href": "http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=113645"
+            }
+          },
+          {
+            "$": {
+              "rel": "self",
+              "type": "application/xhtml+xml",
+              "title": "Overview - A & S Shillam Limited - NHS Choices",
+              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/5065279?apikey=bbccdd"
+            }
+          }
+        ],
+        "content": {
+          "$": {
+            "type": "application/xml"
+          },
+          "organisationSummary": {
+            "$": {
+              "xmlns:s": "http://syndication.nhschoices.nhs.uk/services"
+            },
+            "name": "A & S Shillam Limited",
+            "odscode": "FEP23",
+            "address": {
+              "addressLine": [
+                "Dane Pharmacy",
+                "10 Dane Road",
+                "Seaford",
+                "East Sussex"
+              ],
+              "postcode": "BN25 1LL"
+            },
+            "phone": "01323 892660",
+            "email": "daneroad@shillampharmacies.com",
+            "geographicCoordinates": {
+              "latitude": "50.7725296020508",
+              "longitude": "0.100091241300106"
+            }
+          }
+        }
+      },
+      {
+        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/25563",
+        "title": {
+          "_": "A Akhtar - Summary",
+          "$": {
+            "type": "text"
+          }
+        },
+        "published": "2014-07-18T02:40:10+01:00",
+        "updated": "2014-07-18T02:40:10+01:00",
+        "link": [
+          {
+            "$": {
+              "rel": "alternate",
+              "type": "application/xhtml",
+              "title": "Overview - A Akhtar - NHS Choices",
+              "href": "http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=30273"
+            }
+          },
+          {
+            "$": {
+              "rel": "self",
+              "type": "application/xhtml+xml",
+              "title": "Overview - A Akhtar - NHS Choices",
+              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/25563?apikey=bbccdd"
+            }
+          }
+        ],
+        "content": {
+          "$": {
+            "type": "application/xml"
+          },
+          "organisationSummary": {
+            "$": {
+              "xmlns:s": "http://syndication.nhschoices.nhs.uk/services"
+            },
+            "name": "A Akhtar",
+            "odscode": "FAV78",
+            "address": {
+              "addressLine": [
+                "68 The Strand",
+                "Longton",
+                "Stoke On Trent",
+                "Staffordshire"
+              ],
+              "postcode": "ST3 2NR"
+            },
+            "phone": "01782 342955",
+            "email": "waterloopharmacy68@gmail.com",
+            "geographicCoordinates": {
+              "latitude": "52.9872207641602",
+              "longitude": "-2.13689780235291"
+            }
+          }
+        }
+      },
+      {
+        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/34040",
+        "title": {
+          "_": "A and A Pharmacy Ltd - Summary",
+          "$": {
+            "type": "text"
+          }
+        },
+        "published": "2016-12-07T01:37:09Z",
+        "updated": "2016-12-07T01:37:09Z",
+        "link": [
+          {
+            "$": {
+              "rel": "alternate",
+              "type": "application/xhtml",
+              "title": "Overview - A and A Pharmacy Ltd - NHS Choices",
+              "href": "http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=11816"
+            }
+          },
+          {
+            "$": {
+              "rel": "self",
+              "type": "application/xhtml+xml",
+              "title": "Overview - A and A Pharmacy Ltd - NHS Choices",
+              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/34040?apikey=bbccdd"
+            }
+          }
+        ],
+        "content": {
+          "$": {
+            "type": "application/xml"
+          },
+          "organisationSummary": {
+            "$": {
+              "xmlns:s": "http://syndication.nhschoices.nhs.uk/services"
+            },
+            "name": "A and A Pharmacy Ltd",
+            "odscode": "FRL97",
+            "address": {
+              "addressLine": [
+                "58 Wilmslow Road",
+                "Rusholme",
+                "Manchester"
+              ],
+              "postcode": "M14 5AL"
+            },
+            "phone": "0161 224 8501",
+            "geographicCoordinates": {
+              "latitude": "53.454517364502",
+              "longitude": "-2.22506356239319"
+            }
+          }
+        }
+      },
+      {
+        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/4511566",
+        "title": {
+          "_": "A C Moule & Co Pharmacy - Summary",
+          "$": {
+            "type": "text"
+          }
+        },
+        "published": "2017-03-10T01:05:07Z",
+        "updated": "2017-03-10T01:05:07Z",
+        "link": [
+          {
+            "$": {
+              "rel": "alternate",
+              "type": "application/xhtml",
+              "title": "Overview - A C Moule & Co Pharmacy - NHS Choices",
+              "href": "http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=110145"
+            }
+          },
+          {
+            "$": {
+              "rel": "self",
+              "type": "application/xhtml+xml",
+              "title": "Overview - A C Moule & Co Pharmacy - NHS Choices",
+              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/4511566?apikey=bbccdd"
+            }
+          }
+        ],
+        "content": {
+          "$": {
+            "type": "application/xml"
+          },
+          "organisationSummary": {
+            "$": {
+              "xmlns:s": "http://syndication.nhschoices.nhs.uk/services"
+            },
+            "name": "A C Moule & Co Pharmacy",
+            "odscode": "FK058",
+            "address": {
+              "addressLine": [
+                "55 Parliament Road",
+                "Middlesbrough",
+                "Cleveland"
+              ],
+              "postcode": "TS1 4JW"
+            },
+            "phone": "01642 244717",
+            "geographicCoordinates": {
+              "latitude": "54.5685806274414",
+              "longitude": "-1.24734997749329"
+            }
+          }
+        }
+      },
+      {
+        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/29626",
+        "title": {
+          "_": "A Karim's Chuckery Pharmacy - Summary",
+          "$": {
+            "type": "text"
+          }
+        },
+        "published": "2016-04-16T01:37:01+01:00",
+        "updated": "2016-04-16T01:37:01+01:00",
+        "link": [
+          {
+            "$": {
+              "rel": "alternate",
+              "type": "application/xhtml",
+              "title": "Overview - A Karim's Chuckery Pharmacy - NHS Choices",
+              "href": "http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=46818"
+            }
+          },
+          {
+            "$": {
+              "rel": "self",
+              "type": "application/xhtml+xml",
+              "title": "Overview - A Karim's Chuckery Pharmacy - NHS Choices",
+              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/29626?apikey=bbccdd"
+            }
+          }
+        ],
+        "content": {
+          "$": {
+            "type": "application/xml"
+          },
+          "organisationSummary": {
+            "$": {
+              "xmlns:s": "http://syndication.nhschoices.nhs.uk/services"
+            },
+            "name": "A Karim's Chuckery Pharmacy",
+            "odscode": "FJD82",
+            "address": {
+              "addressLine": [
+                "7-9 Kinnerley Street",
+                "The Chuckery",
+                "Walsall"
+              ],
+              "postcode": "WS1 2LD"
+            },
+            "phone": "01922 613786",
+            "email": "chuckerypharmacy@gmail.com",
+            "geographicCoordinates": {
+              "latitude": "52.5806312561035",
+              "longitude": "-1.96958541870117"
+            }
+          }
+        }
+      },
+      {
+        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31167",
+        "title": {
+          "_": "A Kassam Pharmacy - Summary",
+          "$": {
+            "type": "text"
+          }
+        },
+        "published": "2017-04-23T01:37:07+01:00",
+        "updated": "2017-04-23T01:37:07+01:00",
+        "link": [
+          {
+            "$": {
+              "rel": "alternate",
+              "type": "application/xhtml",
+              "title": "Overview - A Kassam Pharmacy - NHS Choices",
+              "href": "http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=9202"
+            }
+          },
+          {
+            "$": {
+              "rel": "self",
+              "type": "application/xhtml+xml",
+              "title": "Overview - A Kassam Pharmacy - NHS Choices",
+              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31167?apikey=bbccdd"
+            }
+          }
+        ],
+        "content": {
+          "$": {
+            "type": "application/xml"
+          },
+          "organisationSummary": {
+            "$": {
+              "xmlns:s": "http://syndication.nhschoices.nhs.uk/services"
+            },
+            "name": "A Kassam Pharmacy",
+            "odscode": "FLV47",
+            "address": {
+              "addressLine": [
+                "Kassam Pharmacy",
+                "77 Gales Drive",
+                "Three Bridges",
+                "Crawley",
+                "West Sussex"
+              ],
+              "postcode": "RH10 1QA"
+            },
+            "phone": "01293 522919",
+            "geographicCoordinates": {
+              "latitude": "51.11767578125",
+              "longitude": "-0.172527804970741"
+            }
+          }
+        }
+      },
+      {
+        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/34559",
+        "title": {
+          "_": "A Moore & Co - Summary",
+          "$": {
+            "type": "text"
+          }
+        },
+        "published": "2017-06-02T01:05:15+01:00",
+        "updated": "2017-06-02T01:05:15+01:00",
+        "link": [
+          {
+            "$": {
+              "rel": "alternate",
+              "type": "application/xhtml",
+              "title": "Overview - A Moore & Co - NHS Choices",
+              "href": "http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=12281"
+            }
+          },
+          {
+            "$": {
+              "rel": "self",
+              "type": "application/xhtml+xml",
+              "title": "Overview - A Moore & Co - NHS Choices",
+              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/34559?apikey=bbccdd"
+            }
+          }
+        ],
+        "content": {
+          "$": {
+            "type": "application/xml"
+          },
+          "organisationSummary": {
+            "$": {
+              "xmlns:s": "http://syndication.nhschoices.nhs.uk/services"
+            },
+            "name": "A Moore & Co",
+            "odscode": "FTH32",
+            "address": {
+              "addressLine": [
+                "25E Lowndes Street",
+                "London"
+              ],
+              "postcode": "SW1X 9JF"
+            },
+            "phone": "020 72355887",
+            "geographicCoordinates": {
+              "latitude": "51.4987297058105",
+              "longitude": "-0.157903060317039"
+            }
+          }
+        }
+      },
+      {
+        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/29973",
+        "title": {
+          "_": "A R Chemist - Summary",
+          "$": {
+            "type": "text"
+          }
+        },
+        "published": "2015-10-31T03:33:06Z",
+        "updated": "2015-10-31T03:33:06Z",
+        "link": [
+          {
+            "$": {
+              "rel": "alternate",
+              "type": "application/xhtml",
+              "title": "Overview - A R Chemist - NHS Choices",
+              "href": "http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=8111"
+            }
+          },
+          {
+            "$": {
+              "rel": "self",
+              "type": "application/xhtml+xml",
+              "title": "Overview - A R Chemist - NHS Choices",
+              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/29973?apikey=bbccdd"
+            }
+          }
+        ],
+        "content": {
+          "$": {
+            "type": "application/xml"
+          },
+          "organisationSummary": {
+            "$": {
+              "xmlns:s": "http://syndication.nhschoices.nhs.uk/services"
+            },
+            "name": "A R Chemist",
+            "odscode": "FK012",
+            "address": {
+              "addressLine": [
+                "176-178 Old Kent Road",
+                "London",
+                "leeds"
+              ],
+              "postcode": "SE1 5TY"
+            },
+            "phone": "020 77034097",
+            "geographicCoordinates": {
+              "latitude": "51.4904518127441",
+              "longitude": "-0.0812571048736572"
+            }
+          }
+        }
+      },
+      {
+        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/7353571",
+        "title": {
+          "_": "A T Derbyshire - Summary",
+          "$": {
+            "type": "text"
+          }
+        },
+        "published": "2017-03-17T01:05:07Z",
+        "updated": "2017-03-17T01:05:07Z",
+        "link": [
+          {
+            "$": {
+              "rel": "alternate",
+              "type": "application/xhtml",
+              "title": "Overview - A T Derbyshire - NHS Choices",
+              "href": "http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=128384"
+            }
+          },
+          {
+            "$": {
+              "rel": "self",
+              "type": "application/xhtml+xml",
+              "title": "Overview - A T Derbyshire - NHS Choices",
+              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/7353571?apikey=bbccdd"
+            }
+          }
+        ],
+        "content": {
+          "$": {
+            "type": "application/xml"
+          },
+          "organisationSummary": {
+            "$": {
+              "xmlns:s": "http://syndication.nhschoices.nhs.uk/services"
+            },
+            "name": "A T Derbyshire",
+            "odscode": "FTF41",
+            "address": {
+              "addressLine": [
+                "115 Higher Parr Street",
+                "St.Helens",
+                "Merseyside"
+              ],
+              "postcode": "WA9 1AG"
+            },
+            "phone": "01744 21150",
+            "geographicCoordinates": {
+              "latitude": "53.4539756774902",
+              "longitude": "-2.7209529876709"
+            }
+          }
+        }
+      },
+      {
+        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/1279755",
+        "title": {
+          "_": "A.C. Curd Pharmacy - Summary",
+          "$": {
+            "type": "text"
+          }
+        },
+        "published": "2013-11-01T02:40:13Z",
+        "updated": "2013-11-01T02:40:13Z",
+        "link": [
+          {
+            "$": {
+              "rel": "alternate",
+              "type": "application/xhtml",
+              "title": "Overview - A.C. Curd Pharmacy - NHS Choices",
+              "href": "http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=96055"
+            }
+          },
+          {
+            "$": {
+              "rel": "self",
+              "type": "application/xhtml+xml",
+              "title": "Overview - A.C. Curd Pharmacy - NHS Choices",
+              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/1279755?apikey=bbccdd"
+            }
+          }
+        ],
+        "content": {
+          "$": {
+            "type": "application/xml"
+          },
+          "organisationSummary": {
+            "$": {
+              "xmlns:s": "http://syndication.nhschoices.nhs.uk/services"
+            },
+            "name": "A.C. Curd Pharmacy",
+            "odscode": "FJ888",
+            "address": {
+              "addressLine": [
+                "55 South Street",
+                "Isleworth",
+                "Middlesex"
+              ],
+              "postcode": "TW7 7AA"
+            },
+            "geographicCoordinates": {
+              "latitude": "51.4686698913574",
+              "longitude": "-0.327812999486923"
+            }
+          }
+        }
+      },
+      {
+        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31369",
+        "title": {
+          "_": "A1 Pharmacy - Summary",
+          "$": {
+            "type": "text"
+          }
+        },
+        "published": "2017-01-08T01:37:15Z",
+        "updated": "2017-01-08T01:37:15Z",
+        "link": [
+          {
+            "$": {
+              "rel": "alternate",
+              "type": "application/xhtml",
+              "title": "Overview - A1 Pharmacy - NHS Choices",
+              "href": "http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=29273"
+            }
+          },
+          {
+            "$": {
+              "rel": "self",
+              "type": "application/xhtml+xml",
+              "title": "Overview - A1 Pharmacy - NHS Choices",
+              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31369?apikey=bbccdd"
+            }
+          }
+        ],
+        "content": {
+          "$": {
+            "type": "application/xml"
+          },
+          "organisationSummary": {
+            "$": {
+              "xmlns:s": "http://syndication.nhschoices.nhs.uk/services"
+            },
+            "name": "A1 Pharmacy",
+            "odscode": "FM664",
+            "address": {
+              "addressLine": [
+                "491 Radcliffe Road",
+                "Darcy Lever",
+                "Bolton",
+                "BOLTON"
+              ],
+              "postcode": "BL3 1SX"
+            },
+            "phone": "01204 363400 (ext. 1204363400)",
+            "email": "info@a1-pharmacy.co.uk",
+            "geographicCoordinates": {
+              "latitude": "53.57080078125",
+              "longitude": "-2.39486575126648"
+            }
+          }
+        }
+      },
+      {
+        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/33219",
+        "title": {
+          "_": "Aa Beggs - Summary",
+          "$": {
+            "type": "text"
+          }
+        },
+        "published": "2013-01-08T04:30:24Z",
+        "updated": "2013-01-08T04:30:24Z",
+        "link": [
+          {
+            "$": {
+              "rel": "alternate",
+              "type": "application/xhtml",
+              "title": "Overview - Aa Beggs - NHS Choices",
+              "href": "http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=11065"
+            }
+          },
+          {
+            "$": {
+              "rel": "self",
+              "type": "application/xhtml+xml",
+              "title": "Overview - Aa Beggs - NHS Choices",
+              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/33219?apikey=bbccdd"
+            }
+          }
+        ],
+        "content": {
+          "$": {
+            "type": "application/xml"
+          },
+          "organisationSummary": {
+            "$": {
+              "xmlns:s": "http://syndication.nhschoices.nhs.uk/services"
+            },
+            "name": "Aa Beggs",
+            "odscode": "FQ951",
+            "address": {
+              "addressLine": [
+                "Beggs Pharmacy",
+                "32 Pencester Road",
+                "Dover",
+                "Kent"
+              ],
+              "postcode": "CT16 1BW"
+            },
+            "phone": "01304 205406",
+            "email": "beggsdover@paydens.com",
+            "geographicCoordinates": {
+              "latitude": "51.1274909973145",
+              "longitude": "1.31211173534393"
+            }
+          }
+        }
+      },
+      {
+        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/4209890",
+        "title": {
+          "_": "Aa Pharmacy - Summary",
+          "$": {
+            "type": "text"
+          }
+        },
+        "published": "2017-03-10T01:05:07Z",
+        "updated": "2017-03-10T01:05:07Z",
+        "link": [
+          {
+            "$": {
+              "rel": "alternate",
+              "type": "application/xhtml",
+              "title": "Overview - Aa Pharmacy - NHS Choices",
+              "href": "http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=109355"
+            }
+          },
+          {
+            "$": {
+              "rel": "self",
+              "type": "application/xhtml+xml",
+              "title": "Overview - Aa Pharmacy - NHS Choices",
+              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/4209890?apikey=bbccdd"
+            }
+          }
+        ],
+        "content": {
+          "$": {
+            "type": "application/xml"
+          },
+          "organisationSummary": {
+            "$": {
+              "xmlns:s": "http://syndication.nhschoices.nhs.uk/services"
+            },
+            "name": "Aa Pharmacy",
+            "odscode": "FHW69",
+            "address": {
+              "addressLine": [
+                "98 Whitmore Way",
+                "Basildon",
+                "Essex"
+              ],
+              "postcode": "SS14 3JT"
+            },
+            "phone": "01268 520387",
+            "geographicCoordinates": {
+              "latitude": "51.5823211669922",
+              "longitude": "0.48672941327095"
+            }
+          }
+        }
+      },
+      {
+        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/6331522",
+        "title": {
+          "_": "Abbey Pharmacy - Summary",
+          "$": {
+            "type": "text"
+          }
+        },
+        "published": "2017-04-21T01:05:21+01:00",
+        "updated": "2017-04-21T01:05:21+01:00",
+        "link": [
+          {
+            "$": {
+              "rel": "alternate",
+              "type": "application/xhtml",
+              "title": "Overview - Abbey Pharmacy - NHS Choices",
+              "href": "http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=121307"
+            }
+          },
+          {
+            "$": {
+              "rel": "self",
+              "type": "application/xhtml+xml",
+              "title": "Overview - Abbey Pharmacy - NHS Choices",
+              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/6331522?apikey=bbccdd"
+            }
+          }
+        ],
+        "content": {
+          "$": {
+            "type": "application/xml"
+          },
+          "organisationSummary": {
+            "$": {
+              "xmlns:s": "http://syndication.nhschoices.nhs.uk/services"
+            },
+            "name": "Abbey Pharmacy",
+            "odscode": "FXX86",
+            "address": {
+              "addressLine": [
+                "19-21 Howard Street",
+                "Rotherham",
+                "South Yorkshire"
+              ],
+              "postcode": "S65 1JQ"
+            },
+            "phone": "01709 377421",
+            "geographicCoordinates": {
+              "latitude": "53.4322242736816",
+              "longitude": "-1.35464036464691"
+            }
+          }
+        }
+      },
+      {
+        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31900",
+        "title": {
+          "_": "Abbey Pharmacy - Summary",
+          "$": {
+            "type": "text"
+          }
+        },
+        "published": "2016-11-01T05:13:16Z",
+        "updated": "2016-11-01T05:13:16Z",
+        "link": [
+          {
+            "$": {
+              "rel": "alternate",
+              "type": "application/xhtml",
+              "title": "Overview - Abbey Pharmacy - NHS Choices",
+              "href": "http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=9868"
+            }
+          },
+          {
+            "$": {
+              "rel": "self",
+              "type": "application/xhtml+xml",
+              "title": "Overview - Abbey Pharmacy - NHS Choices",
+              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31900?apikey=bbccdd"
+            }
+          }
+        ],
+        "content": {
+          "$": {
+            "type": "application/xml"
+          },
+          "organisationSummary": {
+            "$": {
+              "xmlns:s": "http://syndication.nhschoices.nhs.uk/services"
+            },
+            "name": "Abbey Pharmacy",
+            "odscode": "FN288",
+            "address": {
+              "addressLine": [
+                "63 Central Avenue",
+                "Nottingham",
+                "Nottinghamshire"
+              ],
+              "postcode": "NG9 2QP"
+            },
+            "phone": "01159 254522",
+            "email": "abbey@jardinesuk.com",
+            "geographicCoordinates": {
+              "latitude": "52.9331169128418",
+              "longitude": "-1.2199147939682"
+            }
+          }
+        }
+      },
+      {
+        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/36813",
+        "title": {
+          "_": "Abbey Pharmacy - Summary",
+          "$": {
+            "type": "text"
+          }
+        },
+        "published": "2013-01-08T04:30:24Z",
+        "updated": "2013-01-08T04:30:24Z",
+        "link": [
+          {
+            "$": {
+              "rel": "alternate",
+              "type": "application/xhtml",
+              "title": "Overview - Abbey Pharmacy - NHS Choices",
+              "href": "http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=14254"
+            }
+          },
+          {
+            "$": {
+              "rel": "self",
+              "type": "application/xhtml+xml",
+              "title": "Overview - Abbey Pharmacy - NHS Choices",
+              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/36813?apikey=bbccdd"
+            }
+          }
+        ],
+        "content": {
+          "$": {
+            "type": "application/xml"
+          },
+          "organisationSummary": {
+            "$": {
+              "xmlns:s": "http://syndication.nhschoices.nhs.uk/services"
+            },
+            "name": "Abbey Pharmacy",
+            "odscode": "FYE27",
+            "address": {
+              "addressLine": [
+                "45 High Street",
+                "Abbots Langley",
+                "Hertfordshire"
+              ],
+              "postcode": "WD5 0AA"
+            },
+            "phone": "01923 262151",
+            "geographicCoordinates": {
+              "latitude": "51.7072296142578",
+              "longitude": "-0.416392683982849"
+            }
+          }
+        }
+      },
+      {
+        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/27435",
+        "title": {
+          "_": "Abbey Pharmacy - Summary",
+          "$": {
+            "type": "text"
+          }
+        },
+        "published": "2016-06-23T01:37:01+01:00",
+        "updated": "2016-06-23T01:37:01+01:00",
+        "link": [
+          {
+            "$": {
+              "rel": "alternate",
+              "type": "application/xhtml",
+              "title": "Overview - Abbey Pharmacy - NHS Choices",
+              "href": "http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=34794"
+            }
+          },
+          {
+            "$": {
+              "rel": "self",
+              "type": "application/xhtml+xml",
+              "title": "Overview - Abbey Pharmacy - NHS Choices",
+              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/27435?apikey=bbccdd"
+            }
+          }
+        ],
+        "content": {
+          "$": {
+            "type": "application/xml"
+          },
+          "organisationSummary": {
+            "$": {
+              "xmlns:s": "http://syndication.nhschoices.nhs.uk/services"
+            },
+            "name": "Abbey Pharmacy",
+            "odscode": "FET80",
+            "address": {
+              "addressLine": [
+                "The Guildhall Surgery",
+                "Lower Baxter Street",
+                "Bury St Edmunds"
+              ],
+              "postcode": "IP33 1ET"
+            },
+            "phone": "01284 761769",
+            "geographicCoordinates": {
+              "latitude": "52.2453918457031",
+              "longitude": "0.71503746509552"
+            }
+          }
+        }
+      },
+      {
+        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/32067",
+        "title": {
+          "_": "Abbey Pharmacy - Summary",
+          "$": {
+            "type": "text"
+          }
+        },
+        "published": "2017-03-24T01:05:08Z",
+        "updated": "2017-03-24T01:05:08Z",
+        "link": [
+          {
+            "$": {
+              "rel": "alternate",
+              "type": "application/xhtml",
+              "title": "Overview - Abbey Pharmacy - NHS Choices",
+              "href": "http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=10015"
+            }
+          },
+          {
+            "$": {
+              "rel": "self",
+              "type": "application/xhtml+xml",
+              "title": "Overview - Abbey Pharmacy - NHS Choices",
+              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/32067?apikey=bbccdd"
+            }
+          }
+        ],
+        "content": {
+          "$": {
+            "type": "application/xml"
+          },
+          "organisationSummary": {
+            "$": {
+              "xmlns:s": "http://syndication.nhschoices.nhs.uk/services"
+            },
+            "name": "Abbey Pharmacy",
+            "odscode": "FNC86",
+            "address": {
+              "addressLine": [
+                "313 Stockbrook Street",
+                "Derby"
+              ],
+              "postcode": "DE22 3WH"
+            },
+            "phone": "01332 291353",
+            "geographicCoordinates": {
+              "latitude": "52.9158706665039",
+              "longitude": "-1.49315106868744"
+            }
+          }
+        }
+      },
+      {
+        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/35829",
+        "title": {
+          "_": "Abbey Pharmacy - Summary",
+          "$": {
+            "type": "text"
+          }
+        },
+        "published": "2017-03-09T01:37:12Z",
+        "updated": "2017-03-09T01:37:12Z",
+        "link": [
+          {
+            "$": {
+              "rel": "alternate",
+              "type": "application/xhtml",
+              "title": "Overview - Abbey Pharmacy - NHS Choices",
+              "href": "http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=13380"
+            }
+          },
+          {
+            "$": {
+              "rel": "self",
+              "type": "application/xhtml+xml",
+              "title": "Overview - Abbey Pharmacy - NHS Choices",
+              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/35829?apikey=bbccdd"
+            }
+          }
+        ],
+        "content": {
+          "$": {
+            "type": "application/xml"
+          },
+          "organisationSummary": {
+            "$": {
+              "xmlns:s": "http://syndication.nhschoices.nhs.uk/services"
+            },
+            "name": "Abbey Pharmacy",
+            "odscode": "FWJ80",
+            "address": {
+              "addressLine": [
+                "12a Abbey Parade",
+                "Merton High Street",
+                "Merton"
+              ],
+              "postcode": "SW19 1DG"
+            },
+            "phone": "020 85423713",
+            "email": "abbey@pearlchemistgroup.co.uk",
+            "geographicCoordinates": {
+              "latitude": "51.4159355163574",
+              "longitude": "-0.185506969690323"
+            }
+          }
+        }
+      },
+      {
+        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/36395",
+        "title": {
+          "_": "Abbeydale Pharmacy - Summary",
+          "$": {
+            "type": "text"
+          }
+        },
+        "published": "2014-05-02T03:31:19+01:00",
+        "updated": "2014-05-02T03:31:19+01:00",
+        "link": [
+          {
+            "$": {
+              "rel": "alternate",
+              "type": "application/xhtml",
+              "title": "Overview - Abbeydale Pharmacy - NHS Choices",
+              "href": "http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=13869"
+            }
+          },
+          {
+            "$": {
+              "rel": "self",
+              "type": "application/xhtml+xml",
+              "title": "Overview - Abbeydale Pharmacy - NHS Choices",
+              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/36395?apikey=bbccdd"
+            }
+          }
+        ],
+        "content": {
+          "$": {
+            "type": "application/xml"
+          },
+          "organisationSummary": {
+            "$": {
+              "xmlns:s": "http://syndication.nhschoices.nhs.uk/services"
+            },
+            "name": "Abbeydale Pharmacy",
+            "odscode": "FXH98",
+            "address": {
+              "addressLine": [
+                "713 Abbeydale Road",
+                "SHEFFIELD"
+              ],
+              "postcode": "S7 2BE"
+            },
+            "phone": "0114 255 5242",
+            "email": "abbeydalepharmacy@yahoo.co.uk",
+            "geographicCoordinates": {
+              "latitude": "53.3548622131348",
+              "longitude": "-1.48536169528961"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

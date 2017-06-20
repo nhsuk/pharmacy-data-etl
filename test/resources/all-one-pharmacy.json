@@ -1,0 +1,56 @@
+{
+  "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/29581",
+  "title": {
+    "_": "Tesco Instore Pharmacy - Summary",
+    "$": {
+      "type": "text"
+    }
+  },
+  "published": "2014-02-12T03:31:19Z",
+  "updated": "2014-02-12T03:31:19Z",
+  "link": [
+    {
+      "$": {
+        "rel": "alternate",
+        "type": "application/xhtml",
+        "title": "Overview - Tesco Instore Pharmacy - NHS Choices",
+        "href": "http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=34574"
+      }
+    },
+    {
+      "$": {
+        "rel": "self",
+        "type": "application/xhtml+xml",
+        "title": "Overview - Tesco Instore Pharmacy - NHS Choices",
+        "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/29581?apikey=bbccdd"
+      }
+    }
+  ],
+  "content": {
+    "$": {
+      "type": "application/xml"
+    },
+    "organisationSummary": {
+      "$": {
+        "xmlns:s": "http://syndication.nhschoices.nhs.uk/services"
+      },
+      "name": "Tesco Instore Pharmacy",
+      "odscode": "FJA60",
+      "address": {
+        "addressLine": [
+          "Tesco Pharmacy",
+          "Ashley Retail Park",
+          "Lugsdale Road",
+          "Widnes",
+          "Cheshire"
+        ],
+        "postcode": "WA8 7YT"
+      },
+      "phone": "0345 6719466",
+      "geographicCoordinates": {
+        "latitude": "53.3623695373535",
+        "longitude": "-2.72535586357117"
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+version: '2'
+services:
+  pharma-etl:
+    image: nhsuk/pharmacy-data-etl:${DOCKER_IMAGE_TAG}
+    environment:
+      AZURE_STORAGE_CONNECTION_STRING: ${AZURE_STORAGE_CONNECTION_STRING}
+      CONTAINER_NAME: ${CONTAINER_NAME}
+      SYNDICATION_API_KEY: ${SYNDICATION_API_KEY}
+      ETL_SCHEDULE: ${ETL_SCHEDULE}
+      NODE_ENV: production
+    labels:
+      io.rancher.container.pull_image: always
+    volumes:
+      - pharmacy-etl-output:/code/output
+
+volumes:
+  pharmacy-etl-output:

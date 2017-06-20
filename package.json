@@ -1,0 +1,74 @@
+{
+  "name": "pharmacy-data-etl",
+  "version": "0.1.0",
+  "description": "ETL to extract data from Syndication/Organisations and store as JSON",
+  "main": "app.js",
+  "scripts": {
+    "check-coverage": "istanbul check-coverage --config .istanbul.yml",
+    "generate-coverage": "yarn run istanbul -- cover _mocha -- --recursive test",
+    "git-hook": "yarn run lint && yarn run generate-coverage && yarn run check-coverage",
+    "istanbul": "NODE_ENV=test istanbul",
+    "lint": "eslint --ext .js,.json .",
+    "postrewrite": "yarn run git-hook",
+    "precommit": "yarn run git-hook",
+    "prepush": "yarn run git-hook",
+    "snyk": "snyk",
+    "snyk-travis": "yarn run snyk -- test --org=nhsuk && yarn run snyk -- monitor --org=nhsuk",
+    "start": "node schedule.js",
+    "start-clear": "node schedule.js clear",
+    "start-small": "node schedule.js small",
+    "start-small-clear": "node schedule.js small clear",
+    "test": "NODE_ENV=test mocha --recursive test",
+    "test-integration": "NODE_ENV=test mocha --recursive test/integration",
+    "test-unit": "NODE_ENV=test mocha --recursive test/unit",
+    "test-watch": "yarn run test -- --watch --reporter min",
+    "test-watch-integration": "yarn run test-integration -- --watch --reporter min",
+    "test-watch-unit": "yarn run test-unit -- --watch --reporter min",
+    "travis": "yarn run lint && yarn run generate-coverage && yarn run check-coverage && yarn run upload-coverage-coveralls && yarn run snyk-travis",
+    "upload-coverage-coveralls": "cat ./coverage/lcov.info | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nhsuk/pharmacy-data-etl.git"
+  },
+  "keywords": [
+    "Pharmacy",
+    "JSON",
+    "Organisation",
+    "Syndication"
+  ],
+  "author": "Mark Harrop",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nhsuk/pharmacy-data-etl/issues"
+  },
+  "homepage": "https://github.com/nhsuk/pharmacy-data-etl#readme",
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "coveralls": "^2.13.1",
+    "eslint": "^3.17.1",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-config-nhsuk": "^0.2.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-json": "^1.2.0",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-mocha": "^4.8.0",
+    "eslint-plugin-react": "^7.0.1",
+    "eslint-watch": "^3.1.1",
+    "husky": "^0.13.4",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "nock": "^9.0.13",
+    "nodemon": "^1.11.0",
+    "snyk": "^1.30.1"
+  },
+  "dependencies": {
+    "async": "^2.4.1",
+    "azure-storage": "^2.1.0",
+    "bunyan": "^1.8.10",
+    "google-libphonenumber": "^2.0.18",
+    "node-schedule": "^1.2.3",
+    "require-environment-variables": "^1.1.2",
+    "xml2js": "^0.4.17"
+  }
+}
