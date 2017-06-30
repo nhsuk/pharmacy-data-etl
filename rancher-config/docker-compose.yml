@@ -21,6 +21,7 @@ services:
         splunk-sourcetype: docker
         splunk-source: pharmacy-data-etl
         splunk-verify-connection: "false"
+        tag: '{{.ImageName}} {{.Name}} {{.FullID}}'
 
 volumes:
   pharmacy-etl-output:
