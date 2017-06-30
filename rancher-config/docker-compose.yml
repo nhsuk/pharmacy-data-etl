@@ -22,6 +22,7 @@ services:
         splunk-source: pharmacy-data-etl
         splunk-verify-connection: "false"
         tag: '{{.ImageName}} {{.Name}} {{.FullID}}'
+        splunk-format: json
 
 volumes:
   pharmacy-etl-output:
