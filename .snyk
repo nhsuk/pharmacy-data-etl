@@ -1,7 +1,11 @@
-version: v1.5.2
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.7.1
+# ignores vulnerabilities until expiry date; change duration by modifying expiry date
 ignore:
-  'npm:validator:20150313':
-    - azure-storage > validator:
-        reason: no upgrade available
-        expires: '2017-07-12T14:26:04.895Z'
+  'npm:tunnel-agent:20170305':
+    - azure-storage > request > tunnel-agent:
+        reason: >-
+          The application is not public facing so the specific vulnerability is
+          unable to be leveraged by external users.
+        expires: '2017-08-05T06:55:59.690Z'
 patch: {}
