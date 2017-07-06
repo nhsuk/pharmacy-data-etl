@@ -1,7 +1,8 @@
 # Pharmacy Data ETL
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/nhsuk/pharmacy-data-etl.svg)](https://greenkeeper.io/)
-ETL to retrieve Pharmacy information from [NHS Organisation API](http://api.nhs.uk/organisations) based on listings in [NHS Choices Syndication](http://www.nhs.uk/aboutNHSChoices/professionals/syndication/Pages/Webservices.aspx)
+
+> ETL to retrieve Pharmacy information from [NHS Organisation API](http://api.nhs.uk/organisations) based on listings in [NHS Choices Syndication](http://www.nhs.uk/aboutNHSChoices/professionals/syndication/Pages/Webservices.aspx)
 and store as JSON.
 
 ## Run process
@@ -11,7 +12,7 @@ Details of registration are available on
 [NHS Choices](http://www.nhs.uk/aboutNHSChoices/professionals/syndication/Pages/Webservices.aspx).
 The application needs the API key available within the environment as the variable `SYNDICATION_API_KEY`.
 
-THe output is uploaded to an Azure storage blob, a suitable connection string should be set in the `AZURE_STORAGE_CONNECTION_STRING` variable.
+The output is uploaded to an Azure storage blob, a suitable connection string should be set in the `AZURE_STORAGE_CONNECTION_STRING` variable.
 For further details see [Azure Blob Storage](https://azure.microsoft.com/en-gb/services/storage/blobs/).
 
 The ETL retrieves the ODS codes for all Pharmacies from the Syndication API, then visits the organisation API to obtain full pharmacy information.
@@ -44,13 +45,13 @@ Environment variables are expected to be managed by the environment in which
 the application is being run. This is best practice as described by
 [twelve-factor](https://12factor.net/config).
 
-| Variable                         | Description                                                        | Default               | Required |
-|:---------------------------------|:-------------------------------------------------------------------|-----------------------|:---------|
-| `NODE_ENV`                       | node environment                                                   | development           |          |
-| `LOG_LEVEL`                      | [log level](https://github.com/trentm/node-bunyan#levels)          | Depends on `NODE_ENV` |          |
-| `SYNDICATION_API_KEY`            | API key to access syndication                                      |                       | yes      |
-| `AZURE_STORAGE_CONNECTION_STRING`| Azure storage connection string                                    |                       | yes      |
-| `CONTAINER_NAME`                 | Azure storage container name                                       | etl-output            |          |
+| Variable                           | Description                                                          | Default                 | Required   |
+| :--------------------------------- | :------------------------------------------------------------------- | ----------------------- | :--------- |
+| `NODE_ENV`                         | node environment                                                     | development             |            |
+| `LOG_LEVEL`                        | [log level](https://github.com/trentm/node-bunyan#levels)            | Depends on `NODE_ENV`   |            |
+| `SYNDICATION_API_KEY`              | API key to access syndication                                        |                         | yes        |
+| `AZURE_STORAGE_CONNECTION_STRING`  | Azure storage connection string                                      |                         | yes        |
+| `CONTAINER_NAME`                   | Azure storage container name                                         | etl-output              |            |
 
 ## Architecture Decision Records
 
