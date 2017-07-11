@@ -4,9 +4,10 @@
   "description": "ETL to extract data from Syndication/Organisations and store as JSON",
   "main": "app.js",
   "scripts": {
-    "check-coverage": "istanbul check-coverage --config .istanbul.yml",
-    "generate-coverage": "yarn run istanbul -- cover _mocha -- --recursive test",
-    "git-hook": "yarn run lint && yarn run generate-coverage && yarn run check-coverage",
+    "coverage-check": "istanbul check-coverage --config .istanbul.yml",
+    "coverage-generate": "yarn run istanbul -- cover _mocha -- --recursive test",
+    "coverage-upload-coveralls": "cat ./coverage/lcov.info | coveralls",
+    "git-hook": "yarn run lint && yarn run coverage-generate && yarn run coverage-check",
     "istanbul": "NODE_ENV=test istanbul",
     "lint": "eslint --ext .js,.json .",
     "postrewrite": "yarn run git-hook",
@@ -19,13 +20,12 @@
     "start-small": "node schedule.js small",
     "start-small-clear": "node schedule.js small clear",
     "test": "NODE_ENV=test mocha --recursive test",
+    "test-ci": "yarn run lint && yarn run coverage-generate && yarn run coverage-check && yarn run coverage-upload-coveralls && yarn run snyk-travis",
     "test-integration": "NODE_ENV=test mocha --recursive test/integration",
     "test-unit": "NODE_ENV=test mocha --recursive test/unit",
     "test-watch": "yarn run test -- --watch --reporter min",
     "test-watch-integration": "yarn run test-integration -- --watch --reporter min",
-    "test-watch-unit": "yarn run test-unit -- --watch --reporter min",
-    "travis": "yarn run lint && yarn run generate-coverage && yarn run check-coverage && yarn run upload-coverage-coveralls && yarn run snyk-travis",
-    "upload-coverage-coveralls": "cat ./coverage/lcov.info | coveralls"
+    "test-watch-unit": "yarn run test-unit -- --watch --reporter min"
   },
   "repository": {
     "type": "git",

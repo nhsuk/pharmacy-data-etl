@@ -12,11 +12,11 @@ services:
     environment:
       NODE_ENV: development
 
-  travis-tests:
+  test-ci:
     extends:
       file: docker-compose.yml
       service: base-etl
-    command: yarn run travis
+    command: yarn run test-ci
     volumes:
       - pharmacy-etl-test-node_modules:/code/node_modules
     environment:
