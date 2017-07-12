@@ -1,6 +1,7 @@
 # Pharmacy Data ETL
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/nhsuk/pharmacy-data-etl.svg)](https://greenkeeper.io/)
+[![Known Vulnerabilities](https://snyk.io/test/github/nhsuk/pharmacy-data-etl/badge.svg)](https://snyk.io/test/github/nhsuk/pharmacy-data-etl)
 
 > ETL to retrieve Pharmacy information from [NHS Organisation API](http://api.nhs.uk/organisations) based on listings in [NHS Choices Syndication](http://www.nhs.uk/aboutNHSChoices/professionals/syndication/Pages/Webservices.aspx)
 and store as JSON.
@@ -58,4 +59,4 @@ the application is being run. This is best practice as described by
 This repo uses
 [Architecture Decision Records](http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions)
 to record architectural decisions for this project.
-They are stored in [doc/architecture/decisions](doc/architecture/decisions).
+They are stored in [doc/adr](doc/adr).
