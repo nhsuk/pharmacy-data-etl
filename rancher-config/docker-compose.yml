@@ -12,6 +12,17 @@ services:
       io.rancher.container.pull_image: always
     volumes:
       - pharmacy-etl-output:/code/output
+    logging:
+      driver: splunk
+      options:
+        splunk-url: ${SPLUNK_HEC_URL}
+        splunk-token: ${SPLUNK_HEC_TOKEN}
+        splunk-insecureskipverify: "true"
+        splunk-sourcetype: docker
+        splunk-source: pharmacy-data-etl
+        splunk-verify-connection: "false"
+        tag: "{{`{{.ImageName}} {{.Name}} {{.FullID}}`}}"
+        splunk-format: json
 
 volumes:
   pharmacy-etl-output:
