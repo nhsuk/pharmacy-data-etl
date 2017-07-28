@@ -1,5 +1,6 @@
 # Pharmacy Data ETL
 
+[![GitHub Release](https://img.shields.io/github/release/nhsuk/pharmacy-data-etl.svg)](https://github.com/nhsuk/pharmacy-data-etl/releases/latest/)
 [![Greenkeeper badge](https://badges.greenkeeper.io/nhsuk/pharmacy-data-etl.svg)](https://greenkeeper.io/)
 [![Known Vulnerabilities](https://snyk.io/test/github/nhsuk/pharmacy-data-etl/badge.svg)](https://snyk.io/test/github/nhsuk/pharmacy-data-etl)
 
