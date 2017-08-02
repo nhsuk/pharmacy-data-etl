@@ -1,5 +1,5 @@
 version: '2'
 services:
   pharma-etl:
-    scale: 1
+    scale: $INITIAL_CONTAINER_SCALE
     start_on_create: true
