@@ -23,7 +23,9 @@
     "test-unit": "NODE_ENV=test mocha --recursive test/unit",
     "test-watch": "yarn test -- --watch --reporter min",
     "test-watch-integration": "yarn test-integration -- --watch --reporter min",
-    "test-watch-unit": "yarn test-unit -- --watch --reporter min"
+    "test-watch-unit": "yarn test-unit -- --watch --reporter min",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -55,8 +57,7 @@
     "istanbul": "^0.4.5",
     "mocha": "^3.2.0",
     "nock": "^9.0.13",
-    "nodemon": "^1.11.0",
-    "snyk": "^1.36.2"
+    "nodemon": "^1.11.0"
   },
   "dependencies": {
     "async": "^2.5.0",
@@ -65,6 +66,8 @@
     "google-libphonenumber": "^3.0.0",
     "node-schedule": "^1.2.3",
     "require-environment-variables": "^1.1.2",
-    "xml2js": "^0.4.17"
-  }
+    "xml2js": "^0.4.17",
+    "snyk": "^1.38.1"
+  },
+  "snyk": true
 }
