@@ -8,4 +8,7 @@ ignore:
           The application is not public facing so the specific vulnerability is
           unable to be leveraged by external users.
         expires: '2017-08-05T06:55:59.690Z'
+    - azure-storage > request > tunnel-agent:
+        reason: None given
+        expires: '2017-09-07T16:39:47.780Z'
 patch: {}
