@@ -4,8 +4,6 @@ version: v1.7.1
 ignore:
   'npm:tunnel-agent:20170305':
     - azure-storage > request > tunnel-agent:
-        reason: >-
-          The application is not public facing so the specific vulnerability is
-          unable to be leveraged by external users.
-        expires: '2017-08-05T06:55:59.690Z'
+        reason: No upgrade path currently available
+        expires: '2017-09-15T13:00:27.424Z'
 patch: {}
