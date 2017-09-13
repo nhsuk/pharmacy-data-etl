@@ -27,6 +27,8 @@ i.e. `export ETL_SCHEDULE='25 15 * * *'` to start the processing a 3:25pm. Note:
 
 Further details on node-schedule available [here](https://www.npmjs.com/package/node-schedule)
 
++The scheduler can be completely disabled by setting the `DISABLE_SCHEDULER` variable to `true`. This sets the run date to run once in the future on Jan 1st, 2100.
+
 A successful scrape will result in the file `pharmacy-data.json` being written to the `output` folder. This file will also be uploaded to the Azure storage location specified in the environmental variables. The file will be uploaded twice, once to overwrite the current file at `pharmacy-data.json` and another date-stamped file at `YYYY-MM-DD-pharmacy-data.json`.
 
 The ETL may also be run locally with `yarn start`
@@ -54,6 +56,8 @@ the application is being run. This is best practice as described by
 | `SYNDICATION_API_KEY`              | API key to access syndication                                        |                         | yes        |
 | `AZURE_STORAGE_CONNECTION_STRING`  | Azure storage connection string                                      |                         | yes        |
 | `CONTAINER_NAME`                   | Azure storage container name                                         | etl-output              |            |
+| `UPDATE_SCHEDULE`                  | time of day to run the upgrade                                       | * 23 * * * (11:00 pm)   |            |
+| `DISABLE_SCHEDULER`                | set to 'true' to disable the scheduler                               | false                   |            |
 
 ## Architecture Decision Records
 
