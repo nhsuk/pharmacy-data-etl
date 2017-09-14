@@ -7,7 +7,7 @@ const disableScheduler = process.env.DISABLE_SCHEDULER;
 const etlSchedule = process.env.ETL_SCHEDULE;
 
 function resetEnv() {
-  process.env.disableScheduler = disableScheduler;
+  process.env.DISABLE_SCHEDULER = disableScheduler;
   process.env.ETL_SCHEDULE = etlSchedule;
 }
 
