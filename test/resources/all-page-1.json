@@ -9,7 +9,7 @@
         "type": "text"
       }
     },
-    "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/all",
+    "id": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/all",
     "rights": {
       "_": "© Crown Copyright 2009",
       "$": {
@@ -34,7 +34,7 @@
           "rel": "self",
           "type": "application/xml",
           "title": "NHS Choices - All Pharmacies",
-          "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/all?apikey=bbccdd"
+          "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/all?apikey=bbccdd"
         }
       },
       {
@@ -43,7 +43,7 @@
           "type": "application/xml",
           "title": "first",
           "length": "1000",
-          "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/all?apikey=bbccdd&page=1"
+          "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/all?apikey=bbccdd&page=1"
         }
       },
       {
@@ -52,7 +52,7 @@
           "type": "application/xml",
           "title": "next",
           "length": "1000",
-          "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/all?apikey=bbccdd&page=2"
+          "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/all?apikey=bbccdd&page=2"
         }
       },
       {
@@ -61,7 +61,7 @@
           "type": "application/xml",
           "title": "last",
           "length": "1000",
-          "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/all?apikey=bbccdd&page=385"
+          "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/all?apikey=bbccdd&page=385"
         }
       },
       {
@@ -80,7 +80,7 @@
     },
     "entry": [
       {
-        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/29581",
+        "id": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/29581",
         "title": {
           "_": "Tesco Instore Pharmacy - Summary",
           "$": {
@@ -103,7 +103,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - Tesco Instore Pharmacy - NHS Choices",
-              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/29581?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/29581?apikey=bbccdd"
             }
           }
         ],
@@ -136,7 +136,7 @@
         }
       },
       {
-        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/55554",
+        "id": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/55554",
         "title": {
           "_": "118 Pharmacy Ltd - Summary",
           "$": {
@@ -159,7 +159,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - 118 Pharmacy Ltd - NHS Choices",
-              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/55554?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/55554?apikey=bbccdd"
             }
           }
         ],
@@ -192,7 +192,7 @@
         }
       },
       {
-        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/32248",
+        "id": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/32248",
         "title": {
           "_": "1st Pharmacy - Summary",
           "$": {
@@ -215,7 +215,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - 1st Pharmacy - NHS Choices",
-              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/32248?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/32248?apikey=bbccdd"
             }
           }
         ],
@@ -248,7 +248,7 @@
         }
       },
       {
-        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31926",
+        "id": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31926",
         "title": {
           "_": "212 Pharmacy - Summary",
           "$": {
@@ -271,7 +271,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - 212 Pharmacy - NHS Choices",
-              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31926?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31926?apikey=bbccdd"
             }
           }
         ],
@@ -305,7 +305,7 @@
         }
       },
       {
-        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/7758300",
+        "id": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/7758300",
         "title": {
           "_": "247Pharmacy - Summary",
           "$": {
@@ -328,7 +328,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - 247Pharmacy - NHS Choices",
-              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/7758300?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/7758300?apikey=bbccdd"
             }
           }
         ],
@@ -360,7 +360,7 @@
         }
       },
       {
-        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/28129",
+        "id": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/28129",
         "title": {
           "_": "3q Pharmacy - Summary",
           "$": {
@@ -383,7 +383,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - 3q Pharmacy - NHS Choices",
-              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/28129?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/28129?apikey=bbccdd"
             }
           }
         ],
@@ -414,7 +414,7 @@
         }
       },
       {
-        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/35183",
+        "id": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/35183",
         "title": {
           "_": "4court Pharmacy - Summary",
           "$": {
@@ -437,7 +437,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - 4court Pharmacy - NHS Choices",
-              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/35183?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/35183?apikey=bbccdd"
             }
           }
         ],
@@ -470,7 +470,7 @@
         }
       },
       {
-        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/32953",
+        "id": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/32953",
         "title": {
           "_": "4Court Pharmacy - Summary",
           "$": {
@@ -493,7 +493,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - 4Court Pharmacy - NHS Choices",
-              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/32953?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/32953?apikey=bbccdd"
             }
           }
         ],
@@ -526,7 +526,7 @@
         }
       },
       {
-        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/32147",
+        "id": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/32147",
         "title": {
           "_": "7 - 11 Pharmacy - Summary",
           "$": {
@@ -549,7 +549,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - 7 - 11 Pharmacy - NHS Choices",
-              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/32147?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/32147?apikey=bbccdd"
             }
           }
         ],
@@ -580,7 +580,7 @@
         }
       },
       {
-        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31995",
+        "id": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31995",
         "title": {
           "_": "8 Pm Chemist Ltd - Summary",
           "$": {
@@ -603,7 +603,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - 8 Pm Chemist Ltd - NHS Choices",
-              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31995?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31995?apikey=bbccdd"
             }
           }
         ],
@@ -634,7 +634,7 @@
         }
       },
       {
-        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/5065279",
+        "id": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/5065279",
         "title": {
           "_": "A & S Shillam Limited - Summary",
           "$": {
@@ -657,7 +657,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - A & S Shillam Limited - NHS Choices",
-              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/5065279?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/5065279?apikey=bbccdd"
             }
           }
         ],
@@ -690,7 +690,7 @@
         }
       },
       {
-        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/25563",
+        "id": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/25563",
         "title": {
           "_": "A Akhtar - Summary",
           "$": {
@@ -713,7 +713,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - A Akhtar - NHS Choices",
-              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/25563?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/25563?apikey=bbccdd"
             }
           }
         ],
@@ -746,7 +746,7 @@
         }
       },
       {
-        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/34040",
+        "id": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/34040",
         "title": {
           "_": "A and A Pharmacy Ltd - Summary",
           "$": {
@@ -769,7 +769,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - A and A Pharmacy Ltd - NHS Choices",
-              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/34040?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/34040?apikey=bbccdd"
             }
           }
         ],
@@ -800,7 +800,7 @@
         }
       },
       {
-        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/4511566",
+        "id": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/4511566",
         "title": {
           "_": "A C Moule & Co Pharmacy - Summary",
           "$": {
@@ -823,7 +823,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - A C Moule & Co Pharmacy - NHS Choices",
-              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/4511566?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/4511566?apikey=bbccdd"
             }
           }
         ],
@@ -854,7 +854,7 @@
         }
       },
       {
-        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/29626",
+        "id": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/29626",
         "title": {
           "_": "A Karim's Chuckery Pharmacy - Summary",
           "$": {
@@ -877,7 +877,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - A Karim's Chuckery Pharmacy - NHS Choices",
-              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/29626?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/29626?apikey=bbccdd"
             }
           }
         ],
@@ -909,7 +909,7 @@
         }
       },
       {
-        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31167",
+        "id": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31167",
         "title": {
           "_": "A Kassam Pharmacy - Summary",
           "$": {
@@ -932,7 +932,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - A Kassam Pharmacy - NHS Choices",
-              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31167?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31167?apikey=bbccdd"
             }
           }
         ],
@@ -965,7 +965,7 @@
         }
       },
       {
-        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/34559",
+        "id": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/34559",
         "title": {
           "_": "A Moore & Co - Summary",
           "$": {
@@ -988,7 +988,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - A Moore & Co - NHS Choices",
-              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/34559?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/34559?apikey=bbccdd"
             }
           }
         ],
@@ -1018,7 +1018,7 @@
         }
       },
       {
-        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/29973",
+        "id": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/29973",
         "title": {
           "_": "A R Chemist - Summary",
           "$": {
@@ -1041,7 +1041,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - A R Chemist - NHS Choices",
-              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/29973?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/29973?apikey=bbccdd"
             }
           }
         ],
@@ -1072,7 +1072,7 @@
         }
       },
       {
-        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/7353571",
+        "id": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/7353571",
         "title": {
           "_": "A T Derbyshire - Summary",
           "$": {
@@ -1095,7 +1095,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - A T Derbyshire - NHS Choices",
-              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/7353571?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/7353571?apikey=bbccdd"
             }
           }
         ],
@@ -1126,7 +1126,7 @@
         }
       },
       {
-        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/1279755",
+        "id": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/1279755",
         "title": {
           "_": "A.C. Curd Pharmacy - Summary",
           "$": {
@@ -1149,7 +1149,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - A.C. Curd Pharmacy - NHS Choices",
-              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/1279755?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/1279755?apikey=bbccdd"
             }
           }
         ],
@@ -1179,7 +1179,7 @@
         }
       },
       {
-        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31369",
+        "id": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31369",
         "title": {
           "_": "A1 Pharmacy - Summary",
           "$": {
@@ -1202,7 +1202,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - A1 Pharmacy - NHS Choices",
-              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31369?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31369?apikey=bbccdd"
             }
           }
         ],
@@ -1235,7 +1235,7 @@
         }
       },
       {
-        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/33219",
+        "id": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/33219",
         "title": {
           "_": "Aa Beggs - Summary",
           "$": {
@@ -1258,7 +1258,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - Aa Beggs - NHS Choices",
-              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/33219?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/33219?apikey=bbccdd"
             }
           }
         ],
@@ -1291,7 +1291,7 @@
         }
       },
       {
-        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/4209890",
+        "id": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/4209890",
         "title": {
           "_": "Aa Pharmacy - Summary",
           "$": {
@@ -1314,7 +1314,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - Aa Pharmacy - NHS Choices",
-              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/4209890?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/4209890?apikey=bbccdd"
             }
           }
         ],
@@ -1345,7 +1345,7 @@
         }
       },
       {
-        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/6331522",
+        "id": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/6331522",
         "title": {
           "_": "Abbey Pharmacy - Summary",
           "$": {
@@ -1368,7 +1368,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - Abbey Pharmacy - NHS Choices",
-              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/6331522?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/6331522?apikey=bbccdd"
             }
           }
         ],
@@ -1399,7 +1399,7 @@
         }
       },
       {
-        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31900",
+        "id": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31900",
         "title": {
           "_": "Abbey Pharmacy - Summary",
           "$": {
@@ -1422,7 +1422,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - Abbey Pharmacy - NHS Choices",
-              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31900?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31900?apikey=bbccdd"
             }
           }
         ],
@@ -1454,7 +1454,7 @@
         }
       },
       {
-        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/36813",
+        "id": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/36813",
         "title": {
           "_": "Abbey Pharmacy - Summary",
           "$": {
@@ -1477,7 +1477,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - Abbey Pharmacy - NHS Choices",
-              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/36813?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/36813?apikey=bbccdd"
             }
           }
         ],
@@ -1508,7 +1508,7 @@
         }
       },
       {
-        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/27435",
+        "id": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/27435",
         "title": {
           "_": "Abbey Pharmacy - Summary",
           "$": {
@@ -1531,7 +1531,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - Abbey Pharmacy - NHS Choices",
-              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/27435?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/27435?apikey=bbccdd"
             }
           }
         ],
@@ -1562,7 +1562,7 @@
         }
       },
       {
-        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/32067",
+        "id": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/32067",
         "title": {
           "_": "Abbey Pharmacy - Summary",
           "$": {
@@ -1585,7 +1585,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - Abbey Pharmacy - NHS Choices",
-              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/32067?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/32067?apikey=bbccdd"
             }
           }
         ],
@@ -1615,7 +1615,7 @@
         }
       },
       {
-        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/35829",
+        "id": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/35829",
         "title": {
           "_": "Abbey Pharmacy - Summary",
           "$": {
@@ -1638,7 +1638,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - Abbey Pharmacy - NHS Choices",
-              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/35829?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/35829?apikey=bbccdd"
             }
           }
         ],
@@ -1670,7 +1670,7 @@
         }
       },
       {
-        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/36395",
+        "id": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/36395",
         "title": {
           "_": "Abbeydale Pharmacy - Summary",
           "$": {
@@ -1693,7 +1693,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - Abbeydale Pharmacy - NHS Choices",
-              "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/36395?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/36395?apikey=bbccdd"
             }
           }
         ],
