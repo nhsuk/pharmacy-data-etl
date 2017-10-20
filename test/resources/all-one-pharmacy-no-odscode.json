@@ -1,5 +1,5 @@
 {
-  "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/29581",
+  "id": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/29581",
   "title": {
     "_": "Tesco Instore Pharmacy - Summary",
     "$": {
@@ -22,7 +22,7 @@
         "rel": "self",
         "type": "application/xhtml+xml",
         "title": "Overview - Tesco Instore Pharmacy - NHS Choices",
-        "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/29581?apikey=bbccdd"
+        "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/29581?apikey=bbccdd"
       }
     }
   ],
