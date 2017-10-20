@@ -6,4 +6,13 @@ ignore:
     - azure-storage > request > tunnel-agent:
         reason: No upgrade path currently available
         expires: '2017-09-15T13:00:27.424Z'
-patch: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:tough-cookie:20170905':
+    - node-pre-gyp > request > tough-cookie:
+        patched: '2017-10-20T13:36:11.036Z'
+    - azure-storage > request > tough-cookie:
+        patched: '2017-10-20T13:36:11.036Z'
+  'npm:debug:20170905':
+    - node-pre-gyp > tar-pack > debug:
+        patched: '2017-10-20T13:36:11.036Z'

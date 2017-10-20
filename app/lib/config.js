@@ -5,7 +5,7 @@ const config = {
   outputFile: 'pharmacy-data',
   containerName: process.env.CONTAINER_NAME || 'etl-output',
   orgApiUrl: 'https://api.nhs.uk/organisations',
-  syndicationApiUrl: 'http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies',
+  syndicationApiUrl: 'https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies',
 };
 
 module.exports = config;
