@@ -48,6 +48,18 @@ describe('Populate ID queue', () => {
     populateIds.start(options);
   });
 
+  it('should call queueComplete for zero pages', (done) => {
+    const options = {
+      workers: 1,
+      totalPages: 0,
+      getIdsAction: () => { done('should not have been called'); },
+      queueComplete: () => {
+        done();
+      },
+    };
+    populateIds.start(options);
+  });
+
   it('should ignore pages already scanned etlStore with loaded ids', (done) => {
     const queueComplete = () => {
       assertEtlStore();

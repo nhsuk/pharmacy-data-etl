@@ -49,6 +49,18 @@ describe('Populate ID queue', () => {
     populateRecordsFromIds.start(options);
   });
 
+  it('should call queueComplete for empty ID list', (done) => {
+    etlStore.addIds([]);
+    const options = {
+      workers: 1,
+      populateRecordAction: getPharmacyAction,
+      queueComplete: () => {
+        done();
+      },
+    };
+    populateRecordsFromIds.start(options);
+  });
+
   it('should skip duplicate IDs', (done) => {
     etlStore.addIds([odsCode1, odsCode2, odsCode3, odsCode1]);
     const options = {

@@ -1,3 +1,8 @@
+0.2.1 / TBA
+==================
+- Call drain for an empty queue
+- Use NHSUK bunyan logger
+
 0.2.0 / 2017-10-26
 ==================
 - Upgrade Docker container to `node:8.8.0-alpine`

@@ -84,14 +84,18 @@ function startRetryQueue(options) {
 
 function start(options) {
   count = 0;
-  populateRecordFromIdAction = options.populateRecordAction;
-  setHitsPerWorker(options);
-  const q = async.queue(processQueueItem, options.workers);
-  queueIds(q);
-  q.drain = () => {
-    etlStore.saveState();
+  if (etlStore.getIds().length > 0) {
+    populateRecordFromIdAction = options.populateRecordAction;
+    setHitsPerWorker(options);
+    const q = async.queue(processQueueItem, options.workers);
+    queueIds(q);
+    q.drain = () => {
+      etlStore.saveState();
+      options.queueComplete();
+    };
+  } else {
     options.queueComplete();
-  };
+  }
 }
 
 module.exports = {
