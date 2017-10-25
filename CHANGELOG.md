@@ -1,5 +1,10 @@
+0.2.0 / 2017-10-26
+==================
+- Upgrade Docker container to `node:8.8.0-alpine`
+- Update npm dependencies
+
 0.1.1 / 2017-10-24
-===========
+==================
 - Add CHANGELOG
 - Change syndication URL from HTTP to HTTPS
 
