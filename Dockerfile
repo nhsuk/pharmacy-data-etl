@@ -1,4 +1,4 @@
-FROM node:8.4.0-alpine
+FROM node:8.8.0-alpine
 
 ENV USERNAME nodeuser
 
@@ -16,7 +16,7 @@ ENV AZURE_STORAGE_CONNECTION_STRING=${AZURE_STORAGE_CONNECTION_STRING}
 ENV CONTAINER_NAME=${CONTAINER_NAME}
 
 COPY yarn.lock package.json /code/
-RUN if [ "$NODE_ENV" == "production" ]; then yarn install --production --ignore-optional --pure-lockfile; else yarn install --ignore-optional --pure-lockfile; fi
+RUN if [ "$NODE_ENV" == "production" ]; then yarn install --production --pure-lockfile; else yarn install --pure-lockfile; fi
 
 COPY . /code
 
