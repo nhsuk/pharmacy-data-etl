@@ -1,6 +1,6 @@
 {
   "name": "pharmacy-data-etl",
-  "version": "0.2.1",
+  "version": "0.2.0",
   "description": "ETL to extract data from Syndication/Organisations and store as JSON",
   "main": "app.js",
   "scripts": {

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed 
+  xmlns="http://www.w3.org/2005/Atom">
+  <title type="text">NHS Choices - All Pharmacies</title>
+  <id>http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/all</id>
+  <rights type="text">© Crown Copyright 2009</rights>
+  <updated>2017-10-26T11:23:19Z</updated>
+  <category term="pharmacies" />
+  <logo>http://www.nhs.uk/nhscwebservices/documents/logo1.jpg</logo>
+  <author>
+    <name>NHS Choices</name>
+    <uri>http://www.nhs.uk</uri>
+    <email>webservices@nhschoices.nhs.uk</email>
+  </author>
+  <link rel="self" type="application/xml" title="NHS Choices - All Pharmacies" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/all?apikey=CHANGEME" />
+  <link rel="first" type="application/xml" title="first" length="1000" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/all?apikey=CHANGEME&amp;page=0" />
+  <link rel="next" type="application/xml" title="next" length="1000" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/all?apikey=CHANGEME&amp;page=0" />
+  <link rel="last" type="application/xml" title="last" length="1000" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/all?apikey=CHANGEME&amp;page=0" />
+  <link rel="alternate" title="Find and choose services - Pharmacies" href="http://www.nhs.uk/ServiceDirectories/pages/ServiceSearch.aspx?ServiceType=Pharmacy" />
+  <tracking 
+    xmlns="http://syndication.nhschoices.nhs.uk/services">&lt;img style="border: 0; width: 1px; height: 1px;" alt="" src="http://statse.webtrendslive.com/dcss9yzisf9xjyg74mgbihg8p_8d2u/njs.gif?dcsuri=/organisations%2fpharmacies%2fall&amp;amp;wt.js=no&amp;amp;wt.cg_n=syndication"/&gt;
+  </tracking>
+</feed>
