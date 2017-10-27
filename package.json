@@ -61,7 +61,6 @@
   "dependencies": {
     "async": "^2.5.0",
     "azure-storage": "^2.4.0",
-    "bunyan": "^1.8.12",
     "google-libphonenumber": "^3.0.3",
     "nhsuk-bunyan-logger": "^1.4.1",
     "node-schedule": "^1.2.4",
