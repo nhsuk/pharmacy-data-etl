@@ -53,13 +53,13 @@ the application is being run. This is best practice as described by
 
 | Variable                           | Description                                                                                                 | Default                | Required |
 | :--------------------------------- | :---------------------------------------------------------------------------------------------------------- | ---------------------- | :------- |
-| `NODE_ENV`                         | node environment                                                                                            | development            |          |
-| `LOG_LEVEL`                        | [log level](https://github.com/trentm/node-bunyan#levels)                                                   | Depends on `NODE_ENV`  |          |
-| `SYNDICATION_API_KEY`              | API key to access syndication                                                                               |                        | yes      |
 | `AZURE_STORAGE_CONNECTION_STRING`  | Azure storage connection string                                                                             |                        | yes      |
 | `CONTAINER_NAME`                   | Azure storage container name                                                                                | etl-output             |          |
-| `ETL_SCHEDULE`                     | Time of day to run the upgrade. [Syntax](https://www.npmjs.com/package/node-schedule#cron-style-scheduling) | * 23 * * * (11:00 pm)  |          |
 | `DISABLE_SCHEDULER`                | set to 'true' to disable the scheduler                                                                      | false                  |          |
+| `ETL_SCHEDULE`                     | Time of day to run the upgrade. [Syntax](https://www.npmjs.com/package/node-schedule#cron-style-scheduling) | 0 23 * * * (11:00 pm)  |          |
+| `LOG_LEVEL`                        | [log level](https://github.com/trentm/node-bunyan#levels)                                                   | Depends on `NODE_ENV`  |          |
+| `NODE_ENV`                         | node environment                                                                                            | development            |          |
+| `SYNDICATION_API_KEY`              | API key to access syndication                                                                               |                        | yes      |
 
 ## Architecture Decision Records
 
