@@ -2,7 +2,7 @@
 ==================
 - Call drain for an empty queue
 - Use NHSUK bunyan logger
-- Upgrade Docker container to `node:8.8.0-alpine`
+- Upgrade Docker container to `node:8.8.1-alpine`
 - Update npm dependencies
 - Correct schedule override env var in `README`
 
