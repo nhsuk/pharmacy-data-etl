@@ -17,6 +17,7 @@ const config = require('./config');
 const WORKERS = 1;
 const RECORD_KEY = 'identifier';
 let etlInProgress = false;
+let resolvePromise;
 
 etlStore.setIdKey(RECORD_KEY);
 
@@ -35,6 +36,9 @@ async function etlComplete() {
   await uploadOutputToAzure();
   clearState();
   etlInProgress = false;
+  if (resolvePromise) {
+    resolvePromise();
+  }
 }
 
 function startRevisitFailuresQueue() {
@@ -98,12 +102,18 @@ function start() {
 }
 
 function safeStart() {
-  if (etlInProgress) {
-    log.error('Etl already running');
-  } else {
-    etlInProgress = true;
-    start();
-  }
+  return new Promise((resolve, reject) => {
+    if (etlInProgress) {
+      log.error('Etl already running');
+      reject();
+    } else {
+      etlInProgress = true;
+      start();
+      resolvePromise = () => {
+        resolve();
+      };
+    }
+  });
 }
 
 module.exports = {

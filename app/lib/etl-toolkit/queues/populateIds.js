@@ -59,16 +59,20 @@ function addPageToQueue(q, pageNo) {
 }
 
 function start(options) {
-  getIdsAction = options.getIdsAction;
-  const q = async.queue(processQueueItem, options.workers);
+  if (options.totalPages > 0) {
+    getIdsAction = options.getIdsAction;
+    const q = async.queue(processQueueItem, options.workers);
 
-  q.drain = () => {
-    saveState();
+    q.drain = () => {
+      saveState();
+      options.queueComplete();
+    };
+
+    for (let i = 1; i <= options.totalPages; i++) {
+      addPageToQueue(q, i);
+    }
+  } else {
     options.queueComplete();
-  };
-
-  for (let i = 1; i <= options.totalPages; i++) {
-    addPageToQueue(q, i);
   }
 }
 

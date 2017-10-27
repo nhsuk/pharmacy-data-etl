@@ -1,0 +1,829 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed 
+  xmlns="http://www.w3.org/2005/Atom">
+  <title type="text">NHS Choices - All Pharmacies</title>
+  <id>http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/all</id>
+  <rights type="text">© Crown Copyright 2009</rights>
+  <updated>2017-10-26T11:23:19Z</updated>
+  <category term="pharmacies" />
+  <logo>http://www.nhs.uk/nhscwebservices/documents/logo1.jpg</logo>
+  <author>
+    <name>NHS Choices</name>
+    <uri>http://www.nhs.uk</uri>
+    <email>webservices@nhschoices.nhs.uk</email>
+  </author>
+  <link rel="self" type="application/xml" title="NHS Choices - All Pharmacies" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/all?apikey=CHANGEME" />
+  <link rel="first" type="application/xml" title="first" length="1000" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/all?apikey=CHANGEME&amp;page=1" />
+  <link rel="next" type="application/xml" title="next" length="1000" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/all?apikey=CHANGEME&amp;page=1" />
+  <link rel="last" type="application/xml" title="last" length="1000" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/all?apikey=CHANGEME&amp;page=1" />
+  <link rel="alternate" title="Find and choose services - Pharmacies" href="http://www.nhs.uk/ServiceDirectories/pages/ServiceSearch.aspx?ServiceType=Pharmacy" />
+  <tracking 
+    xmlns="http://syndication.nhschoices.nhs.uk/services">&lt;img style="border: 0; width: 1px; height: 1px;" alt="" src="http://statse.webtrendslive.com/dcss9yzisf9xjyg74mgbihg8p_8d2u/njs.gif?dcsuri=/organisations%2fpharmacies%2fall&amp;amp;wt.js=no&amp;amp;wt.cg_n=syndication"/&gt;
+  </tracking>
+  <entry>
+    <id>http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31926</id>
+    <title type="text">212 Pharmacy - Summary</title>
+    <published>2017-01-13T01:37:08Z</published>
+    <updated>2017-01-13T01:37:08Z</updated>
+    <link rel="alternate" type="application/xhtml" title="Overview - 212 Pharmacy - NHS Choices" href="http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=34876" />
+    <link rel="self" type="application/xhtml+xml" title="Overview - 212 Pharmacy - NHS Choices" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31926?apikey=CHANGEME" />
+    <content type="application/xml">
+      <s:organisationSummary 
+        xmlns:s="http://syndication.nhschoices.nhs.uk/services">
+        <s:name>212 Pharmacy</s:name>
+        <s:odscode>FN418</s:odscode>
+        <s:address>
+          <s:addressLine>Pharmacy 1st Limited</s:addressLine>
+          <s:addressLine>Pharmacy 1st</s:addressLine>
+          <s:addressLine>212 Canterbury Street</s:addressLine>
+          <s:addressLine>Gillingham</s:addressLine>
+          <s:addressLine>Kent</s:addressLine>
+          <s:postcode>ME7 5XL</s:postcode>
+        </s:address>
+        <s:phone>01634 850289</s:phone>
+        <s:email>pharmacy1st@outlook.com</s:email>
+        <s:geographicCoordinates>
+          <s:latitude>51.3800621032715</s:latitude>
+          <s:longitude>0.54780900478363</s:longitude>
+        </s:geographicCoordinates>
+      </s:organisationSummary>
+    </content>
+  </entry>
+  <entry>
+    <id>http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/32147</id>
+    <title type="text">7 - 11 Pharmacy - Summary</title>
+    <published>2017-04-13T01:37:45+01:00</published>
+    <updated>2017-04-13T01:37:45+01:00</updated>
+    <link rel="alternate" type="application/xhtml" title="Overview - 7 - 11 Pharmacy - NHS Choices" href="http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=10089" />
+    <link rel="self" type="application/xhtml+xml" title="Overview - 7 - 11 Pharmacy - NHS Choices" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/32147?apikey=CHANGEME" />
+    <content type="application/xml">
+      <s:organisationSummary 
+        xmlns:s="http://syndication.nhschoices.nhs.uk/services">
+        <s:name>7 - 11 Pharmacy</s:name>
+        <s:odscode>FNG62</s:odscode>
+        <s:address>
+          <s:addressLine>84 Berners Street</s:addressLine>
+          <s:addressLine>Leicester</s:addressLine>
+          <s:addressLine>Leicestershire</s:addressLine>
+          <s:postcode>LE2 0FS</s:postcode>
+        </s:address>
+        <s:phone>0116 2511333</s:phone>
+        <s:geographicCoordinates>
+          <s:latitude>52.6343765258789</s:latitude>
+          <s:longitude>-1.11219882965088</s:longitude>
+        </s:geographicCoordinates>
+      </s:organisationSummary>
+    </content>
+  </entry>
+  <entry>
+    <id>http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/34040</id>
+    <title type="text">A and A Pharmacy Ltd - Summary</title>
+    <published>2017-08-11T01:36:15+01:00</published>
+    <updated>2017-08-11T01:36:15+01:00</updated>
+    <link rel="alternate" type="application/xhtml" title="Overview - A and A Pharmacy Ltd - NHS Choices" href="http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=11816" />
+    <link rel="self" type="application/xhtml+xml" title="Overview - A and A Pharmacy Ltd - NHS Choices" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/34040?apikey=CHANGEME" />
+    <content type="application/xml">
+      <s:organisationSummary 
+        xmlns:s="http://syndication.nhschoices.nhs.uk/services">
+        <s:name>A and A Pharmacy Ltd</s:name>
+        <s:odscode>FRL97</s:odscode>
+        <s:address>
+          <s:addressLine>58 Wilmslow Road</s:addressLine>
+          <s:addressLine>Rusholme</s:addressLine>
+          <s:addressLine>Manchester</s:addressLine>
+          <s:postcode>M14 5AL</s:postcode>
+        </s:address>
+        <s:phone>0161 224 8501</s:phone>
+        <s:geographicCoordinates>
+          <s:latitude>53.454517364502</s:latitude>
+          <s:longitude>-2.22506356239319</s:longitude>
+        </s:geographicCoordinates>
+      </s:organisationSummary>
+    </content>
+  </entry>
+  <entry>
+    <id>http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31167</id>
+    <title type="text">A Kassam Pharmacy - Summary</title>
+    <published>2017-04-23T01:37:07+01:00</published>
+    <updated>2017-04-23T01:37:07+01:00</updated>
+    <link rel="alternate" type="application/xhtml" title="Overview - A Kassam Pharmacy - NHS Choices" href="http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=9202" />
+    <link rel="self" type="application/xhtml+xml" title="Overview - A Kassam Pharmacy - NHS Choices" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31167?apikey=CHANGEME" />
+    <content type="application/xml">
+      <s:organisationSummary 
+        xmlns:s="http://syndication.nhschoices.nhs.uk/services">
+        <s:name>A Kassam Pharmacy</s:name>
+        <s:odscode>FLV47</s:odscode>
+        <s:address>
+          <s:addressLine>Kassam Pharmacy</s:addressLine>
+          <s:addressLine>77 Gales Drive</s:addressLine>
+          <s:addressLine>Three Bridges</s:addressLine>
+          <s:addressLine>Crawley</s:addressLine>
+          <s:addressLine>West Sussex</s:addressLine>
+          <s:postcode>RH10 1QA</s:postcode>
+        </s:address>
+        <s:phone>01293 522919</s:phone>
+        <s:geographicCoordinates>
+          <s:latitude>51.11767578125</s:latitude>
+          <s:longitude>-0.172527804970741</s:longitude>
+        </s:geographicCoordinates>
+      </s:organisationSummary>
+    </content>
+  </entry>
+  <entry>
+    <id>http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/1279755</id>
+    <title type="text">A.C. Curd Pharmacy - Summary</title>
+    <published>2013-11-01T02:40:13Z</published>
+    <updated>2013-11-01T02:40:13Z</updated>
+    <link rel="alternate" type="application/xhtml" title="Overview - A.C. Curd Pharmacy - NHS Choices" href="http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=96055" />
+    <link rel="self" type="application/xhtml+xml" title="Overview - A.C. Curd Pharmacy - NHS Choices" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/1279755?apikey=CHANGEME" />
+    <content type="application/xml">
+      <s:organisationSummary 
+        xmlns:s="http://syndication.nhschoices.nhs.uk/services">
+        <s:name>A.C. Curd Pharmacy</s:name>
+        <s:odscode>FJ888</s:odscode>
+        <s:address>
+          <s:addressLine>55 South Street</s:addressLine>
+          <s:addressLine>Isleworth</s:addressLine>
+          <s:addressLine>Middlesex</s:addressLine>
+          <s:postcode>TW7 7AA</s:postcode>
+        </s:address>
+        <s:geographicCoordinates>
+          <s:latitude>51.4686698913574</s:latitude>
+          <s:longitude>-0.327812999486923</s:longitude>
+        </s:geographicCoordinates>
+      </s:organisationSummary>
+    </content>
+  </entry>
+  <entry>
+    <id>http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/8127833</id>
+    <title type="text">Abbey Field Pharmacy - Summary</title>
+    <published>2017-09-05T05:42:51+01:00</published>
+    <updated>2017-09-05T05:42:51+01:00</updated>
+    <link rel="alternate" type="application/xhtml" title="Overview - Abbey Field Pharmacy - NHS Choices" href="http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=132840" />
+    <link rel="self" type="application/xhtml+xml" title="Overview - Abbey Field Pharmacy - NHS Choices" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/8127833?apikey=CHANGEME" />
+    <content type="application/xml">
+      <s:organisationSummary 
+        xmlns:s="http://syndication.nhschoices.nhs.uk/services">
+        <s:name>Abbey Field Pharmacy</s:name>
+        <s:odscode>FTA74</s:odscode>
+        <s:address>
+          <s:addressLine>Abbey Field Medical Ctr</s:addressLine>
+          <s:addressLine>Ypres Road</s:addressLine>
+          <s:addressLine>Colchester</s:addressLine>
+          <s:addressLine>Essex</s:addressLine>
+          <s:postcode>CO2 7UW</s:postcode>
+        </s:address>
+        <s:phone>01206 560 273</s:phone>
+        <s:email>info@abbeyfieldpharmacy.co.uk</s:email>
+        <s:geographicCoordinates>
+          <s:latitude>51.8776168823242</s:latitude>
+          <s:longitude>0.899742066860199</s:longitude>
+        </s:geographicCoordinates>
+      </s:organisationSummary>
+    </content>
+  </entry>
+  <entry>
+    <id>http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/32067</id>
+    <title type="text">Abbey Pharmacy - Summary</title>
+    <published>2017-03-24T01:05:08Z</published>
+    <updated>2017-03-24T01:05:08Z</updated>
+    <link rel="alternate" type="application/xhtml" title="Overview - Abbey Pharmacy - NHS Choices" href="http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=10015" />
+    <link rel="self" type="application/xhtml+xml" title="Overview - Abbey Pharmacy - NHS Choices" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/32067?apikey=CHANGEME" />
+    <content type="application/xml">
+      <s:organisationSummary 
+        xmlns:s="http://syndication.nhschoices.nhs.uk/services">
+        <s:name>Abbey Pharmacy</s:name>
+        <s:odscode>FNC86</s:odscode>
+        <s:address>
+          <s:addressLine>313 Stockbrook Street</s:addressLine>
+          <s:addressLine>Derby</s:addressLine>
+          <s:postcode>DE22 3WH</s:postcode>
+        </s:address>
+        <s:phone>01332 291353</s:phone>
+        <s:geographicCoordinates>
+          <s:latitude>52.9158706665039</s:latitude>
+          <s:longitude>-1.49315106868744</s:longitude>
+        </s:geographicCoordinates>
+      </s:organisationSummary>
+    </content>
+  </entry>
+  <entry>
+    <id>http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/32248</id>
+    <title type="text">1st Pharmacy - Summary</title>
+    <published>2017-04-23T01:37:07+01:00</published>
+    <updated>2017-04-23T01:37:07+01:00</updated>
+    <link rel="alternate" type="application/xhtml" title="Overview - 1st Pharmacy - NHS Choices" href="http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=10184" />
+    <link rel="self" type="application/xhtml+xml" title="Overview - 1st Pharmacy - NHS Choices" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/32248?apikey=CHANGEME" />
+    <content type="application/xml">
+      <s:organisationSummary 
+        xmlns:s="http://syndication.nhschoices.nhs.uk/services">
+        <s:name>1st Pharmacy</s:name>
+        <s:odscode>FNM60</s:odscode>
+        <s:address>
+          <s:addressLine>Fountain Hall</s:addressLine>
+          <s:addressLine>Fountain Street</s:addressLine>
+          <s:addressLine>Bradford</s:addressLine>
+          <s:addressLine>West Yorkshire</s:addressLine>
+          <s:postcode>BD1 3RA</s:postcode>
+        </s:address>
+        <s:phone>01274 323877</s:phone>
+        <s:email>1stpharmacybradford@gmail.com</s:email>
+        <s:geographicCoordinates>
+          <s:latitude>53.7972755432129</s:latitude>
+          <s:longitude>-1.75778746604919</s:longitude>
+        </s:geographicCoordinates>
+      </s:organisationSummary>
+    </content>
+  </entry>
+  <entry>
+    <id>http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/32953</id>
+    <title type="text">4Court Pharmacy - Summary</title>
+    <published>2017-04-20T01:37:05+01:00</published>
+    <updated>2017-04-20T01:37:05+01:00</updated>
+    <link rel="alternate" type="application/xhtml" title="Overview - 4Court Pharmacy - NHS Choices" href="http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=10825" />
+    <link rel="self" type="application/xhtml+xml" title="Overview - 4Court Pharmacy - NHS Choices" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/32953?apikey=CHANGEME" />
+    <content type="application/xml">
+      <s:organisationSummary 
+        xmlns:s="http://syndication.nhschoices.nhs.uk/services">
+        <s:name>4Court Pharmacy</s:name>
+        <s:odscode>FPT24</s:odscode>
+        <s:address>
+          <s:addressLine>4Court Pharmacy</s:addressLine>
+          <s:addressLine>Blackburn Service Station</s:addressLine>
+          <s:addressLine>Whalley Banks</s:addressLine>
+          <s:addressLine>Blackburn</s:addressLine>
+          <s:postcode>BB2 1NT</s:postcode>
+        </s:address>
+        <s:phone>01254 677447</s:phone>
+        <s:email>4courtltd@gmail.com</s:email>
+        <s:geographicCoordinates>
+          <s:latitude>53.7434997558594</s:latitude>
+          <s:longitude>-2.49203658103943</s:longitude>
+        </s:geographicCoordinates>
+      </s:organisationSummary>
+    </content>
+  </entry>
+  <entry>
+    <id>http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/25563</id>
+    <title type="text">A Akhtar - Summary</title>
+    <published>2014-07-18T02:40:10+01:00</published>
+    <updated>2014-07-18T02:40:10+01:00</updated>
+    <link rel="alternate" type="application/xhtml" title="Overview - A Akhtar - NHS Choices" href="http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=30273" />
+    <link rel="self" type="application/xhtml+xml" title="Overview - A Akhtar - NHS Choices" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/25563?apikey=CHANGEME" />
+    <content type="application/xml">
+      <s:organisationSummary 
+        xmlns:s="http://syndication.nhschoices.nhs.uk/services">
+        <s:name>A Akhtar</s:name>
+        <s:odscode>FAV78</s:odscode>
+        <s:address>
+          <s:addressLine>68 The Strand</s:addressLine>
+          <s:addressLine>Longton</s:addressLine>
+          <s:addressLine>Stoke On Trent</s:addressLine>
+          <s:addressLine>Staffordshire</s:addressLine>
+          <s:postcode>ST3 2NR</s:postcode>
+        </s:address>
+        <s:phone>01782 342955</s:phone>
+        <s:email>waterloopharmacy68@gmail.com</s:email>
+        <s:geographicCoordinates>
+          <s:latitude>52.9872207641602</s:latitude>
+          <s:longitude>-2.13689780235291</s:longitude>
+        </s:geographicCoordinates>
+      </s:organisationSummary>
+    </content>
+  </entry>
+  <entry>
+    <id>http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/29626</id>
+    <title type="text">A Karim's Chuckery Pharmacy - Summary</title>
+    <published>2016-04-16T01:37:01+01:00</published>
+    <updated>2016-04-16T01:37:01+01:00</updated>
+    <link rel="alternate" type="application/xhtml" title="Overview - A Karim's Chuckery Pharmacy - NHS Choices" href="http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=46818" />
+    <link rel="self" type="application/xhtml+xml" title="Overview - A Karim's Chuckery Pharmacy - NHS Choices" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/29626?apikey=CHANGEME" />
+    <content type="application/xml">
+      <s:organisationSummary 
+        xmlns:s="http://syndication.nhschoices.nhs.uk/services">
+        <s:name>A Karim's Chuckery Pharmacy</s:name>
+        <s:odscode>FJD82</s:odscode>
+        <s:address>
+          <s:addressLine>7-9 Kinnerley Street</s:addressLine>
+          <s:addressLine>The Chuckery</s:addressLine>
+          <s:addressLine>Walsall</s:addressLine>
+          <s:postcode>WS1 2LD</s:postcode>
+        </s:address>
+        <s:phone>01922 613786</s:phone>
+        <s:email>chuckerypharmacy@gmail.com</s:email>
+        <s:geographicCoordinates>
+          <s:latitude>52.5806312561035</s:latitude>
+          <s:longitude>-1.96958541870117</s:longitude>
+        </s:geographicCoordinates>
+      </s:organisationSummary>
+    </content>
+  </entry>
+  <entry>
+    <id>http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/7353571</id>
+    <title type="text">A T Derbyshire - Summary</title>
+    <published>2017-03-17T01:05:07Z</published>
+    <updated>2017-03-17T01:05:07Z</updated>
+    <link rel="alternate" type="application/xhtml" title="Overview - A T Derbyshire - NHS Choices" href="http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=128384" />
+    <link rel="self" type="application/xhtml+xml" title="Overview - A T Derbyshire - NHS Choices" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/7353571?apikey=CHANGEME" />
+    <content type="application/xml">
+      <s:organisationSummary 
+        xmlns:s="http://syndication.nhschoices.nhs.uk/services">
+        <s:name>A T Derbyshire</s:name>
+        <s:odscode>FTF41</s:odscode>
+        <s:address>
+          <s:addressLine>115 Higher Parr Street</s:addressLine>
+          <s:addressLine>St.Helens</s:addressLine>
+          <s:addressLine>Merseyside</s:addressLine>
+          <s:postcode>WA9 1AG</s:postcode>
+        </s:address>
+        <s:phone>01744 21150</s:phone>
+        <s:geographicCoordinates>
+          <s:latitude>53.4539756774902</s:latitude>
+          <s:longitude>-2.7209529876709</s:longitude>
+        </s:geographicCoordinates>
+      </s:organisationSummary>
+    </content>
+  </entry>
+  <entry>
+    <id>http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/4209890</id>
+    <title type="text">Aa Pharmacy - Summary</title>
+    <published>2017-03-10T01:05:07Z</published>
+    <updated>2017-03-10T01:05:07Z</updated>
+    <link rel="alternate" type="application/xhtml" title="Overview - Aa Pharmacy - NHS Choices" href="http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=109355" />
+    <link rel="self" type="application/xhtml+xml" title="Overview - Aa Pharmacy - NHS Choices" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/4209890?apikey=CHANGEME" />
+    <content type="application/xml">
+      <s:organisationSummary 
+        xmlns:s="http://syndication.nhschoices.nhs.uk/services">
+        <s:name>Aa Pharmacy</s:name>
+        <s:odscode>FHW69</s:odscode>
+        <s:address>
+          <s:addressLine>98 Whitmore Way</s:addressLine>
+          <s:addressLine>Basildon</s:addressLine>
+          <s:addressLine>Essex</s:addressLine>
+          <s:postcode>SS14 3JT</s:postcode>
+        </s:address>
+        <s:phone>01268 520387</s:phone>
+        <s:geographicCoordinates>
+          <s:latitude>51.5823211669922</s:latitude>
+          <s:longitude>0.48672941327095</s:longitude>
+        </s:geographicCoordinates>
+      </s:organisationSummary>
+    </content>
+  </entry>
+  <entry>
+    <id>http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/6331522</id>
+    <title type="text">Abbey Pharmacy - Summary</title>
+    <published>2017-04-21T01:05:21+01:00</published>
+    <updated>2017-04-21T01:05:21+01:00</updated>
+    <link rel="alternate" type="application/xhtml" title="Overview - Abbey Pharmacy - NHS Choices" href="http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=121307" />
+    <link rel="self" type="application/xhtml+xml" title="Overview - Abbey Pharmacy - NHS Choices" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/6331522?apikey=CHANGEME" />
+    <content type="application/xml">
+      <s:organisationSummary 
+        xmlns:s="http://syndication.nhschoices.nhs.uk/services">
+        <s:name>Abbey Pharmacy</s:name>
+        <s:odscode>FXX86</s:odscode>
+        <s:address>
+          <s:addressLine>19-21 Howard Street</s:addressLine>
+          <s:addressLine>Rotherham</s:addressLine>
+          <s:addressLine>South Yorkshire</s:addressLine>
+          <s:postcode>S65 1JQ</s:postcode>
+        </s:address>
+        <s:phone>01709 377421</s:phone>
+        <s:geographicCoordinates>
+          <s:latitude>53.4322242736816</s:latitude>
+          <s:longitude>-1.35464036464691</s:longitude>
+        </s:geographicCoordinates>
+      </s:organisationSummary>
+    </content>
+  </entry>
+  <entry>
+    <id>http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/55554</id>
+    <title type="text">118 Pharmacy Ltd - Summary</title>
+    <published>2017-04-14T01:05:15+01:00</published>
+    <updated>2017-04-14T01:05:15+01:00</updated>
+    <link rel="alternate" type="application/xhtml" title="Overview - 118 Pharmacy Ltd - NHS Choices" href="http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=84926" />
+    <link rel="self" type="application/xhtml+xml" title="Overview - 118 Pharmacy Ltd - NHS Choices" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/55554?apikey=CHANGEME" />
+    <content type="application/xml">
+      <s:organisationSummary 
+        xmlns:s="http://syndication.nhschoices.nhs.uk/services">
+        <s:name>118 Pharmacy Ltd</s:name>
+        <s:odscode>FWP52</s:odscode>
+        <s:address>
+          <s:addressLine>9 High Street</s:addressLine>
+          <s:addressLine>Walsall Wood</s:addressLine>
+          <s:addressLine>Walsall</s:addressLine>
+          <s:addressLine>West Midlands</s:addressLine>
+          <s:postcode>WS9 9LR</s:postcode>
+        </s:address>
+        <s:phone>01543 379777</s:phone>
+        <s:email>info@118pharmacy.com</s:email>
+        <s:geographicCoordinates>
+          <s:latitude>52.6252212524414</s:latitude>
+          <s:longitude>-1.93311035633087</s:longitude>
+        </s:geographicCoordinates>
+      </s:organisationSummary>
+    </content>
+  </entry>
+  <entry>
+    <id>http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/35183</id>
+    <title type="text">4court Pharmacy - Summary</title>
+    <published>2017-02-05T01:37:13Z</published>
+    <updated>2017-02-05T01:37:13Z</updated>
+    <link rel="alternate" type="application/xhtml" title="Overview - 4court Pharmacy - NHS Choices" href="http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=29396" />
+    <link rel="self" type="application/xhtml+xml" title="Overview - 4court Pharmacy - NHS Choices" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/35183?apikey=CHANGEME" />
+    <content type="application/xml">
+      <s:organisationSummary 
+        xmlns:s="http://syndication.nhschoices.nhs.uk/services">
+        <s:name>4court Pharmacy</s:name>
+        <s:odscode>FVG90</s:odscode>
+        <s:address>
+          <s:addressLine>Heybrook Service Station</s:addressLine>
+          <s:addressLine>Halifax Road</s:addressLine>
+          <s:addressLine>Rochdale</s:addressLine>
+          <s:addressLine>Lancashire</s:addressLine>
+          <s:postcode>OL16 2NT</s:postcode>
+        </s:address>
+        <s:phone>01706 646262</s:phone>
+        <s:email>4courtrochdale@gmail.com</s:email>
+        <s:geographicCoordinates>
+          <s:latitude>53.6236000061035</s:latitude>
+          <s:longitude>-2.14388132095337</s:longitude>
+        </s:geographicCoordinates>
+      </s:organisationSummary>
+    </content>
+  </entry>
+  <entry>
+    <id>http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/5065279</id>
+    <title type="text">A &amp; S Shillam Limited - Summary</title>
+    <published>2016-04-21T01:37:02+01:00</published>
+    <updated>2016-04-21T01:37:02+01:00</updated>
+    <link rel="alternate" type="application/xhtml" title="Overview - A &amp; S Shillam Limited - NHS Choices" href="http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=113645" />
+    <link rel="self" type="application/xhtml+xml" title="Overview - A &amp; S Shillam Limited - NHS Choices" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/5065279?apikey=CHANGEME" />
+    <content type="application/xml">
+      <s:organisationSummary 
+        xmlns:s="http://syndication.nhschoices.nhs.uk/services">
+        <s:name>A &amp; S Shillam Limited</s:name>
+        <s:odscode>FEP23</s:odscode>
+        <s:address>
+          <s:addressLine>Dane Pharmacy</s:addressLine>
+          <s:addressLine>10 Dane Road</s:addressLine>
+          <s:addressLine>Seaford</s:addressLine>
+          <s:addressLine>East Sussex</s:addressLine>
+          <s:postcode>BN25 1LL</s:postcode>
+        </s:address>
+        <s:phone>01323 892660</s:phone>
+        <s:email>daneroad@shillampharmacies.com</s:email>
+        <s:geographicCoordinates>
+          <s:latitude>50.7725296020508</s:latitude>
+          <s:longitude>0.100091241300106</s:longitude>
+        </s:geographicCoordinates>
+      </s:organisationSummary>
+    </content>
+  </entry>
+  <entry>
+    <id>http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/34284</id>
+    <title type="text">A E Hobbs Ltd - Summary</title>
+    <published>2017-09-05T05:42:51+01:00</published>
+    <updated>2017-09-05T05:42:51+01:00</updated>
+    <link rel="alternate" type="application/xhtml" title="Overview - A E Hobbs Ltd - NHS Choices" href="http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=12032" />
+    <link rel="self" type="application/xhtml+xml" title="Overview - A E Hobbs Ltd - NHS Choices" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/34284?apikey=CHANGEME" />
+    <content type="application/xml">
+      <s:organisationSummary 
+        xmlns:s="http://syndication.nhschoices.nhs.uk/services">
+        <s:name>A E Hobbs Ltd</s:name>
+        <s:odscode>FT200</s:odscode>
+        <s:address>
+          <s:addressLine>72 Mount Pleasant</s:addressLine>
+          <s:addressLine>Tunbridge Wells</s:addressLine>
+          <s:addressLine>Kent</s:addressLine>
+          <s:postcode>TN1 1RJ</s:postcode>
+        </s:address>
+        <s:phone>01892 546565</s:phone>
+        <s:email>aehobbstunbridgewells@nhs.net</s:email>
+        <s:geographicCoordinates>
+          <s:latitude>51.1319046020508</s:latitude>
+          <s:longitude>0.263678312301636</s:longitude>
+        </s:geographicCoordinates>
+      </s:organisationSummary>
+    </content>
+  </entry>
+  <entry>
+    <id>http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/29973</id>
+    <title type="text">A R Chemist - Summary</title>
+    <published>2017-10-10T01:36:46+01:00</published>
+    <updated>2017-10-10T01:36:46+01:00</updated>
+    <link rel="alternate" type="application/xhtml" title="Overview - A R Chemist - NHS Choices" href="http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=8111" />
+    <link rel="self" type="application/xhtml+xml" title="Overview - A R Chemist - NHS Choices" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/29973?apikey=CHANGEME" />
+    <content type="application/xml">
+      <s:organisationSummary 
+        xmlns:s="http://syndication.nhschoices.nhs.uk/services">
+        <s:name>A R Chemist</s:name>
+        <s:odscode>FK012</s:odscode>
+        <s:address>
+          <s:addressLine>176-178 Old Kent Road</s:addressLine>
+          <s:addressLine>London</s:addressLine>
+          <s:postcode>SE1 5TY</s:postcode>
+        </s:address>
+        <s:phone>02077034097</s:phone>
+        <s:geographicCoordinates>
+          <s:latitude>51.4904518127441</s:latitude>
+          <s:longitude>-0.0812571048736572</s:longitude>
+        </s:geographicCoordinates>
+      </s:organisationSummary>
+    </content>
+  </entry>
+  <entry>
+    <id>http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/33219</id>
+    <title type="text">Aa Beggs - Summary</title>
+    <published>2013-01-08T04:30:24Z</published>
+    <updated>2013-01-08T04:30:24Z</updated>
+    <link rel="alternate" type="application/xhtml" title="Overview - Aa Beggs - NHS Choices" href="http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=11065" />
+    <link rel="self" type="application/xhtml+xml" title="Overview - Aa Beggs - NHS Choices" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/33219?apikey=CHANGEME" />
+    <content type="application/xml">
+      <s:organisationSummary 
+        xmlns:s="http://syndication.nhschoices.nhs.uk/services">
+        <s:name>Aa Beggs</s:name>
+        <s:odscode>FQ951</s:odscode>
+        <s:address>
+          <s:addressLine>Beggs Pharmacy</s:addressLine>
+          <s:addressLine>32 Pencester Road</s:addressLine>
+          <s:addressLine>Dover</s:addressLine>
+          <s:addressLine>Kent</s:addressLine>
+          <s:postcode>CT16 1BW</s:postcode>
+        </s:address>
+        <s:phone>01304 205406</s:phone>
+        <s:email>beggsdover@paydens.com</s:email>
+        <s:geographicCoordinates>
+          <s:latitude>51.1274909973145</s:latitude>
+          <s:longitude>1.31211173534393</s:longitude>
+        </s:geographicCoordinates>
+      </s:organisationSummary>
+    </content>
+  </entry>
+  <entry>
+    <id>http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/35829</id>
+    <title type="text">Abbey Pharmacy - Summary</title>
+    <published>2017-03-09T01:37:12Z</published>
+    <updated>2017-03-09T01:37:12Z</updated>
+    <link rel="alternate" type="application/xhtml" title="Overview - Abbey Pharmacy - NHS Choices" href="http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=13380" />
+    <link rel="self" type="application/xhtml+xml" title="Overview - Abbey Pharmacy - NHS Choices" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/35829?apikey=CHANGEME" />
+    <content type="application/xml">
+      <s:organisationSummary 
+        xmlns:s="http://syndication.nhschoices.nhs.uk/services">
+        <s:name>Abbey Pharmacy</s:name>
+        <s:odscode>FWJ80</s:odscode>
+        <s:address>
+          <s:addressLine>12a Abbey Parade</s:addressLine>
+          <s:addressLine>Merton High Street</s:addressLine>
+          <s:addressLine>Merton</s:addressLine>
+          <s:postcode>SW19 1DG</s:postcode>
+        </s:address>
+        <s:phone>020 85423713</s:phone>
+        <s:email>abbey@pearlchemistgroup.co.uk</s:email>
+        <s:geographicCoordinates>
+          <s:latitude>51.4159355163574</s:latitude>
+          <s:longitude>-0.185506969690323</s:longitude>
+        </s:geographicCoordinates>
+      </s:organisationSummary>
+    </content>
+  </entry>
+  <entry>
+    <id>http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31900</id>
+    <title type="text">Abbey Pharmacy - Summary</title>
+    <published>2016-11-01T05:13:16Z</published>
+    <updated>2016-11-01T05:13:16Z</updated>
+    <link rel="alternate" type="application/xhtml" title="Overview - Abbey Pharmacy - NHS Choices" href="http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=9868" />
+    <link rel="self" type="application/xhtml+xml" title="Overview - Abbey Pharmacy - NHS Choices" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31900?apikey=CHANGEME" />
+    <content type="application/xml">
+      <s:organisationSummary 
+        xmlns:s="http://syndication.nhschoices.nhs.uk/services">
+        <s:name>Abbey Pharmacy</s:name>
+        <s:odscode>FN288</s:odscode>
+        <s:address>
+          <s:addressLine>63 Central Avenue</s:addressLine>
+          <s:addressLine>Nottingham</s:addressLine>
+          <s:addressLine>Nottinghamshire</s:addressLine>
+          <s:postcode>NG9 2QP</s:postcode>
+        </s:address>
+        <s:phone>01159 254522</s:phone>
+        <s:email>abbey@jardinesuk.com</s:email>
+        <s:geographicCoordinates>
+          <s:latitude>52.9331169128418</s:latitude>
+          <s:longitude>-1.2199147939682</s:longitude>
+        </s:geographicCoordinates>
+      </s:organisationSummary>
+    </content>
+  </entry>
+  <entry>
+    <id>http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/29581</id>
+    <title type="text">Tesco Instore Pharmacy - Summary</title>
+    <published>2014-02-12T03:31:19Z</published>
+    <updated>2014-02-12T03:31:19Z</updated>
+    <link rel="alternate" type="application/xhtml" title="Overview - Tesco Instore Pharmacy - NHS Choices" href="http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=34574" />
+    <link rel="self" type="application/xhtml+xml" title="Overview - Tesco Instore Pharmacy - NHS Choices" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/29581?apikey=CHANGEME" />
+    <content type="application/xml">
+      <s:organisationSummary 
+        xmlns:s="http://syndication.nhschoices.nhs.uk/services">
+        <s:name>Tesco Instore Pharmacy</s:name>
+        <s:odscode>FJA60</s:odscode>
+        <s:address>
+          <s:addressLine>Tesco Pharmacy</s:addressLine>
+          <s:addressLine>Ashley Retail Park</s:addressLine>
+          <s:addressLine>Lugsdale Road</s:addressLine>
+          <s:addressLine>Widnes</s:addressLine>
+          <s:addressLine>Cheshire</s:addressLine>
+          <s:postcode>WA8 7YT</s:postcode>
+        </s:address>
+        <s:phone>0345 6719466</s:phone>
+        <s:geographicCoordinates>
+          <s:latitude>53.3623695373535</s:latitude>
+          <s:longitude>-2.72535586357117</s:longitude>
+        </s:geographicCoordinates>
+      </s:organisationSummary>
+    </content>
+  </entry>
+  <entry>
+    <id>http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/28129</id>
+    <title type="text">3q Pharmacy - Summary</title>
+    <published>2017-10-03T05:16:58+01:00</published>
+    <updated>2017-10-03T05:16:58+01:00</updated>
+    <link rel="alternate" type="application/xhtml" title="Overview - 3q Pharmacy - NHS Choices" href="http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=29196" />
+    <link rel="self" type="application/xhtml+xml" title="Overview - 3q Pharmacy - NHS Choices" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/28129?apikey=CHANGEME" />
+    <content type="application/xml">
+      <s:organisationSummary 
+        xmlns:s="http://syndication.nhschoices.nhs.uk/services">
+        <s:name>3q Pharmacy</s:name>
+        <s:odscode>FG039</s:odscode>
+        <s:address>
+          <s:addressLine>3 Queen Street</s:addressLine>
+          <s:addressLine>Wellingborough</s:addressLine>
+          <s:addressLine>Northamptonshire</s:addressLine>
+          <s:postcode>NN8 4RW</s:postcode>
+        </s:address>
+        <s:phone>01933 273373</s:phone>
+        <s:email>3qpharmacy@gmail.com</s:email>
+        <s:geographicCoordinates>
+          <s:latitude>52.3033981323242</s:latitude>
+          <s:longitude>-0.695552706718445</s:longitude>
+        </s:geographicCoordinates>
+      </s:organisationSummary>
+    </content>
+  </entry>
+  <entry>
+    <id>http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31995</id>
+    <title type="text">8 Pm Chemist Ltd - Summary</title>
+    <published>2013-01-18T05:55:04Z</published>
+    <updated>2013-01-18T05:55:04Z</updated>
+    <link rel="alternate" type="application/xhtml" title="Overview - 8 Pm Chemist Ltd - NHS Choices" href="http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=9949" />
+    <link rel="self" type="application/xhtml+xml" title="Overview - 8 Pm Chemist Ltd - NHS Choices" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31995?apikey=CHANGEME" />
+    <content type="application/xml">
+      <s:organisationSummary 
+        xmlns:s="http://syndication.nhschoices.nhs.uk/services">
+        <s:name>8 Pm Chemist Ltd</s:name>
+        <s:odscode>FN736</s:odscode>
+        <s:address>
+          <s:addressLine>61 Wolverhampton Street</s:addressLine>
+          <s:addressLine>Willenhall</s:addressLine>
+          <s:addressLine>West Midlands</s:addressLine>
+          <s:postcode>WV13 2NF</s:postcode>
+        </s:address>
+        <s:phone>01902 633310</s:phone>
+        <s:geographicCoordinates>
+          <s:latitude>52.5842361450195</s:latitude>
+          <s:longitude>-2.0568675994873</s:longitude>
+        </s:geographicCoordinates>
+      </s:organisationSummary>
+    </content>
+  </entry>
+  <entry>
+    <id>http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/4511566</id>
+    <title type="text">A C Moule &amp; Co Pharmacy - Summary</title>
+    <published>2017-03-10T01:05:07Z</published>
+    <updated>2017-03-10T01:05:07Z</updated>
+    <link rel="alternate" type="application/xhtml" title="Overview - A C Moule &amp; Co Pharmacy - NHS Choices" href="http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=110145" />
+    <link rel="self" type="application/xhtml+xml" title="Overview - A C Moule &amp; Co Pharmacy - NHS Choices" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/4511566?apikey=CHANGEME" />
+    <content type="application/xml">
+      <s:organisationSummary 
+        xmlns:s="http://syndication.nhschoices.nhs.uk/services">
+        <s:name>A C Moule &amp; Co Pharmacy</s:name>
+        <s:odscode>FK058</s:odscode>
+        <s:address>
+          <s:addressLine>55 Parliament Road</s:addressLine>
+          <s:addressLine>Middlesbrough</s:addressLine>
+          <s:addressLine>Cleveland</s:addressLine>
+          <s:postcode>TS1 4JW</s:postcode>
+        </s:address>
+        <s:phone>01642 244717</s:phone>
+        <s:geographicCoordinates>
+          <s:latitude>54.5685806274414</s:latitude>
+          <s:longitude>-1.24734997749329</s:longitude>
+        </s:geographicCoordinates>
+      </s:organisationSummary>
+    </content>
+  </entry>
+  <entry>
+    <id>http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/34559</id>
+    <title type="text">A Moore &amp; Co - Summary</title>
+    <published>2017-10-20T01:05:16+01:00</published>
+    <updated>2017-10-20T01:05:16+01:00</updated>
+    <link rel="alternate" type="application/xhtml" title="Overview - A Moore &amp; Co - NHS Choices" href="http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=12281" />
+    <link rel="self" type="application/xhtml+xml" title="Overview - A Moore &amp; Co - NHS Choices" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/34559?apikey=CHANGEME" />
+    <content type="application/xml">
+      <s:organisationSummary 
+        xmlns:s="http://syndication.nhschoices.nhs.uk/services">
+        <s:name>A Moore &amp; Co</s:name>
+        <s:odscode>FTH32</s:odscode>
+        <s:address>
+          <s:addressLine>25E Lowndes Street</s:addressLine>
+          <s:addressLine>London</s:addressLine>
+          <s:postcode>SW1X 9JF</s:postcode>
+        </s:address>
+        <s:phone>020 72355887</s:phone>
+        <s:geographicCoordinates>
+          <s:latitude>51.4987297058105</s:latitude>
+          <s:longitude>-0.157903060317039</s:longitude>
+        </s:geographicCoordinates>
+      </s:organisationSummary>
+    </content>
+  </entry>
+  <entry>
+    <id>http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31369</id>
+    <title type="text">A1 Pharmacy - Summary</title>
+    <published>2017-01-08T01:37:15Z</published>
+    <updated>2017-01-08T01:37:15Z</updated>
+    <link rel="alternate" type="application/xhtml" title="Overview - A1 Pharmacy - NHS Choices" href="http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=29273" />
+    <link rel="self" type="application/xhtml+xml" title="Overview - A1 Pharmacy - NHS Choices" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31369?apikey=CHANGEME" />
+    <content type="application/xml">
+      <s:organisationSummary 
+        xmlns:s="http://syndication.nhschoices.nhs.uk/services">
+        <s:name>A1 Pharmacy</s:name>
+        <s:odscode>FM664</s:odscode>
+        <s:address>
+          <s:addressLine>491 Radcliffe Road</s:addressLine>
+          <s:addressLine>Darcy Lever</s:addressLine>
+          <s:addressLine>Bolton</s:addressLine>
+          <s:addressLine>BOLTON</s:addressLine>
+          <s:postcode>BL3 1SX</s:postcode>
+        </s:address>
+        <s:phone>01204 363400 (ext. 1204363400)</s:phone>
+        <s:email>info@a1-pharmacy.co.uk</s:email>
+        <s:geographicCoordinates>
+          <s:latitude>53.57080078125</s:latitude>
+          <s:longitude>-2.39486575126648</s:longitude>
+        </s:geographicCoordinates>
+      </s:organisationSummary>
+    </content>
+  </entry>
+  <entry>
+    <id>http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/36813</id>
+    <title type="text">Abbey Pharmacy - Summary</title>
+    <published>2013-01-08T04:30:24Z</published>
+    <updated>2013-01-08T04:30:24Z</updated>
+    <link rel="alternate" type="application/xhtml" title="Overview - Abbey Pharmacy - NHS Choices" href="http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=14254" />
+    <link rel="self" type="application/xhtml+xml" title="Overview - Abbey Pharmacy - NHS Choices" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/36813?apikey=CHANGEME" />
+    <content type="application/xml">
+      <s:organisationSummary 
+        xmlns:s="http://syndication.nhschoices.nhs.uk/services">
+        <s:name>Abbey Pharmacy</s:name>
+        <s:odscode>FYE27</s:odscode>
+        <s:address>
+          <s:addressLine>45 High Street</s:addressLine>
+          <s:addressLine>Abbots Langley</s:addressLine>
+          <s:addressLine>Hertfordshire</s:addressLine>
+          <s:postcode>WD5 0AA</s:postcode>
+        </s:address>
+        <s:phone>01923 262151</s:phone>
+        <s:geographicCoordinates>
+          <s:latitude>51.7072296142578</s:latitude>
+          <s:longitude>-0.416392683982849</s:longitude>
+        </s:geographicCoordinates>
+      </s:organisationSummary>
+    </content>
+  </entry>
+  <entry>
+    <id>http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/27435</id>
+    <title type="text">Abbey Pharmacy - Summary</title>
+    <published>2016-06-23T01:37:01+01:00</published>
+    <updated>2016-06-23T01:37:01+01:00</updated>
+    <link rel="alternate" type="application/xhtml" title="Overview - Abbey Pharmacy - NHS Choices" href="http://www.nhs.uk/Services/pharmacies/Overview/DefaultView.aspx?id=34794" />
+    <link rel="self" type="application/xhtml+xml" title="Overview - Abbey Pharmacy - NHS Choices" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/27435?apikey=CHANGEME" />
+    <content type="application/xml">
+      <s:organisationSummary 
+        xmlns:s="http://syndication.nhschoices.nhs.uk/services">
+        <s:name>Abbey Pharmacy</s:name>
+        <s:odscode>FET80</s:odscode>
+        <s:address>
+          <s:addressLine>The Guildhall Surgery</s:addressLine>
+          <s:addressLine>Lower Baxter Street</s:addressLine>
+          <s:addressLine>Bury St Edmunds</s:addressLine>
+          <s:postcode>IP33 1ET</s:postcode>
+        </s:address>
+        <s:phone>01284 761769</s:phone>
+        <s:geographicCoordinates>
+          <s:latitude>52.2453918457031</s:latitude>
+          <s:longitude>0.71503746509552</s:longitude>
+        </s:geographicCoordinates>
+      </s:organisationSummary>
+    </content>
+  </entry>
+</feed>

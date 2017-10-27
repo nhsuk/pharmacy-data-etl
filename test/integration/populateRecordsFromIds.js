@@ -11,7 +11,7 @@ const odsCode3 = 'FP3';
 
 function getPharmacyAction(odsCode) {
   return new Promise((resolve) => {
-    resolve({ _id: odsCode });
+    resolve({ identifier: odsCode });
   });
 }
 
@@ -20,7 +20,7 @@ function getPharmacyWithErrorAction(odsCode) {
     if (odsCode === odsCode2) {
       throw new Error('error in json');
     } else {
-      resolve({ _id: odsCode });
+      resolve({ identifier: odsCode });
     }
   });
 }
@@ -37,12 +37,24 @@ describe('Populate ID queue', () => {
       populateRecordAction: getPharmacyAction,
       queueComplete: () => {
         /* eslint-disable no-underscore-dangle */
-        expect(etlStore.getRecord(odsCode1)._id).to.equal(odsCode1);
-        expect(etlStore.getRecord(odsCode2)._id).to.equal(odsCode2);
-        expect(etlStore.getRecord(odsCode3)._id).to.equal(odsCode3);
+        expect(etlStore.getRecord(odsCode1).identifier).to.equal(odsCode1);
+        expect(etlStore.getRecord(odsCode2).identifier).to.equal(odsCode2);
+        expect(etlStore.getRecord(odsCode3).identifier).to.equal(odsCode3);
         expect(etlStore.getErorredIds().length).to.equal(0);
         expect(etlStore.getRecords().length).to.equal(3);
         /* eslint-enable no-underscore-dangle */
+        done();
+      },
+    };
+    populateRecordsFromIds.start(options);
+  });
+
+  it('should call queueComplete for empty ID list', (done) => {
+    etlStore.addIds([]);
+    const options = {
+      workers: 1,
+      populateRecordAction: getPharmacyAction,
+      queueComplete: () => {
         done();
       },
     };
@@ -56,9 +68,9 @@ describe('Populate ID queue', () => {
       populateRecordAction: getPharmacyAction,
       queueComplete: () => {
         /* eslint-disable no-underscore-dangle */
-        expect(etlStore.getRecord(odsCode1)._id).to.equal(odsCode1);
-        expect(etlStore.getRecord(odsCode2)._id).to.equal(odsCode2);
-        expect(etlStore.getRecord(odsCode3)._id).to.equal(odsCode3);
+        expect(etlStore.getRecord(odsCode1).identifier).to.equal(odsCode1);
+        expect(etlStore.getRecord(odsCode2).identifier).to.equal(odsCode2);
+        expect(etlStore.getRecord(odsCode3).identifier).to.equal(odsCode3);
         expect(etlStore.getErorredIds().length).to.equal(0);
         expect(etlStore.getRecords().length).to.equal(3);
         /* eslint-enable no-underscore-dangle */
@@ -75,8 +87,8 @@ describe('Populate ID queue', () => {
       populateRecordAction: getPharmacyWithErrorAction,
       queueComplete: () => {
         /* eslint-disable no-underscore-dangle */
-        expect(etlStore.getRecord(odsCode1)._id).to.equal(odsCode1);
-        expect(etlStore.getRecord(odsCode3)._id).to.equal(odsCode3);
+        expect(etlStore.getRecord(odsCode1).identifier).to.equal(odsCode1);
+        expect(etlStore.getRecord(odsCode3).identifier).to.equal(odsCode3);
         expect(etlStore.getRecords().length).to.equal(2);
         expect(etlStore.getErorredIds().length).to.equal(1);
         /* eslint-enable no-underscore-dangle */
@@ -94,8 +106,8 @@ describe('Populate ID queue', () => {
       populateRecordAction: getPharmacyAction,
       queueComplete: () => {
         /* eslint-disable no-underscore-dangle */
-        expect(etlStore.getRecord(odsCode1)._id).to.equal(odsCode1);
-        expect(etlStore.getRecord(odsCode3)._id).to.equal(odsCode3);
+        expect(etlStore.getRecord(odsCode1).identifier).to.equal(odsCode1);
+        expect(etlStore.getRecord(odsCode3).identifier).to.equal(odsCode3);
         expect(etlStore.getRecords().length).to.equal(3);
         expect(etlStore.getErorredIds().length).to.equal(0);
         /* eslint-enable no-underscore-dangle */

@@ -34,7 +34,7 @@
           "rel": "self",
           "type": "application/xml",
           "title": "NHS Choices - All Pharmacies",
-          "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/all?apikey=bbccdd"
+          "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/all?apikey=CHANGEME"
         }
       },
       {
@@ -43,7 +43,7 @@
           "type": "application/xml",
           "title": "first",
           "length": "1000",
-          "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/all?apikey=bbccdd&page=1"
+          "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/all?apikey=CHANGEME&page=1"
         }
       },
       {
@@ -52,7 +52,7 @@
           "type": "application/xml",
           "title": "next",
           "length": "1000",
-          "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/all?apikey=bbccdd&page=2"
+          "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/all?apikey=CHANGEME&page=2"
         }
       },
       {
@@ -61,7 +61,7 @@
           "type": "application/xml",
           "title": "last",
           "length": "1000",
-          "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/all?apikey=bbccdd&page=385"
+          "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/all?apikey=CHANGEME&page=385"
         }
       },
       {
@@ -103,7 +103,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - Tesco Instore Pharmacy - NHS Choices",
-              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/29581?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/29581?apikey=CHANGEME"
             }
           }
         ],
@@ -159,7 +159,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - 118 Pharmacy Ltd - NHS Choices",
-              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/55554?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/55554?apikey=CHANGEME"
             }
           }
         ],
@@ -215,7 +215,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - 1st Pharmacy - NHS Choices",
-              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/32248?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/32248?apikey=CHANGEME"
             }
           }
         ],
@@ -271,7 +271,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - 212 Pharmacy - NHS Choices",
-              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31926?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31926?apikey=CHANGEME"
             }
           }
         ],
@@ -328,7 +328,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - 247Pharmacy - NHS Choices",
-              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/7758300?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/7758300?apikey=CHANGEME"
             }
           }
         ],
@@ -383,7 +383,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - 3q Pharmacy - NHS Choices",
-              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/28129?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/28129?apikey=CHANGEME"
             }
           }
         ],
@@ -437,7 +437,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - 4court Pharmacy - NHS Choices",
-              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/35183?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/35183?apikey=CHANGEME"
             }
           }
         ],
@@ -493,7 +493,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - 4Court Pharmacy - NHS Choices",
-              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/32953?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/32953?apikey=CHANGEME"
             }
           }
         ],
@@ -549,7 +549,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - 7 - 11 Pharmacy - NHS Choices",
-              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/32147?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/32147?apikey=CHANGEME"
             }
           }
         ],
@@ -603,7 +603,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - 8 Pm Chemist Ltd - NHS Choices",
-              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31995?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31995?apikey=CHANGEME"
             }
           }
         ],
@@ -657,7 +657,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - A & S Shillam Limited - NHS Choices",
-              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/5065279?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/5065279?apikey=CHANGEME"
             }
           }
         ],
@@ -713,7 +713,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - A Akhtar - NHS Choices",
-              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/25563?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/25563?apikey=CHANGEME"
             }
           }
         ],
@@ -769,7 +769,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - A and A Pharmacy Ltd - NHS Choices",
-              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/34040?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/34040?apikey=CHANGEME"
             }
           }
         ],
@@ -823,7 +823,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - A C Moule & Co Pharmacy - NHS Choices",
-              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/4511566?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/4511566?apikey=CHANGEME"
             }
           }
         ],
@@ -877,7 +877,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - A Karim's Chuckery Pharmacy - NHS Choices",
-              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/29626?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/29626?apikey=CHANGEME"
             }
           }
         ],
@@ -932,7 +932,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - A Kassam Pharmacy - NHS Choices",
-              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31167?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31167?apikey=CHANGEME"
             }
           }
         ],
@@ -988,7 +988,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - A Moore & Co - NHS Choices",
-              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/34559?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/34559?apikey=CHANGEME"
             }
           }
         ],
@@ -1041,7 +1041,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - A R Chemist - NHS Choices",
-              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/29973?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/29973?apikey=CHANGEME"
             }
           }
         ],
@@ -1095,7 +1095,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - A T Derbyshire - NHS Choices",
-              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/7353571?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/7353571?apikey=CHANGEME"
             }
           }
         ],
@@ -1149,7 +1149,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - A.C. Curd Pharmacy - NHS Choices",
-              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/1279755?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/1279755?apikey=CHANGEME"
             }
           }
         ],
@@ -1202,7 +1202,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - A1 Pharmacy - NHS Choices",
-              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31369?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31369?apikey=CHANGEME"
             }
           }
         ],
@@ -1258,7 +1258,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - Aa Beggs - NHS Choices",
-              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/33219?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/33219?apikey=CHANGEME"
             }
           }
         ],
@@ -1314,7 +1314,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - Aa Pharmacy - NHS Choices",
-              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/4209890?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/4209890?apikey=CHANGEME"
             }
           }
         ],
@@ -1368,7 +1368,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - Abbey Pharmacy - NHS Choices",
-              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/6331522?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/6331522?apikey=CHANGEME"
             }
           }
         ],
@@ -1422,7 +1422,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - Abbey Pharmacy - NHS Choices",
-              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31900?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/31900?apikey=CHANGEME"
             }
           }
         ],
@@ -1477,7 +1477,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - Abbey Pharmacy - NHS Choices",
-              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/36813?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/36813?apikey=CHANGEME"
             }
           }
         ],
@@ -1531,7 +1531,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - Abbey Pharmacy - NHS Choices",
-              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/27435?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/27435?apikey=CHANGEME"
             }
           }
         ],
@@ -1585,7 +1585,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - Abbey Pharmacy - NHS Choices",
-              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/32067?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/32067?apikey=CHANGEME"
             }
           }
         ],
@@ -1638,7 +1638,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - Abbey Pharmacy - NHS Choices",
-              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/35829?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/35829?apikey=CHANGEME"
             }
           }
         ],
@@ -1693,7 +1693,7 @@
               "rel": "self",
               "type": "application/xhtml+xml",
               "title": "Overview - Abbeydale Pharmacy - NHS Choices",
-              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/36395?apikey=bbccdd"
+              "href": "https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/36395?apikey=CHANGEME"
             }
           }
         ],

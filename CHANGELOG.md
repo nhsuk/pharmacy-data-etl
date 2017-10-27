@@ -1,5 +1,7 @@
-0.2.0 / 2017-10-26
+0.2.0 / 2017-10-31
 ==================
+- Call drain for an empty queue
+- Use NHSUK bunyan logger
 - Upgrade Docker container to `node:8.8.0-alpine`
 - Update npm dependencies
 
