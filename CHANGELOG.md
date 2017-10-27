@@ -4,6 +4,7 @@
 - Use NHSUK bunyan logger
 - Upgrade Docker container to `node:8.8.0-alpine`
 - Update npm dependencies
+- Correct schedule override env var in `README`
 
 0.1.1 / 2017-10-24
 ==================

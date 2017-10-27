@@ -58,7 +58,7 @@ the application is being run. This is best practice as described by
 | `SYNDICATION_API_KEY`              | API key to access syndication                                        |                         | yes        |
 | `AZURE_STORAGE_CONNECTION_STRING`  | Azure storage connection string                                      |                         | yes        |
 | `CONTAINER_NAME`                   | Azure storage container name                                         | etl-output              |            |
-| `UPDATE_SCHEDULE`                  | time of day to run the upgrade                                       | * 23 * * * (11:00 pm)   |            |
+| `ETL_SCHEDULE`                     | time of day to run the upgrade                                       | * 23 * * * (11:00 pm)   |            |
 | `DISABLE_SCHEDULER`                | set to 'true' to disable the scheduler                               | false                   |            |
 
 ## Architecture Decision Records
