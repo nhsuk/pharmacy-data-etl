@@ -1,3 +1,8 @@
+0.3.0 / 2017-11-16
+==================
+- Upgrade Docker container to `node:8.9.1-alpine`
+- Remove redundant `--` for forwarding script options
+
 0.2.0 / 2017-10-31
 ==================
 - Call drain for an empty queue

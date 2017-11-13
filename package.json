@@ -1,11 +1,11 @@
 {
   "name": "pharmacy-data-etl",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "ETL to extract data from Syndication/Organisations and store as JSON",
   "main": "app.js",
   "scripts": {
     "coverage-check": "istanbul check-coverage --config .istanbul.yml",
-    "coverage-generate": "yarn istanbul -- cover _mocha -- --recursive test",
+    "coverage-generate": "yarn istanbul cover -- _mocha -- --recursive test",
     "coverage-upload-coveralls": "cat ./coverage/lcov.info | coveralls",
     "git-hook": "yarn lint && yarn coverage-generate && yarn coverage-check",
     "istanbul": "NODE_ENV=test istanbul",
@@ -21,9 +21,9 @@
     "test-ci": "yarn lint && yarn coverage-generate && yarn coverage-check && yarn coverage-upload-coveralls",
     "test-integration": "NODE_ENV=test mocha --recursive test/integration",
     "test-unit": "NODE_ENV=test mocha --recursive test/unit",
-    "test-watch": "yarn test -- --watch --reporter min",
-    "test-watch-integration": "yarn test-integration -- --watch --reporter min",
-    "test-watch-unit": "yarn test-unit -- --watch --reporter min"
+    "test-watch": "yarn test --watch --reporter min",
+    "test-watch-integration": "yarn test-integration --watch --reporter min",
+    "test-watch-unit": "yarn test-unit --watch --reporter min"
   },
   "repository": {
     "type": "git",
