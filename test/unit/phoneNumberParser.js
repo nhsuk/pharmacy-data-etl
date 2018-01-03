@@ -18,7 +18,6 @@ describe('parse phone number', () => {
 
   it('should gracefully handle undefined', () => {
     const number = phoneNumberParser(undefined);
-    // eslint-disable-next-line no-unused-expressions
     expect(number).to.be.undefined;
   });
 });
