@@ -14,11 +14,11 @@ function joinTimesDay(daySessions) {
   return fixedKeySessions.list;
 }
 
-function joinTimes(type) {
-  if (type) {
-    Object.keys(type).forEach((key) => {
+function joinTimes(times) {
+  if (times) {
+    Object.keys(times).forEach((key) => {
       // eslint-disable-next-line no-param-reassign
-      type[key] = joinTimesDay(type[key]);
+      times[key] = joinTimesDay(times[key]);
     });
   }
 }

@@ -1,27 +1,11 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
 version: v1.7.1
-# ignores vulnerabilities until expiry date; change duration by modifying expiry date
-ignore:
-  'npm:tough-cookie:20170905':
-    - azure-storage > request > tough-cookie:
-        reason: Not user facing
-        expires: '2017-11-24T08:35:43.242Z'
-    - node-pre-gyp > request > tough-cookie:
-        reason: Not user facing
-        expires: '2017-11-24T08:35:43.242Z'
-  'npm:debug:20170905':
-    - node-pre-gyp > tar-pack > debug:
-        reason: Not user facing
-        expires: '2017-11-24T08:35:43.242Z'
-  'npm:shelljs:20140723':
-    - eslint-config-nhsuk > eslint-plugin-json > jshint > shelljs:
-        reason: no patch available
-        expires: '2018-02-02T14:12:43.543Z'
+ignore: {}
 # patches apply the minimum changes required to fix a vulnerability
 patch:
   'npm:debug:20170905':
     - node-pre-gyp > tar-pack > debug:
-        patched: '2018-01-03T14:16:17.858Z'
+        patched: '2018-01-03T15:26:36.584Z'
   'npm:tough-cookie:20170905':
     - node-pre-gyp > request > tough-cookie:
-        patched: '2018-01-03T14:16:17.858Z'
+        patched: '2018-01-03T15:26:36.584Z'

@@ -137,7 +137,6 @@ describe('joinContiguousTimes', () => {
     expect(pharmacy.openingTimes.general.wednesday.length).to.equal(1);
     expect(pharmacy.openingTimes.general.wednesday[0].opens).to.equal('09:02');
     expect(pharmacy.openingTimes.general.wednesday[0].closes).to.equal('19:32');
-    expect(pharmacy.openingTimes.general.tuesday[0].closes).to.equal('19:31');
     expect(pharmacy.openingTimes.general.thursday.length).to.equal(1);
     expect(pharmacy.openingTimes.general.thursday[0].opens).to.equal('09:03');
     expect(pharmacy.openingTimes.general.thursday[0].closes).to.equal('19:33');
@@ -147,7 +146,6 @@ describe('joinContiguousTimes', () => {
     expect(pharmacy.openingTimes.general.saturday.length).to.equal(1);
     expect(pharmacy.openingTimes.general.saturday[0].opens).to.equal('09:05');
     expect(pharmacy.openingTimes.general.saturday[0].closes).to.equal('19:35');
-    expect(pharmacy.openingTimes.general.friday[0].closes).to.equal('19:34');
     expect(pharmacy.openingTimes.general.sunday.length).to.equal(1);
     expect(pharmacy.openingTimes.general.sunday[0].opens).to.equal('09:06');
     expect(pharmacy.openingTimes.general.sunday[0].closes).to.equal('19:36');
@@ -178,7 +176,6 @@ describe('joinContiguousTimes', () => {
     expect(pharmacy.openingTimes.general.monday.length).to.equal(2);
     expect(pharmacy.openingTimes.general.monday[0].opens).to.equal('09:00');
     expect(pharmacy.openingTimes.general.monday[0].closes).to.equal('13:00');
-    expect(pharmacy.openingTimes.general.monday.length).to.equal(2);
     expect(pharmacy.openingTimes.general.monday[1].opens).to.equal('14:00');
     expect(pharmacy.openingTimes.general.monday[1].closes).to.equal('17:00');
   });
@@ -226,7 +223,6 @@ describe('joinContiguousTimes', () => {
     expect(pharmacy.openingTimes.general.monday.length).to.equal(2);
     expect(pharmacy.openingTimes.general.monday[0].opens).to.equal('09:00');
     expect(pharmacy.openingTimes.general.monday[0].closes).to.equal('13:00');
-    expect(pharmacy.openingTimes.general.monday.length).to.equal(2);
     expect(pharmacy.openingTimes.general.monday[1].opens).to.equal('14:00');
     expect(pharmacy.openingTimes.general.monday[1].closes).to.equal('19:30');
   });

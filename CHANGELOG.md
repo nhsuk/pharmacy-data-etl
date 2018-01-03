@@ -1,6 +1,7 @@
 0.4.0 / TBA
 ==================
 - Join Contiguous opening times
+- Update npm dependencies
 
 0.3.0 / 2017-11-16
 ==================
