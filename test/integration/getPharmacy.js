@@ -9,7 +9,6 @@ describe('Get Pharmacy', () => {
     this.timeout(5000);
     const odsCode = 'FYY76';
     getPharmacy(odsCode).then((pharmacy) => {
-      // eslint-disable-next-line no-unused-expressions
       expect(pharmacy).to.exist;
       expect(pharmacy.identifier).to.equal(odsCode);
       done();

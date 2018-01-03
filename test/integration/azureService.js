@@ -5,7 +5,7 @@ const azureService = require('../../app/lib/azureService');
 const expect = chai.expect;
 // writing to a shared area, timestamp file to avoid collisions
 const name = `${new Date().getTime()}test.json`;
-const timeout = 5000;
+const timeout = 15000;
 
 describe('Azure Service', () => {
   after(function deleteGeneratedFile(done) {
@@ -27,7 +27,6 @@ describe('Azure Service', () => {
     this.timeout(timeout);
     azureService.listBlobs()
       .then((entries) => {
-        // eslint-disable-next-line no-unused-expressions
         expect(entries).to.exist;
         done();
       })
