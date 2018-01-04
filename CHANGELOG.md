@@ -1,4 +1,4 @@
-0.4.0 / TBA
+0.4.0 / 2018-01-09
 ==================
 - Join Contiguous opening times
 - Update npm dependencies
