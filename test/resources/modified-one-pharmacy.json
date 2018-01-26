@@ -1,0 +1,44 @@
+{
+  "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/33823",
+  "title": {
+    "_": "Ashtons Late Night Pharmacy",
+    "$": {
+      "type": "text"
+    }
+  },
+  "updated": "2018-01-26T11:38:32Z",
+  "link": {
+    "$": {
+      "rel": "self",
+      "title": "Ashtons Late Night Pharmacy",
+      "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/33823?apikey=bbccdd"
+    }
+  },
+  "content": {
+    "$": {
+      "type": "application/xml"
+    },
+    "organisationSummary": {
+      "name": "Ashtons Late Night Pharmacy",
+      "odsCode": "FRA14",
+      "address": {
+        "addressLine": [
+          "98 Dyke Road",
+          "Brighton",
+          "East Sussex"
+        ],
+        "postcode": "BN1 3JD"
+      },
+      "contact": {
+        "$": {
+          "type": "General"
+        },
+        "telephone": "01273 325020"
+      },
+      "geographicCoordinates": {
+        "longitude": "-0.147023752331734",
+        "latitude": "50.8302726745605"
+      }
+    }
+  }
+}

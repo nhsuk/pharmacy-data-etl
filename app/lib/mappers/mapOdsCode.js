@@ -1,7 +1,8 @@
 const utils = require('../utils');
 
 function fromSummary(pharmSummary) {
-  return utils.getNested(pharmSummary, 'content.organisationSummary.odscode');
+  return utils.getNested(pharmSummary, 'content.organisationSummary.odscode') ||
+         utils.getNested(pharmSummary, 'content.organisationSummary.odsCode');
 }
 
 function fromResults(results) {

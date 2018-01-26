@@ -7,6 +7,7 @@ const config = require('../../config');
 
 let populateRecordFromIdAction;
 let hitsPerWorker;
+let alwaysOverwrite;
 let count = 0;
 let retryCount = 0;
 let totalRetries = 0;
@@ -34,7 +35,7 @@ function savePeriodically() {
 
 function processQueueItem(task, callback) {
   count += 1;
-  if (pageParsed(task.id)) {
+  if (!alwaysOverwrite && pageParsed(task.id)) {
     log.info(`skipping ${task.id}, already loaded`);
     callback();
   } else {
@@ -86,6 +87,7 @@ function start(options) {
   count = 0;
   if (etlStore.getIds().length > 0) {
     populateRecordFromIdAction = options.populateRecordAction;
+    alwaysOverwrite = options.alwaysOverwrite;
     setHitsPerWorker(options);
     const q = async.queue(processQueueItem, options.workers);
     queueIds(q);

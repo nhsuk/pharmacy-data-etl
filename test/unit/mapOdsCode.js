@@ -2,7 +2,8 @@ const chai = require('chai');
 
 const mapOdsCode = require('../../app/lib/mappers/mapOdsCode');
 const rawAll = require('../resources/all-page-1.json');
-const rawSingle = require('../resources/all-one-pharmacy.json');
+const rawSingleAll = require('../resources/all-one-pharmacy.json');
+const rawSingleModified = require('../resources/modified-one-pharmacy.json');
 const rawSingleNoId = require('../resources/all-one-pharmacy-no-odscode.json');
 
 const expect = chai.expect;
@@ -32,10 +33,16 @@ describe('ODS code mapper', () => {
     expect(odsCodes.length).to.equal(0);
   });
 
-  it('should read ODS code from single summary result', () => {
-    const id = mapOdsCode.fromSummary(rawSingle);
+  it('should read ODS code from all record', () => {
+    const id = mapOdsCode.fromSummary(rawSingleAll);
     expect(id).to.exist;
     expect(id).to.equal('FJA60');
+  });
+
+  it('should read ODS code from modified since record', () => {
+    const id = mapOdsCode.fromSummary(rawSingleModified);
+    expect(id).to.exist;
+    expect(id).to.equal('FRA14');
   });
 
   it('should gracefully handle missing ODS code', () => {

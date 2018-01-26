@@ -62,6 +62,7 @@
     "async": "^2.5.0",
     "azure-storage": "^2.7.0",
     "google-libphonenumber": "^3.0.3",
+    "moment": "^2.20.1",
     "nhsuk-bunyan-logger": "^1.4.1",
     "node-schedule": "^1.2.5",
     "require-environment-variables": "^1.1.2",
