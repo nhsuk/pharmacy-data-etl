@@ -5,9 +5,18 @@ const config = require('../config');
 const ALL_TYPE = 'all';
 
 let ids = [];
+let lastRunDate;
 let failedIds = {};
 let cache = {};
 let idKey = '_id';
+
+function setLastRunDate(date) {
+  lastRunDate = date;
+}
+
+function getLastRunDate() {
+  return lastRunDate;
+}
 
 function setIdKey(key) {
   idKey = key;
@@ -22,6 +31,10 @@ function addRecord(record) {
   return record;
 }
 
+function deleteRecord(id) {
+  delete cache[id];
+}
+
 function getRecords() {
   return Object.values(cache);
 }
@@ -32,6 +45,10 @@ function getRecord(id) {
 
 function getIds() {
   return ids;
+}
+
+function clearIds() {
+  ids = [];
 }
 
 function getFailedIds() {
@@ -80,6 +97,7 @@ function saveState() {
 function clearState() {
   ids = [];
   cache = {};
+  lastRunDate = undefined;
   clearFailedIds();
   saveState();
 }
@@ -114,12 +132,16 @@ loadState();
 
 module.exports = {
   ALL_TYPE,
+  setLastRunDate,
+  getLastRunDate,
   setIdKey,
   getIds,
   addIds,
+  clearIds,
   getRecord,
   getRecords,
   addRecord,
+  deleteRecord,
   saveRecords,
   saveSummary,
   addFailedId,

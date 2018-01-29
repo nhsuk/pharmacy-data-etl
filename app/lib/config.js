@@ -1,4 +1,7 @@
+const version = require('../../package').version;
+
 const config = {
+  version,
   hitsPerHour: process.env.HITS_PER_HOUR || 20000,
   saveEvery: 100,
   outputDir: './output',

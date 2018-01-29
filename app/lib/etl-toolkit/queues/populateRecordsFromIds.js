@@ -36,7 +36,7 @@ function savePeriodically() {
 function processQueueItem(task, callback) {
   count += 1;
   if (!alwaysOverwrite && pageParsed(task.id)) {
-    log.info(`skipping ${task.id}, already loaded`);
+    // log.info(`skipping ${task.id}, already loaded`);
     callback();
   } else {
     savePeriodically();

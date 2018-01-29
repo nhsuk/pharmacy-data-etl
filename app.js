@@ -1,3 +1,3 @@
-const etl = require('./app/lib/incrementalEtl');
+const etl = require('./app/lib/smartEtl');
 
 etl.start();
