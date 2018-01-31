@@ -12,7 +12,7 @@ const getPharmacy = require('./actions/getPharmacy');
 const log = require('./logger');
 const uploadOutputToAzure = require('./uploadOutputToAzure');
 
-const datePattern = /pharmacy-seed-ids-(\d+).json/i;
+const datePattern = /.*pharmacy-seed-ids-(\d+).json/i;
 
 const RECORD_KEY = 'identifier';
 const WORKERS = 1;
@@ -20,56 +20,50 @@ let resolvePromise;
 
 etlStore.setIdKey(RECORD_KEY);
 
-function getDate(url) {
-  const match = datePattern.exec(url);
+function getDate(filename) {
+  const match = datePattern.exec(filename);
   if (match && match.length === 2) {
     return match[1];
   }
   return undefined;
 }
-function sortByDateDesc(first, second) {
-  const a = moment(first.lastModified);
-  const b = moment(second.lastModified);
-  if (a.isBefore(b)) {
-    return 1;
-  }
-  if (b.isBefore(a)) {
-    return -1;
-  }
-  return 0;
+
+function getPrefix() {
+  // prevent dev from over-writing production azure blob
+  return process.env.NODE_ENV === 'production' ? '' : 'dev-';
 }
 
-async function getLastScanBlob() {
-  return (await azureService.listBlobs())
-    .filter(b => b.name.startsWith('pharmacy-data-') && b.name.endsWith(`${config.version}.json`))
-    .sort(sortByDateDesc)[0];
+async function getLatestScanBlob() {
+  const filter = b => b.name.startsWith(`${getPrefix()}pharmacy-data-`) && b.name.endsWith(`${config.version}.json`);
+  return azureService.getLatestBlob(filter);
 }
 
-async function getLastSeedBlob() {
-  return (await azureService.listBlobs())
-    .filter(b => b.name.startsWith('pharmacy-seed-ids-'))
-    .sort(sortByDateDesc)[0];
+async function getLatestSeedBlob() {
+  const filter = b => b.name.startsWith(`${getPrefix()}pharmacy-seed-ids-`);
+  return azureService.getLatestBlob(filter);
 }
 
 async function loadLatestEtlData() {
-  const lastScan = await getLastScanBlob();
+  const lastScan = await getLatestScanBlob();
   if (lastScan) {
-    // if current version save to output/pharmacy-data.json;
+    log.info(`Latest Scan data file retrieved ${lastScan.name}`);
     await azureService.downloadFromAzure('./output/pharmacy-data.json', lastScan.name);
-    fsHelper.loadJsonSync('pharmacy-data').map(r => etlStore.addRecord(r));
+    fsHelper.loadJsonSync('pharmacy-data').map(etlStore.addRecord);
     return moment(lastScan.lastModified);
   }
   return undefined;
 }
 
 async function loadLatestIDList() {
-  const seedBlob = await getLastSeedBlob();
+  const seedBlob = await getLatestSeedBlob();
   if (seedBlob) {
+    log.info(`Latest ID file retrieved ${seedBlob.name}`);
     const seedTimestamp = getDate(seedBlob.name);
     const seedDate = moment(seedTimestamp, 'YYYYMMDD');
     etlStore.setLastRunDate(seedDate);
     await azureService.downloadFromAzure('./output/seed-ids.json', seedBlob.name);
     etlStore.addIds(fsHelper.loadJsonSync('seed-ids'));
+    log.info(`Total IDs: ${etlStore.getIds().length}`);
   } else {
     throw Error('unable to retrieve ID list');
   }
@@ -103,23 +97,30 @@ async function getTotalModifiedSincePages(lastScanDate) {
   return mapTotalPages(page);
 }
 
-async function smartEtl() {
-  etlStore.clearState();
-  await loadLatestIDList();
-  log.info(etlStore.getIds().length);
-  await loadLatestEtlData();
-  // read IDs updated since snapshot timestamp
+async function clearUpdatedRecords() {
   const totalChangedPages = await getTotalModifiedSincePages(etlStore.getLastRunDate());
   log.info(`${totalChangedPages} pages of modified records since ${etlStore.getLastRunDate()}`);
-  etlStore.clearIds();
+  let changeCount = 0;
   for (let page = 1; page <= totalChangedPages; page++) {
     // eslint-disable-next-line no-await-in-loop
     const pageIds = await getModifiedOdsCodes(etlStore.getLastRunDate(), page);
     etlStore.addIds(pageIds);
+    pageIds.forEach(etlStore.deleteRecord);
+    changeCount += pageIds.length;
   }
-  log.info(`Refreshing ${etlStore.getIds().length} records`);
-  // run scan of IDs not in etl store
-  startPopulateRecordsFromIdsQueue();
+  log.info(`${changeCount} records modified since ${etlStore.getLastRunDate()}`);
+}
+
+async function smartEtl() {
+  try {
+    etlStore.clearState();
+    await loadLatestIDList();
+    await loadLatestEtlData();
+    await clearUpdatedRecords();
+    startPopulateRecordsFromIdsQueue();
+  } catch (ex) {
+    console.log(ex);
+  }
 }
 
 module.exports = {

@@ -84,8 +84,14 @@ function addFailedId(id, area, message) {
   return id;
 }
 
+function addIfNew(id) {
+  if (ids.indexOf(id) < 0) {
+    ids.push(id);
+  }
+}
+
 function addIds(idList) {
-  ids = ids.concat(idList);
+  idList.map(addIfNew);
   return ids;
 }
 

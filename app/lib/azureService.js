@@ -1,5 +1,5 @@
 const azure = require('azure-storage');
-
+const moment = require('moment');
 const config = require('./config.js');
 
 const blobSvc = azure.createBlobService();
@@ -58,10 +58,28 @@ function deleteFromAzure(name) {
     });
   });
 }
+function sortByDateDesc(first, second) {
+  const a = moment(first.lastModified);
+  const b = moment(second.lastModified);
+  if (a.isBefore(b)) {
+    return 1;
+  }
+  if (b.isBefore(a)) {
+    return -1;
+  }
+  return 0;
+}
+
+async function getLatestBlob(filter) {
+  return (await listBlobs())
+    .filter(filter)
+    .sort(sortByDateDesc)[0];
+}
 
 module.exports = {
   uploadToAzure,
   downloadFromAzure,
   deleteFromAzure,
   listBlobs,
+  getLatestBlob
 };
