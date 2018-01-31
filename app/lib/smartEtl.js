@@ -119,7 +119,7 @@ async function smartEtl() {
     await clearUpdatedRecords();
     startPopulateRecordsFromIdsQueue();
   } catch (ex) {
-    console.log(ex);
+    log.error(ex);
   }
 }
 
