@@ -2,6 +2,7 @@ const nock = require('nock');
 const fs = require('fs');
 
 const etl = require('../../app/lib/etl');
+const etlStore = require('../../app/lib/etl-toolkit/etlStore');
 const config = require('../../app/lib/config');
 
 function readFile(path) {
@@ -17,12 +18,17 @@ function stubResults(filePath) {
     .reply(200, stubbedData);
 }
 
+beforeEach(() => {
+  etlStore.clearState();
+});
+
 function stubNoResults() {
   stubResults('test/resources/zero-pages.xml');
 }
 
 function stubOnePageOfResults() {
   stubResults('test/resources/one-page.xml');
+  etlStore.clearState();
 }
 
 describe('ETL', function test() {

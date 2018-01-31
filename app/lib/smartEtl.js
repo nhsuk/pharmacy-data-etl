@@ -43,32 +43,6 @@ async function getLatestSeedBlob() {
   return azureService.getLatestBlob(filter);
 }
 
-async function loadLatestEtlData() {
-  const lastScan = await getLatestScanBlob();
-  if (lastScan) {
-    log.info(`Latest Scan data file retrieved ${lastScan.name}`);
-    await azureService.downloadFromAzure('./output/pharmacy-data.json', lastScan.name);
-    fsHelper.loadJsonSync('pharmacy-data').map(etlStore.addRecord);
-    return moment(lastScan.lastModified);
-  }
-  return undefined;
-}
-
-async function loadLatestIDList() {
-  const seedBlob = await getLatestSeedBlob();
-  if (seedBlob) {
-    log.info(`Latest ID file retrieved ${seedBlob.name}`);
-    const seedTimestamp = getDate(seedBlob.name);
-    const seedDate = moment(seedTimestamp, 'YYYYMMDD');
-    etlStore.setLastRunDate(seedDate);
-    await azureService.downloadFromAzure('./output/seed-ids.json', seedBlob.name);
-    etlStore.addIds(fsHelper.loadJsonSync('seed-ids'));
-    log.info(`Total IDs: ${etlStore.getIds().length}`);
-  } else {
-    throw Error('unable to retrieve ID list');
-  }
-}
-
 function clearState() {
   populateIdListQueue.clearState();
   etlStore.clearState();
@@ -83,6 +57,12 @@ async function etlComplete() {
     resolvePromise();
   }
 }
+
+async function getTotalModifiedSincePages(lastScanDate) {
+  const page = await syndicationService.getModifiedSincePage(lastScanDate, 1);
+  return mapTotalPages(page);
+}
+
 function startPopulateRecordsFromIdsQueue() {
   const options = {
     workers: WORKERS,
@@ -90,11 +70,6 @@ function startPopulateRecordsFromIdsQueue() {
     populateRecordAction: getPharmacy
   };
   populateRecordsFromIdsQueue.start(options);
-}
-
-async function getTotalModifiedSincePages(lastScanDate) {
-  const page = await syndicationService.getModifiedSincePage(lastScanDate, 1);
-  return mapTotalPages(page);
 }
 
 async function clearUpdatedRecords() {
@@ -109,6 +84,32 @@ async function clearUpdatedRecords() {
     changeCount += pageIds.length;
   }
   log.info(`${changeCount} records modified since ${etlStore.getLastRunDate()}`);
+}
+
+async function loadLatestEtlData() {
+  const lastScan = await getLatestScanBlob();
+  if (lastScan) {
+    log.info(`Latest Scan data file retrieved '${lastScan.name}'`);
+    await azureService.downloadFromAzure('./output/pharmacy-data.json', lastScan.name);
+    fsHelper.loadJsonSync('pharmacy-data').map(etlStore.addRecord);
+    return moment(lastScan.lastModified);
+  }
+  return undefined;
+}
+
+async function loadLatestIDList() {
+  const seedBlob = await getLatestSeedBlob();
+  if (seedBlob) {
+    log.info(`Latest ID file retrieved '${seedBlob.name}'`);
+    const seedTimestamp = getDate(seedBlob.name);
+    const seedDate = moment(seedTimestamp, 'YYYYMMDD');
+    etlStore.setLastRunDate(seedDate);
+    await azureService.downloadFromAzure('./output/seed-ids.json', seedBlob.name);
+    etlStore.addIds(fsHelper.loadJsonSync('seed-ids'));
+    log.info(`Total IDs: ${etlStore.getIds().length}`);
+  } else {
+    throw Error('unable to retrieve ID list');
+  }
 }
 
 async function smartEtl() {
