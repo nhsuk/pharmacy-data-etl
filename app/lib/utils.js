@@ -9,7 +9,12 @@ function getNested(obj, key) {
   }, obj);
 }
 
+function getFilePrefix() {
+  // prevent dev and test from over-writing production azure blob
+  return process.env.NODE_ENV === 'production' ? '' : `${process.env.UPLOAD_PREFIX || 'dev'}-`;
+}
 module.exports = {
   getAttribute,
   getNested,
+  getFilePrefix
 };

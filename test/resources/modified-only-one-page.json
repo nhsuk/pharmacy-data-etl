@@ -1,0 +1,186 @@
+{
+  "feed": {
+    "$": {
+      "xmlns:s": "http://syndication.nhschoices.nhs.uk/services",
+      "xmlns": "http://www.w3.org/2005/Atom"
+    },
+    "title": {
+      "_": "NHS Choices - Organisation Search Results",
+      "$": {
+        "type": "text"
+      }
+    },
+    "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/modifiedsince/2018/2/1",
+    "rights": {
+      "_": "© Crown Copyright 2009",
+      "$": {
+        "type": "text"
+      }
+    },
+    "updated": "2018-02-01T10:35:27Z",
+    "category": {
+      "$": {
+        "term": "Search"
+      }
+    },
+    "logo": "http://www.nhs.uk/nhscwebservices/documents/logo1.jpg",
+    "author": {
+      "name": "NHS Choices",
+      "uri": "http://www.nhs.uk",
+      "email": "webservices@nhschoices.nhs.uk"
+    },
+    "link": {
+      "$": {
+        "rel": "self",
+        "type": "application/xml",
+        "title": "NHS Choices - Organisation Search Results",
+        "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/modifiedsince/2018/2/1?apikey=bbccdd"
+      }
+    },
+    "tracking": {
+      "_": "<img style=\"border: 0; width: 1px; height: 1px;\" alt=\"\" src=\"http://statse.webtrendslive.com/dcss9yzisf9xjyg74mgbihg8p_8d2u/njs.gif?dcsuri=/organisations%2fpharmacies%2fmodifiedsince%2f2018%2f2%2f1&amp;wt.js=no&amp;wt.cg_n=syndication\"/>",
+      "$": {
+        "xmlns": "http://syndication.nhschoices.nhs.uk/services"
+      }
+    },
+    "complete": {
+      "$": {
+        "xmlns": "http://purl.org/syndication/history/1.0"
+      }
+    },
+    "entry": [
+      {
+        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/35095",
+        "title": {
+          "_": "Elmswell Pharmacy",
+          "$": {
+            "type": "text"
+          }
+        },
+        "updated": "2018-02-01T09:19:55Z",
+        "link": {
+          "$": {
+            "rel": "self",
+            "title": "Elmswell Pharmacy",
+            "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/35095?apikey=bbccdd"
+          }
+        },
+        "content": {
+          "$": {
+            "type": "application/xml"
+          },
+          "organisationSummary": {
+            "name": "Elmswell Pharmacy",
+            "odsCode": "FVC72",
+            "address": {
+              "addressLine": [
+                "Unit 1 Cattlepens",
+                "Station Road",
+                "Elmswell"
+              ],
+              "postcode": "IP30 9HD"
+            },
+            "contact": {
+              "$": {
+                "type": "General"
+              },
+              "telephone": "01359 242868"
+            },
+            "geographicCoordinates": {
+              "longitude": "0.914525389671326",
+              "latitude": "52.2385215759277"
+            }
+          }
+        }
+      },
+      {
+        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/33537",
+        "title": {
+          "_": "Masters Pharmacy",
+          "$": {
+            "type": "text"
+          }
+        },
+        "updated": "2018-02-01T09:45:11Z",
+        "link": {
+          "$": {
+            "rel": "self",
+            "title": "Masters Pharmacy",
+            "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/33537?apikey=bbccdd"
+          }
+        },
+        "content": {
+          "$": {
+            "type": "application/xml"
+          },
+          "organisationSummary": {
+            "name": "Masters Pharmacy",
+            "odsCode": "FQR61",
+            "address": {
+              "addressLine": [
+                "176 Shooters Hill Road",
+                "Blackheath",
+                "London"
+              ],
+              "postcode": "SE3 8RP"
+            },
+            "contact": {
+              "$": {
+                "type": "General"
+              },
+              "telephone": "020 88561104"
+            },
+            "geographicCoordinates": {
+              "longitude": "0.0342838317155838",
+              "latitude": "51.4745483398438"
+            }
+          }
+        }
+      },
+      {
+        "id": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/34969",
+        "title": {
+          "_": "New Park Pharmacy",
+          "$": {
+            "type": "text"
+          }
+        },
+        "updated": "2018-02-01T09:40:58Z",
+        "link": {
+          "$": {
+            "rel": "self",
+            "title": "New Park Pharmacy",
+            "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/34969?apikey=bbccdd"
+          }
+        },
+        "content": {
+          "$": {
+            "type": "application/xml"
+          },
+          "organisationSummary": {
+            "name": "New Park Pharmacy",
+            "odsCode": "FV549",
+            "address": {
+              "addressLine": [
+                "85 New Park Road",
+                "Brixton",
+                "London"
+              ],
+              "postcode": "SW2 4ES"
+            },
+            "contact": {
+              "$": {
+                "type": "General"
+              },
+              "telephone": "020 867 46070"
+            },
+            "geographicCoordinates": {
+              "longitude": "-0.127845972776413",
+              "latitude": "51.4471054077148"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

@@ -6,6 +6,7 @@ const config = {
   saveEvery: 100,
   outputDir: './output',
   outputFile: 'pharmacy-data',
+  idListFile: 'ids',
   containerName: process.env.CONTAINER_NAME || 'etl-output',
   orgApiUrl: 'https://api.nhs.uk/organisations',
   syndicationApiUrl: 'https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies',

@@ -96,7 +96,7 @@ function addIds(idList) {
 }
 
 function saveState() {
-  fsHelper.saveJsonSync(ids, 'ids');
+  fsHelper.saveJsonSync(ids, config.idListFile);
   fsHelper.saveJsonSync(cache, 'cache');
 }
 
@@ -109,7 +109,7 @@ function clearState() {
 }
 
 function loadState() {
-  ids = fsHelper.loadJsonSync('ids') || [];
+  ids = fsHelper.loadJsonSync(config.idListFile) || [];
   cache = fsHelper.loadJsonSync('cache') || {};
 }
 
@@ -122,6 +122,7 @@ function writeStatus() {
 function saveRecords() {
   writeStatus();
   fsHelper.saveJsonSync(getRecords(), config.outputFile);
+  fsHelper.saveJsonSync(getIds(), config.idListFile);
 }
 
 function saveSummary() {

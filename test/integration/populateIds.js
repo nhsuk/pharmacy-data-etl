@@ -60,7 +60,7 @@ describe('Populate ID queue', () => {
     populateIds.start(options);
   });
 
-  it('should ignore pages already scanned etlStore with loaded ids', (done) => {
+  it('should ignore pages already scanned', (done) => {
     const queueComplete = () => {
       assertEtlStore();
       done();
@@ -69,7 +69,7 @@ describe('Populate ID queue', () => {
     const options = {
       workers: 1,
       totalPages: 2,
-      getIdsAction,
+      getIdsAction: () => { done('should not have been called'); },
       queueComplete,
     };
 

@@ -13,11 +13,19 @@ function getMatchedNumber(url, pattern) {
 function getPageCount(url) {
   return getMatchedNumber(url, pageCountPattern);
 }
+
 function matchLastPage(link) {
   return utils.getAttribute(link, 'rel') === 'last';
 }
 
+function onlyOneLink(links) {
+  return links.constructor !== Array;
+}
+
 function getTotalPages(links) {
+  if (onlyOneLink(links)) {
+    return 1;
+  }
   const lastPageLink = links.find(matchLastPage);
   if (lastPageLink) {
     return getPageCount(utils.getAttribute(lastPageLink, 'href'));

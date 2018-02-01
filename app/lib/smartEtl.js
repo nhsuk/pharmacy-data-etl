@@ -1,7 +1,5 @@
-const moment = require('moment');
 const etlStore = require('./etl-toolkit/etlStore');
-const fsHelper = require('./fsHelper');
-const azureService = require('./azureService');
+const dataService = require('./dataService');
 const config = require('./config');
 const syndicationService = require('./syndicationService');
 const mapTotalPages = require('./mappers/mapTotalPages');
@@ -12,36 +10,11 @@ const getPharmacy = require('./actions/getPharmacy');
 const log = require('./logger');
 const uploadOutputToAzure = require('./uploadOutputToAzure');
 
-const datePattern = /.*pharmacy-seed-ids-(\d+).json/i;
-
 const RECORD_KEY = 'identifier';
 const WORKERS = 1;
 let resolvePromise;
 
 etlStore.setIdKey(RECORD_KEY);
-
-function getDate(filename) {
-  const match = datePattern.exec(filename);
-  if (match && match.length === 2) {
-    return match[1];
-  }
-  return undefined;
-}
-
-function getPrefix() {
-  // prevent dev from over-writing production azure blob
-  return process.env.NODE_ENV === 'production' ? '' : 'dev-';
-}
-
-async function getLatestScanBlob() {
-  const filter = b => b.name.startsWith(`${getPrefix()}pharmacy-data-`) && b.name.endsWith(`${config.version}.json`);
-  return azureService.getLatestBlob(filter);
-}
-
-async function getLatestSeedBlob() {
-  const filter = b => b.name.startsWith(`${getPrefix()}pharmacy-seed-ids-`);
-  return azureService.getLatestBlob(filter);
-}
 
 function clearState() {
   populateIdListQueue.clearState();
@@ -87,29 +60,16 @@ async function clearUpdatedRecords() {
 }
 
 async function loadLatestEtlData() {
-  const lastScan = await getLatestScanBlob();
-  if (lastScan) {
-    log.info(`Latest Scan data file retrieved '${lastScan.name}'`);
-    await azureService.downloadFromAzure('./output/pharmacy-data.json', lastScan.name);
-    fsHelper.loadJsonSync('pharmacy-data').map(etlStore.addRecord);
-    return moment(lastScan.lastModified);
-  }
-  return undefined;
+  const { data, date } = await dataService.getLatestData(config.version);
+  data.map(etlStore.addRecord);
+  return date;
 }
 
 async function loadLatestIDList() {
-  const seedBlob = await getLatestSeedBlob();
-  if (seedBlob) {
-    log.info(`Latest ID file retrieved '${seedBlob.name}'`);
-    const seedTimestamp = getDate(seedBlob.name);
-    const seedDate = moment(seedTimestamp, 'YYYYMMDD');
-    etlStore.setLastRunDate(seedDate);
-    await azureService.downloadFromAzure('./output/seed-ids.json', seedBlob.name);
-    etlStore.addIds(fsHelper.loadJsonSync('seed-ids'));
-    log.info(`Total IDs: ${etlStore.getIds().length}`);
-  } else {
-    throw Error('unable to retrieve ID list');
-  }
+  const { ids, date } = await dataService.getLatestIds();
+  etlStore.setLastRunDate(date);
+  etlStore.addIds(ids);
+  log.info(`Total IDs: ${etlStore.getIds().length}`);
 }
 
 async function smartEtl() {
