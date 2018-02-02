@@ -37,12 +37,6 @@ The ETL may also be run locally with `yarn start`
 
 The ETL is re-entrant - if the process is interrupted via `ctrl + c` while the ODS code list is being built, it will skip the pages or records it has already scanned. State is also persisted every 100 records in case of system failure.
 
-To clear the state before starting when running locally run `yarn run start-clear`.
-When running in a container The `start` command will always clear the volumes and start again.
-
-To run the ETL end to end, but with only 3 pages of 90 pharmacies, rather than the full 385+ pages run `scripts/start-small`.
-The small ETL can be run locally with the command `yarn run start-small` or `yarn run start-small-clear` to remove any in progress files.
-
 The output JSON will be an array of objects in the format shown in the [Sample Pharmacy Data](sample-pharmacy-data.json)
 
 ## Environment variables
