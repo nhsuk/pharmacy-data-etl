@@ -4,6 +4,10 @@ const fsHelper = require('./fsHelper');
 const azureService = require('./azureService');
 const utils = require('./utils');
 const log = require('./logger');
+const config = require('./config');
+
+const outputFile = `${config.outputDir}/${config.outputFile}.json`;
+const idListFile = `${config.outputDir}/ids.json`;
 
 const datePattern = /.*pharmacy-seed-ids-(\d+).json/i;
 
@@ -51,7 +55,25 @@ async function getLatestData(version) {
   return { data: [] };
 }
 
+function getDatestamp() {
+  return moment().format('YYYYMMDD');
+}
+
+function getSuffix() {
+  return `-${getDatestamp()}-${config.version}.json`;
+}
+
+async function uploadData() {
+  log.info('Saving date stamped version of ID list in Azure');
+  await azureService.uploadToAzure(idListFile, `${utils.getFilePrefix()}pharmacy-seed-ids-${getDatestamp()}.json`);
+  log.info(`Overwriting '${config.outputFile}' in Azure`);
+  await azureService.uploadToAzure(outputFile, `${utils.getFilePrefix()}${config.outputFile}.json`);
+  log.info(`Saving date stamped version of '${config.outputFile}' in Azure`);
+  await azureService.uploadToAzure(outputFile, `${utils.getFilePrefix()}${config.outputFile}${getSuffix()}`);
+}
+
 module.exports = {
   getLatestIds,
   getLatestData,
+  uploadData
 };

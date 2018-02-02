@@ -11,7 +11,7 @@ function getNested(obj, key) {
 
 function getFilePrefix() {
   // prevent dev and test from over-writing production azure blob
-  return process.env.NODE_ENV === 'production' ? '' : `${process.env.UPLOAD_PREFIX || 'dev'}-`;
+  return process.env.NODE_ENV === 'production' ? '' : 'dev-';
 }
 
 function asArray(obj) {

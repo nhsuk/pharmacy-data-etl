@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "coverage-check": "istanbul check-coverage --config .istanbul.yml",
-    "coverage-generate": "UPLOAD_PREFIX=test yarn istanbul cover -- _mocha -- --recursive test",
+    "coverage-generate": "NODE_ENV=test yarn istanbul cover -- _mocha -- --recursive test",
     "coverage-upload-coveralls": "cat ./coverage/lcov.info | coveralls",
     "git-hook": "yarn lint && yarn coverage-generate && yarn coverage-check",
     "istanbul": "NODE_ENV=test istanbul",
@@ -14,10 +14,10 @@
     "precommit": "yarn git-hook",
     "prepush": "yarn git-hook && yarn snyk test",
     "start": "node schedule.js",
-    "test": "UPLOAD_PREFIX=test mocha --recursive test",
+    "test": "NODE_ENV=test mocha --recursive test",
     "test-ci": "yarn lint && yarn coverage-generate && yarn coverage-check && yarn coverage-upload-coveralls",
-    "test-integration": "UPLOAD_PREFIX=test mocha --recursive test/integration",
-    "test-unit": "UPLOAD_PREFIX=test mocha --recursive test/unit",
+    "test-integration": "NODE_ENV=test mocha --recursive test/integration",
+    "test-unit": "NODE_ENV=test mocha --recursive test/unit",
     "test-watch": "yarn test --watch --reporter min",
     "test-watch-integration": "yarn test-integration --watch --reporter min",
     "test-watch-unit": "yarn test-unit --watch --reporter min"

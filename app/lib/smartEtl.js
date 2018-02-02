@@ -7,7 +7,6 @@ const populateRecordsFromIdsQueue = require('./etl-toolkit/queues/populateRecord
 const getModifiedOdsCodes = require('./actions/getModifiedOdsCodes');
 const getPharmacy = require('./actions/getPharmacy');
 const log = require('./logger');
-const uploadOutputToAzure = require('./uploadOutputToAzure');
 
 const RECORD_KEY = 'identifier';
 const WORKERS = 1;
@@ -24,7 +23,7 @@ function clearState() {
 async function etlComplete() {
   etlStore.saveRecords();
   etlStore.saveSummary();
-  await uploadOutputToAzure();
+  await dataService.uploadData();
   if (resolvePromise) {
     resolvePromise();
   }
@@ -60,6 +59,9 @@ async function clearUpdatedRecords() {
 
 async function loadLatestEtlData() {
   const { data, date } = await dataService.getLatestData(config.version);
+  if (etlStore.getLastRunDate() > date) {
+    etlStore.setLastRunDate(date);
+  }
   data.map(etlStore.addRecord);
   return date;
 }
@@ -73,20 +75,21 @@ async function loadLatestIDList() {
 
 async function smartEtl(dataServiceIn) {
   dataService = dataServiceIn;
-  try {
-    clearState();
-    await loadLatestIDList();
-    await loadLatestEtlData();
-    await clearUpdatedRecords();
-    startPopulateRecordsFromIdsQueue();
-  } catch (ex) {
-    log.error(ex);
-  }
+  clearState();
+  await loadLatestIDList();
+  await loadLatestEtlData();
+  await clearUpdatedRecords();
+  startPopulateRecordsFromIdsQueue();
 }
 
 function start(dataServiceIn) {
-  return new Promise((resolve) => {
-    smartEtl(dataServiceIn);
+  return new Promise((resolve, reject) => {
+    try {
+      smartEtl(dataServiceIn);
+    } catch (ex) {
+      log.error(ex);
+      reject(ex);
+    }
     resolvePromise = () => {
       resolve();
     };
