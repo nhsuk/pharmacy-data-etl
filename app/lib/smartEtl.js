@@ -63,7 +63,6 @@ async function loadLatestEtlData() {
     etlStore.setLastRunDate(date);
   }
   data.map(etlStore.addRecord);
-  return date;
 }
 
 async function loadLatestIDList() {

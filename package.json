@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "coverage-check": "istanbul check-coverage --config .istanbul.yml",
-    "coverage-generate": "NODE_ENV=test yarn istanbul cover -- _mocha -- --recursive test",
+    "coverage-generate": "yarn istanbul cover -- _mocha -- --recursive test",
     "coverage-upload-coveralls": "cat ./coverage/lcov.info | coveralls",
     "git-hook": "yarn lint && yarn coverage-generate && yarn coverage-check",
     "istanbul": "NODE_ENV=test istanbul",

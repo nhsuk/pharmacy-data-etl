@@ -8,6 +8,7 @@ const config = require('./config');
 
 const outputFile = `${config.outputDir}/${config.outputFile}.json`;
 const idListFile = `${config.outputDir}/ids.json`;
+const summaryFile = `${config.outputDir}/summary.json`;
 
 const datePattern = /.*pharmacy-seed-ids-(\d+).json/i;
 
@@ -19,20 +20,20 @@ function getDate(filename) {
   return undefined;
 }
 
-async function getLatestScanBlob(version) {
+async function getLatestDataBlob(version) {
   const filter = b => b.name.startsWith(`${utils.getFilePrefix()}pharmacy-data-`) && b.name.endsWith(`${version}.json`);
   return azureService.getLatestBlob(filter);
 }
 
-async function getLatestSeedBlob() {
+async function getLatestSeedIdsBlob() {
   const filter = b => b.name.startsWith(`${utils.getFilePrefix()}pharmacy-seed-ids-`);
   return azureService.getLatestBlob(filter);
 }
 
 async function getLatestIds() {
-  const seedBlob = await getLatestSeedBlob();
+  const seedBlob = await getLatestSeedIdsBlob();
   if (seedBlob) {
-    log.info(`Latest ID file retrieved '${seedBlob.name}'`);
+    log.info(`Latest Pharmacy seed IDs file retrieved '${seedBlob.name}'`);
     const seedTimestamp = getDate(seedBlob.name);
     const date = moment(seedTimestamp, 'YYYYMMDD');
     await azureService.downloadFromAzure('./output/seed-ids.json', seedBlob.name);
@@ -43,15 +44,16 @@ async function getLatestIds() {
 }
 
 async function getLatestData(version) {
-  const lastScan = await getLatestScanBlob(version);
+  const lastScan = await getLatestDataBlob(version);
   if (lastScan) {
-    log.info(`Latest Scan data file retrieved '${lastScan.name}'`);
+    log.info(`Latest pharmacy data file '${lastScan.name}' identified`);
     await azureService.downloadFromAzure('./output/pharmacy-data.json', lastScan.name);
+    log.info(`Latest pharmacy data file '${lastScan.name}' dowloaded`);
     const data = fsHelper.loadJsonSync('pharmacy-data');
     const date = moment(lastScan.lastModified);
     return { data, date };
   }
-  log.info('unable to retrieve data');
+  log.info(`unable to retrieve data, no data available for release ${version}?`);
   return { data: [] };
 }
 
@@ -70,6 +72,8 @@ async function uploadData() {
   await azureService.uploadToAzure(outputFile, `${utils.getFilePrefix()}${config.outputFile}.json`);
   log.info(`Saving date stamped version of '${config.outputFile}' in Azure`);
   await azureService.uploadToAzure(outputFile, `${utils.getFilePrefix()}${config.outputFile}${getSuffix()}`);
+  log.info('Saving summary file in Azure');
+  await azureService.uploadToAzure(summaryFile, `${utils.getFilePrefix()}summary${getSuffix()}`);
 }
 
 module.exports = {

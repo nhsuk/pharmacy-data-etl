@@ -34,7 +34,7 @@
         "rel": "self",
         "type": "application/xml",
         "title": "NHS Choices - Organisation Search Results",
-        "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/modifiedsince/2018/2/1?apikey=bbccdd"
+        "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/modifiedsince/2018/2/1?apikey=test"
       }
     },
     "tracking": {
@@ -62,7 +62,7 @@
           "$": {
             "rel": "self",
             "title": "Elmswell Pharmacy",
-            "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/35095?apikey=bbccdd"
+            "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/35095?apikey=test"
           }
         },
         "content": {
@@ -106,7 +106,7 @@
           "$": {
             "rel": "self",
             "title": "Masters Pharmacy",
-            "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/33537?apikey=bbccdd"
+            "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/33537?apikey=test"
           }
         },
         "content": {
@@ -150,7 +150,7 @@
           "$": {
             "rel": "self",
             "title": "New Park Pharmacy",
-            "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/34969?apikey=bbccdd"
+            "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/34969?apikey=test"
           }
         },
         "content": {

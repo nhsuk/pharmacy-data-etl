@@ -7,5 +7,5 @@ const dataService = require('./app/lib/azureDataService');
 
 log.info(`Scheduling job with rule '${scheduleConfig.getSchedule()}'`);
 schedule.scheduleJob(scheduleConfig.getSchedule(), () => {
-  etl.start(dataService);
+  etl.start(dataService).catch(err => log.error('Unexpected error in service', err));
 });

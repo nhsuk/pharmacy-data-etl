@@ -76,7 +76,6 @@ describe('ETL', function test() {
     const dataDate = moment('20180125', 'YYYYMMDD');
     stubOneModifiedRecord(dataDate);
     // nock will throw an error if the other date is called, and the test will fail
-
     stubPharmacyLookup('test/resources/org-one.json', 'one');
     const ids = ['one', 'two', 'three'];
     const data = [
@@ -96,7 +95,6 @@ describe('ETL', function test() {
     const dataDate = idsDate;
     stubNoModifiedRecords(dataDate);
     // nock will throw an error if the other date is called, and the test will fail
-
     stubPharmacyLookup('test/resources/org-one.json', 'one');
     const ids = ['one', 'two', 'three'];
     const data = [

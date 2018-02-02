@@ -13,7 +13,7 @@
     <uri>http://www.nhs.uk</uri>
     <email>webservices@nhschoices.nhs.uk</email>
   </author>
-  <link rel="self" type="application/xml" title="NHS Choices - Organisation Search Results" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/modifiedsince/2018/2/1?apikey=bbccdd" />
+  <link rel="self" type="application/xml" title="NHS Choices - Organisation Search Results" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/modifiedsince/2018/2/1?apikey=test" />
   <tracking 
     xmlns="http://syndication.nhschoices.nhs.uk/services">&lt;img style="border: 0; width: 1px; height: 1px;" alt="" src="http://statse.webtrendslive.com/dcss9yzisf9xjyg74mgbihg8p_8d2u/njs.gif?dcsuri=/organisations%2fpharmacies%2fmodifiedsince%2f2018%2f2%2f1&amp;amp;wt.js=no&amp;amp;wt.cg_n=syndication"/&gt;
   </tracking>

@@ -11,6 +11,7 @@ describe('Syndication Service', () => {
     const page = await service.getModifiedSincePage(moment('2018-01-25'), 1);
     expect(page).to.exist;
   });
+
   it('should retrieve pharmacy all page', async function test() {
     this.timeout(5000);
     const page = await service.getPharmacyAllPage(1);

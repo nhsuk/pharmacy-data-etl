@@ -11,7 +11,7 @@
     "$": {
       "rel": "self",
       "title": "Ashtons Late Night Pharmacy",
-      "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/33823?apikey=bbccdd"
+      "href": "http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/33823?apikey=test"
     }
   },
   "content": {
