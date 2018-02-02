@@ -6,9 +6,8 @@ function fromSummary(pharmSummary) {
 }
 
 function fromResults(results) {
-  return results.feed && results.feed.entry &&
-         results.feed.entry.constructor === Array ?
-    results.feed.entry.map(fromSummary) : [];
+  return results.feed && results.feed.entry ?
+    utils.asArray(results.feed.entry).map(fromSummary).filter(o => o !== undefined) : [];
 }
 
 module.exports = {

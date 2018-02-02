@@ -13,8 +13,14 @@ function getFilePrefix() {
   // prevent dev and test from over-writing production azure blob
   return process.env.NODE_ENV === 'production' ? '' : `${process.env.UPLOAD_PREFIX || 'dev'}-`;
 }
+
+function asArray(obj) {
+  return obj.constructor === Array ? obj : [obj];
+}
+
 module.exports = {
   getAttribute,
   getNested,
-  getFilePrefix
+  getFilePrefix,
+  asArray
 };

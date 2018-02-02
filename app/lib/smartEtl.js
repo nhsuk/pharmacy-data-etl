@@ -1,5 +1,4 @@
 const etlStore = require('./etl-toolkit/etlStore');
-const dataService = require('./dataService');
 const config = require('./config');
 const syndicationService = require('./syndicationService');
 const mapTotalPages = require('./mappers/mapTotalPages');
@@ -13,6 +12,7 @@ const uploadOutputToAzure = require('./uploadOutputToAzure');
 const RECORD_KEY = 'identifier';
 const WORKERS = 1;
 let resolvePromise;
+let dataService;
 
 etlStore.setIdKey(RECORD_KEY);
 
@@ -25,7 +25,6 @@ async function etlComplete() {
   etlStore.saveRecords();
   etlStore.saveSummary();
   await uploadOutputToAzure();
-  clearState();
   if (resolvePromise) {
     resolvePromise();
   }
@@ -72,9 +71,10 @@ async function loadLatestIDList() {
   log.info(`Total IDs: ${etlStore.getIds().length}`);
 }
 
-async function smartEtl() {
+async function smartEtl(dataServiceIn) {
+  dataService = dataServiceIn;
   try {
-    etlStore.clearState();
+    clearState();
     await loadLatestIDList();
     await loadLatestEtlData();
     await clearUpdatedRecords();
@@ -84,6 +84,15 @@ async function smartEtl() {
   }
 }
 
+function start(dataServiceIn) {
+  return new Promise((resolve) => {
+    smartEtl(dataServiceIn);
+    resolvePromise = () => {
+      resolve();
+    };
+  });
+}
+
 module.exports = {
-  start: smartEtl
+  start
 };
