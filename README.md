@@ -20,6 +20,11 @@ The output is uploaded to an Azure storage blob, a suitable connection string sh
 For further details see [Azure Blob Storage](https://azure.microsoft.com/en-gb/services/storage/blobs/).
 
 The ETL retrieves the ODS codes for all Pharmacies from the Syndication API, then visits the organisation API to obtain full pharmacy information.
+An initial list of ODS codes is retrieved from Azure storage. The most recently created file beginning `pharmacy-seed-ids` is used as the source of the data.
+If no file is found th ETL will not run. Once the IDs are loaded, the most recent pharmacy data is retrieved from Azure Blob storage for the particular version of the ETL.
+The ETL version is included along with a timestamp to enable a full rescan if the data structure changes. If no file is found, the entire dataset will be rebuilt.
+the `modifiedsince` end point of Syndication will be used to determine any changed or new pharmacies. The oldest date from the ID or the data filenames will be used as the `modified since` date.
+Any pharmacies that has been modified since the ETL previously ran, or are not present in the previous data will be reload from Syndication.
 
 Once the initial scan is complete, failed pharmacies will be revisited. ODS codes for records still failing after the second attempt are listed in a `summary.json` file.
 
@@ -31,7 +36,19 @@ Further details on node-schedule available [here](https://www.npmjs.com/package/
 
 +The scheduler can be completely disabled by setting the `DISABLE_SCHEDULER` variable to `true`. This sets the run date to run once in the future on Jan 1st, 2100.
 
-A successful scrape will result in the file `pharmacy-data.json` being written to the `output` folder. This file will also be uploaded to the Azure storage location specified in the environmental variables. The file will be uploaded twice, once to overwrite the current file at `pharmacy-data.json` and another date-stamped file at `YYYY-MM-DD-pharmacy-data.json`.
+A successful scrape will result in the file `pharmacy-data.json` being written to the `output` folder and to the Azure storage location specified in the environmental variables.
+
+The files uploaded to Azure Blob Storage are:
+
+`summary-YYYYMMDD-VERSION.json`
+
+`pharmacy-seed-ids-YYYYMMDD.json`
+
+`pharmacy-data-YYYYMMDD-VERSION.json`
+
+`pharmacy-data.json`
+
+ where `YYYYMMDD` is the current year, month and date, and `VERSION` is the current version of the ETL as defined in the `package.json`.
 
 The ETL may also be run locally with `yarn start`
 
