@@ -18,9 +18,14 @@ function asArray(obj) {
   return obj.constructor === Array ? obj : [obj];
 }
 
+function getDuplicates(arr) {
+  return arr.filter((value, index, self) => self.indexOf(value) !== index);
+}
+
 module.exports = {
   getAttribute,
   getNested,
   getFilePrefix,
-  asArray
+  asArray,
+  getDuplicates
 };
