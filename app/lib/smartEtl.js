@@ -6,6 +6,7 @@ const populateIdListQueue = require('./etl-toolkit/queues/populateIds');
 const populateRecordsFromIdsQueue = require('./etl-toolkit/queues/populateRecordsFromIds');
 const getModifiedOdsCodes = require('./actions/getModifiedOdsCodes');
 const getPharmacy = require('./actions/getPharmacy');
+const utils = require('./utils');
 const log = require('./logger');
 
 const RECORD_KEY = 'identifier';
@@ -20,9 +21,15 @@ function clearState() {
   etlStore.clearState();
 }
 
+function logStatus() {
+  log.info(`${utils.getDuplicates(etlStore.getIds()).length} duplicate ID`);
+  log.info(`${etlStore.getFailedIds().length} errored records`);
+}
+
 async function etlComplete() {
   etlStore.saveRecords();
   etlStore.saveSummary();
+  logStatus();
   await dataService.uploadData();
   if (resolvePromise) {
     resolvePromise();
