@@ -1,5 +1,3 @@
-const moment = require('moment');
-
 function getAttribute(member, field) {
   return member && member.$ && member.$[field];
 }
@@ -11,17 +9,9 @@ function getNested(obj, key) {
   }, obj);
 }
 
-function getDatestamp() {
-  return moment().format('YYYYMMDD');
-}
-
-function getEnvPrefix() {
-  return process.env.NODE_ENV === 'production' ? '' : 'dev-';
-}
-
 function getFilePrefix() {
   // prevent dev and test from over-writing production azure blob
-  return `${getDatestamp()}-${getEnvPrefix()}`;
+  return process.env.NODE_ENV === 'production' ? '' : 'dev-';
 }
 
 function asArray(obj) {
@@ -33,10 +23,9 @@ function getDuplicates(arr) {
 }
 
 module.exports = {
-  asArray,
   getAttribute,
-  getDuplicates,
-  getEnvPrefix,
-  getFilePrefix,
   getNested,
+  getFilePrefix,
+  asArray,
+  getDuplicates
 };
