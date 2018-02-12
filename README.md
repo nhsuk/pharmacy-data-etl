@@ -16,15 +16,15 @@ Details of registration are available on
 [NHS Choices](http://www.nhs.uk/aboutNHSChoices/professionals/syndication/Pages/Webservices.aspx).
 The application needs the API key available within the environment as the variable `SYNDICATION_API_KEY`.
 
-The output is uploaded to an Azure storage blob, a suitable connection string should be set in the `AZURE_STORAGE_CONNECTION_STRING` variable.
+The output is uploaded to Azure Blob Storage, a suitable connection string should be set in the `AZURE_STORAGE_CONNECTION_STRING` variable.
 For further details see [Azure Blob Storage](https://azure.microsoft.com/en-gb/services/storage/blobs/).
 
 The ETL retrieves the ODS codes for all Pharmacies from the Syndication API, then visits the organisation API to obtain full pharmacy information.
 An initial list of ODS codes is retrieved from Azure storage. The most recently created file beginning `pharmacy-seed-ids` is used as the source of the data.
-If no file is found th ETL will not run. Once the IDs are loaded, the most recent pharmacy data is retrieved from Azure Blob storage for the particular version of the ETL.
+If no file is found the ETL will not run. Once the IDs are loaded, the most recent pharmacy data is retrieved from Azure Blob Storage for the particular version of the ETL.
 The ETL version is included along with a timestamp to enable a full rescan if the data structure changes. If no file is found, the entire dataset will be rebuilt.
-the `modifiedsince` end point of Syndication will be used to determine any changed or new pharmacies. The oldest date from the ID or the data filenames will be used as the `modified since` date.
-Any pharmacies that has been modified since the ETL previously ran, or are not present in the previous data will be reload from Syndication.
+The `modifiedsince` end point of Syndication will be used to determine any changed or new pharmacies. The oldest date from the ID or the data filenames will be used as the `modifiedsince` date.
+Any pharmacies that have been modified since the ETL previously ran, or are not present in the previous data will be reloaded from Syndication.
 
 Once the initial scan is complete, failed pharmacies will be revisited. ODS codes for records still failing after the second attempt are listed in a `summary.json` file.
 
@@ -50,7 +50,7 @@ The files uploaded to Azure Blob Storage are:
 
  where `YYYYMMDD` is the current year, month and date, and `VERSION` is the current version of the ETL as defined in the `package.json`.
 
-The ETL may also be run locally with `yarn start`
+The ETL may also be run locally with `yarn start`.
 
 The ETL is re-entrant - if the process is interrupted via `ctrl + c` while the ODS code list is being built, it will skip the pages or records it has already scanned. State is also persisted every 100 records in case of system failure.
 

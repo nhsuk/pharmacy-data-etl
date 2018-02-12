@@ -10,7 +10,7 @@ const outputFile = `${config.outputDir}/${config.outputFile}.json`;
 const idListFile = `${config.outputDir}/ids.json`;
 const summaryFile = `${config.outputDir}/summary.json`;
 
-const datePattern = /.*pharmacy-seed-ids-(\d+).json/i;
+const datePattern = /(\d+).*pharmacy-seed-ids.json/i;
 
 function getDate(filename) {
   const match = datePattern.exec(filename);
@@ -21,12 +21,12 @@ function getDate(filename) {
 }
 
 async function getLatestDataBlob(version) {
-  const filter = b => b.name.startsWith(`${utils.getFilePrefix()}pharmacy-data-`) && b.name.endsWith(`${version}.json`);
+  const filter = b => b.name.endsWith(`${utils.getEnvPrefix()}pharmacy-data-${version}.json`);
   return azureService.getLatestBlob(filter);
 }
 
 async function getLatestSeedIdsBlob() {
-  const filter = b => b.name.startsWith(`${utils.getFilePrefix()}pharmacy-seed-ids-`);
+  const filter = b => b.name.endsWith(`${utils.getEnvPrefix()}pharmacy-seed-ids.json`);
   return azureService.getLatestBlob(filter);
 }
 
@@ -48,7 +48,7 @@ async function getLatestData(version) {
   if (lastScan) {
     log.info(`Latest pharmacy data file '${lastScan.name}' identified`);
     await azureService.downloadFromAzure('./output/pharmacy-data.json', lastScan.name);
-    log.info(`Latest pharmacy data file '${lastScan.name}' dowloaded`);
+    log.info(`Latest pharmacy data file '${lastScan.name}' downloaded`);
     const data = fsHelper.loadJsonSync('pharmacy-data');
     const date = moment(lastScan.lastModified);
     return { data, date };
@@ -57,23 +57,20 @@ async function getLatestData(version) {
   return { data: [] };
 }
 
-function getDatestamp() {
-  return moment().format('YYYYMMDD');
-}
-
 function getSuffix() {
-  return `-${getDatestamp()}-${config.version}.json`;
+  return `-${config.version}.json`;
 }
 
 async function uploadData() {
+  const prefix = utils.getFilePrefix();
   log.info('Saving date stamped version of ID list in Azure');
-  await azureService.uploadToAzure(idListFile, `${utils.getFilePrefix()}pharmacy-seed-ids-${getDatestamp()}.json`);
+  await azureService.uploadToAzure(idListFile, `${prefix}pharmacy-seed-ids.json`);
   log.info(`Overwriting '${config.outputFile}' in Azure`);
-  await azureService.uploadToAzure(outputFile, `${utils.getFilePrefix()}${config.outputFile}.json`);
+  await azureService.uploadToAzure(outputFile, `${utils.getEnvPrefix()}${config.outputFile}.json`);
   log.info(`Saving date stamped version of '${config.outputFile}' in Azure`);
-  await azureService.uploadToAzure(outputFile, `${utils.getFilePrefix()}${config.outputFile}${getSuffix()}`);
+  await azureService.uploadToAzure(outputFile, `${prefix}${config.outputFile}${getSuffix()}`);
   log.info('Saving summary file in Azure');
-  await azureService.uploadToAzure(summaryFile, `${utils.getFilePrefix()}summary${getSuffix()}`);
+  await azureService.uploadToAzure(summaryFile, `${prefix}summary${getSuffix()}`);
 }
 
 module.exports = {

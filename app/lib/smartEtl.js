@@ -103,5 +103,5 @@ function start(dataServiceIn) {
 }
 
 module.exports = {
-  start
+  start,
 };
