@@ -1,7 +1,7 @@
-const nock = require('nock');
+const chai = require('chai');
 const fs = require('fs');
 const moment = require('moment');
-const chai = require('chai');
+const nock = require('nock');
 
 const expect = chai.expect;
 
@@ -43,12 +43,14 @@ beforeEach(() => {
 
 function stubOneModifiedRecord(date) {
   stubResults('test/resources/one-modified-record.xml', date);
-  etlStore.clearState();
+}
+
+function stubAnotherModifiedRecord(date) {
+  stubResults('test/resources/another-modified-record.xml', date);
 }
 
 function stubNoModifiedRecords(date) {
   stubResults('test/resources/no-modified-records.xml', date);
-  etlStore.clearState();
 }
 
 describe('ETL', function test() {
@@ -74,9 +76,9 @@ describe('ETL', function test() {
   it('if date stamp on data is older than ID list date, should refresh records modified since data date', async () => {
     const idsDate = moment('20180126', 'YYYYMMDD');
     const dataDate = moment('20180125', 'YYYYMMDD');
-    stubOneModifiedRecord(dataDate);
+    stubAnotherModifiedRecord(dataDate);
     // nock will throw an error if the other date is called, and the test will fail
-    stubPharmacyLookup('test/resources/org-one.json', 'one');
+    stubPharmacyLookup('test/resources/org-two.json', 'two');
     const ids = ['one', 'two', 'three'];
     const data = [
       { identifier: ids[0], name: 'One' },
@@ -85,8 +87,8 @@ describe('ETL', function test() {
     ];
 
     await etl.start(mockDataService(ids, data, idsDate, dataDate));
-    expect(etlStore.getRecord('one').name).to.equal('One Updated');
-    expect(etlStore.getRecord('two').name).to.equal('Two');
+    expect(etlStore.getRecord('one').name).to.equal('One');
+    expect(etlStore.getRecord('two').name).to.equal('Two Updated');
     expect(etlStore.getRecord('three').name).to.equal('Three');
   });
 

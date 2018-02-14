@@ -23,9 +23,9 @@ function getDuplicates(arr) {
 }
 
 module.exports = {
-  getAttribute,
-  getNested,
-  getFilePrefix,
   asArray,
-  getDuplicates
+  getAttribute,
+  getDuplicates,
+  getFilePrefix,
+  getNested,
 };

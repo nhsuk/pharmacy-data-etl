@@ -27,8 +27,8 @@
     <link rel="self" title="Masters Pharmacy" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/33537?apikey=test" />
     <content type="application/xml">
       <s:organisationSummary>
-        <s:name>One</s:name>
-        <s:odsCode>one</s:odsCode>
+        <s:name>Two</s:name>
+        <s:odsCode>two</s:odsCode>
         <s:address>
           <s:addressLine>176 Shooters Hill Road</s:addressLine>
           <s:addressLine>Blackheath</s:addressLine>

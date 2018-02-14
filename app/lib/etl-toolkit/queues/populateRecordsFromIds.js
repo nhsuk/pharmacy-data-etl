@@ -49,7 +49,7 @@ function processRetryQueueItem(task, callback) {
 }
 
 function writeDoneLog(id, writeLog) {
-  if (writeLog === true) {
+  if (writeLog) {
     log.info(`${id} done`);
   }
 }

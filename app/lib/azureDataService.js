@@ -1,10 +1,9 @@
-
-const moment = require('moment');
-const fsHelper = require('./fsHelper');
 const azureService = require('./azureService');
-const utils = require('./utils');
-const log = require('./logger');
 const config = require('./config');
+const fsHelper = require('./fsHelper');
+const log = require('./logger');
+const moment = require('moment');
+const utils = require('./utils');
 
 const outputFile = `${config.outputDir}/${config.outputFile}.json`;
 const idListFile = `${config.outputDir}/ids.json`;
@@ -48,7 +47,7 @@ async function getLatestData(version) {
   if (lastScan) {
     log.info(`Latest pharmacy data file '${lastScan.name}' identified`);
     await azureService.downloadFromAzure('./output/pharmacy-data.json', lastScan.name);
-    log.info(`Latest pharmacy data file '${lastScan.name}' dowloaded`);
+    log.info(`Latest pharmacy data file '${lastScan.name}' downloaded`);
     const data = fsHelper.loadJsonSync('pharmacy-data');
     const date = moment(lastScan.lastModified);
     return { data, date };
@@ -77,7 +76,7 @@ async function uploadData() {
 }
 
 module.exports = {
-  getLatestIds,
   getLatestData,
+  getLatestIds,
   uploadData
 };
