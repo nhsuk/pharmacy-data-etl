@@ -11,8 +11,6 @@ services:
       NODE_ENV: production
     labels:
       io.rancher.container.pull_image: always
-    volumes:
-      - pharmacy-etl-output:/code/output
     logging:
       driver: splunk
       options:
@@ -24,6 +22,3 @@ services:
         splunk-verify-connection: "false"
         tag: "{{`{{.ImageName}} {{.Name}} {{.FullID}}`}}"
         splunk-format: json
-
-volumes:
-  pharmacy-etl-output:
