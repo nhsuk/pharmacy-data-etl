@@ -9,7 +9,23 @@ function getNested(obj, key) {
   }, obj);
 }
 
+function getFilePrefix() {
+  // prevent dev and test from over-writing production azure blob
+  return process.env.NODE_ENV === 'production' ? '' : 'dev-';
+}
+
+function asArray(obj) {
+  return obj.constructor === Array ? obj : [obj];
+}
+
+function getDuplicates(arr) {
+  return arr.filter((value, index, self) => self.indexOf(value) !== index);
+}
+
 module.exports = {
+  asArray,
   getAttribute,
+  getDuplicates,
+  getFilePrefix,
   getNested,
 };

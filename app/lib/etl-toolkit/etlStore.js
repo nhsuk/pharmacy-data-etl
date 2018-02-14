@@ -5,9 +5,18 @@ const config = require('../config');
 const ALL_TYPE = 'all';
 
 let ids = [];
+let lastRunDate;
 let failedIds = {};
 let cache = {};
 let idKey = '_id';
+
+function setLastRunDate(date) {
+  lastRunDate = date;
+}
+
+function getLastRunDate() {
+  return lastRunDate;
+}
 
 function setIdKey(key) {
   idKey = key;
@@ -22,6 +31,10 @@ function addRecord(record) {
   return record;
 }
 
+function deleteRecord(id) {
+  delete cache[id];
+}
+
 function getRecords() {
   return Object.values(cache);
 }
@@ -32,6 +45,10 @@ function getRecord(id) {
 
 function getIds() {
   return ids;
+}
+
+function clearIds() {
+  ids = [];
 }
 
 function getFailedIds() {
@@ -67,25 +84,32 @@ function addFailedId(id, area, message) {
   return id;
 }
 
+function addIfNew(id) {
+  if (ids.indexOf(id) < 0) {
+    ids.push(id);
+  }
+}
+
 function addIds(idList) {
-  ids = ids.concat(idList);
+  idList.map(addIfNew);
   return ids;
 }
 
 function saveState() {
-  fsHelper.saveJsonSync(ids, 'ids');
+  fsHelper.saveJsonSync(ids, config.idListFile);
   fsHelper.saveJsonSync(cache, 'cache');
 }
 
 function clearState() {
   ids = [];
   cache = {};
+  lastRunDate = undefined;
   clearFailedIds();
   saveState();
 }
 
 function loadState() {
-  ids = fsHelper.loadJsonSync('ids') || [];
+  ids = fsHelper.loadJsonSync(config.idListFile) || [];
   cache = fsHelper.loadJsonSync('cache') || {};
 }
 
@@ -98,6 +122,7 @@ function writeStatus() {
 function saveRecords() {
   writeStatus();
   fsHelper.saveJsonSync(getRecords(), config.outputFile);
+  fsHelper.saveJsonSync(getIds(), config.idListFile);
 }
 
 function saveSummary() {
@@ -114,19 +139,23 @@ loadState();
 
 module.exports = {
   ALL_TYPE,
-  setIdKey,
-  getIds,
-  addIds,
-  getRecord,
-  getRecords,
-  addRecord,
-  saveRecords,
-  saveSummary,
   addFailedId,
-  saveState,
-  clearState,
+  addIds,
+  addRecord,
   clearFailedIds,
+  clearIds,
+  clearState,
+  deleteRecord,
+  getErorredIds,
   getFailedIds,
   getFailedIdsByType,
-  getErorredIds,
+  getIds,
+  getLastRunDate,
+  getRecord,
+  getRecords,
+  saveRecords,
+  saveState,
+  saveSummary,
+  setIdKey,
+  setLastRunDate,
 };

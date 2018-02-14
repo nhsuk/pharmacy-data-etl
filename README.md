@@ -16,10 +16,15 @@ Details of registration are available on
 [NHS Choices](http://www.nhs.uk/aboutNHSChoices/professionals/syndication/Pages/Webservices.aspx).
 The application needs the API key available within the environment as the variable `SYNDICATION_API_KEY`.
 
-The output is uploaded to an Azure storage blob, a suitable connection string should be set in the `AZURE_STORAGE_CONNECTION_STRING` variable.
+The output is uploaded to Azure Blob Storage, a suitable connection string should be set in the `AZURE_STORAGE_CONNECTION_STRING` variable.
 For further details see [Azure Blob Storage](https://azure.microsoft.com/en-gb/services/storage/blobs/).
 
 The ETL retrieves the ODS codes for all Pharmacies from the Syndication API, then visits the organisation API to obtain full pharmacy information.
+An initial list of ODS codes is retrieved from Azure storage. The most recently created file beginning `pharmacy-seed-ids` is used as the source of the data.
+If no file is found the ETL will not run. Once the IDs are loaded, the most recent pharmacy data is retrieved from Azure Blob Storage for the particular version of the ETL.
+The ETL version is included along with a timestamp to enable a full rescan if the data structure changes. If no file is found, the entire dataset will be rebuilt.
+The `modifiedsince` end point of Syndication will be used to determine any changed or new pharmacies. The oldest date from the ID or the data filenames will be used as the `modifiedsince` date.
+Any pharmacies that have been modified since the ETL previously ran, or are not present in the previous data will be reloaded from Syndication.
 
 Once the initial scan is complete, failed pharmacies will be revisited. ODS codes for records still failing after the second attempt are listed in a `summary.json` file.
 
@@ -31,17 +36,23 @@ Further details on node-schedule available [here](https://www.npmjs.com/package/
 
 +The scheduler can be completely disabled by setting the `DISABLE_SCHEDULER` variable to `true`. This sets the run date to run once in the future on Jan 1st, 2100.
 
-A successful scrape will result in the file `pharmacy-data.json` being written to the `output` folder. This file will also be uploaded to the Azure storage location specified in the environmental variables. The file will be uploaded twice, once to overwrite the current file at `pharmacy-data.json` and another date-stamped file at `YYYY-MM-DD-pharmacy-data.json`.
+A successful scrape will result in the file `pharmacy-data.json` being written to the `output` folder and to the Azure storage location specified in the environmental variables.
 
-The ETL may also be run locally with `yarn start`
+The files uploaded to Azure Blob Storage are:
+
+`summary-YYYYMMDD-VERSION.json`
+
+`pharmacy-seed-ids-YYYYMMDD.json`
+
+`pharmacy-data-YYYYMMDD-VERSION.json`
+
+`pharmacy-data.json`
+
+ where `YYYYMMDD` is the current year, month and date, and `VERSION` is the current version of the ETL as defined in the `package.json`.
+
+The ETL may also be run locally with `yarn start`.
 
 The ETL is re-entrant - if the process is interrupted via `ctrl + c` while the ODS code list is being built, it will skip the pages or records it has already scanned. State is also persisted every 100 records in case of system failure.
-
-To clear the state before starting when running locally run `yarn run start-clear`.
-When running in a container The `start` command will always clear the volumes and start again.
-
-To run the ETL end to end, but with only 3 pages of 90 pharmacies, rather than the full 385+ pages run `scripts/start-small`.
-The small ETL can be run locally with the command `yarn run start-small` or `yarn run start-small-clear` to remove any in progress files.
 
 The output JSON will be an array of objects in the format shown in the [Sample Pharmacy Data](sample-pharmacy-data.json)
 

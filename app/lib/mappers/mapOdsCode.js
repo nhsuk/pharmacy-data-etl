@@ -1,13 +1,13 @@
 const utils = require('../utils');
 
 function fromSummary(pharmSummary) {
-  return utils.getNested(pharmSummary, 'content.organisationSummary.odscode');
+  return utils.getNested(pharmSummary, 'content.organisationSummary.odscode') ||
+         utils.getNested(pharmSummary, 'content.organisationSummary.odsCode');
 }
 
 function fromResults(results) {
-  return results.feed && results.feed.entry &&
-         results.feed.entry.constructor === Array ?
-    results.feed.entry.map(fromSummary) : [];
+  return results.feed && results.feed.entry ?
+    utils.asArray(results.feed.entry).map(fromSummary).filter(o => o !== undefined) : [];
 }
 
 module.exports = {

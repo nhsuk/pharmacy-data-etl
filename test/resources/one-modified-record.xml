@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed 
+  xmlns:s="http://syndication.nhschoices.nhs.uk/services" 
+  xmlns="http://www.w3.org/2005/Atom">
+  <title type="text">NHS Choices - Organisation Search Results</title>
+  <id>http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/modifiedsince/2018/2/1</id>
+  <rights type="text">© Crown Copyright 2009</rights>
+  <updated>2018-02-01T10:43:07Z</updated>
+  <category term="Search" />
+  <logo>http://www.nhs.uk/nhscwebservices/documents/logo1.jpg</logo>
+  <author>
+    <name>NHS Choices</name>
+    <uri>http://www.nhs.uk</uri>
+    <email>webservices@nhschoices.nhs.uk</email>
+  </author>
+  <link rel="self" type="application/xml" title="NHS Choices - Organisation Search Results" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/modifiedsince/2018/2/1?apikey=test" />
+  <tracking 
+    xmlns="http://syndication.nhschoices.nhs.uk/services">&lt;img style="border: 0; width: 1px; height: 1px;" alt="" src="http://statse.webtrendslive.com/dcss9yzisf9xjyg74mgbihg8p_8d2u/njs.gif?dcsuri=/organisations%2fpharmacies%2fmodifiedsince%2f2018%2f2%2f1&amp;amp;wt.js=no&amp;amp;wt.cg_n=syndication"/&gt;
+  </tracking>
+  <complete 
+    xmlns="http://purl.org/syndication/history/1.0">
+  </complete>
+  <entry>
+    <id>http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/33537</id>
+    <title type="text">Masters Pharmacy</title>
+    <updated>2018-02-01T09:45:11Z</updated>
+    <link rel="self" title="Masters Pharmacy" href="http://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies/33537?apikey=test" />
+    <content type="application/xml">
+      <s:organisationSummary>
+        <s:name>One</s:name>
+        <s:odsCode>one</s:odsCode>
+        <s:address>
+          <s:addressLine>176 Shooters Hill Road</s:addressLine>
+          <s:addressLine>Blackheath</s:addressLine>
+          <s:addressLine>London</s:addressLine>
+          <s:postcode>SE3 8RP</s:postcode>
+        </s:address>
+        <s:contact type="General">
+          <s:telephone>020 88561104</s:telephone>
+        </s:contact>
+        <s:geographicCoordinates>
+          <s:longitude>0.0342838317155838</s:longitude>
+          <s:latitude>51.4745483398438</s:latitude>
+        </s:geographicCoordinates>
+      </s:organisationSummary>
+    </content>
+  </entry>
+</feed>

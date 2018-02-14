@@ -20,7 +20,17 @@ function getPharmacyAllPage(page) {
   return apiRequest(url).then(xmlParser).then(rejectHtml);
 }
 
+function datePath(moment) {
+  return `${moment.year()}/${moment.month() + 1}/${moment.date()}`;
+}
+
+function getModifiedSincePage(moment, page) {
+  const url = `${config.syndicationApiUrl}/modifiedsince/${datePath(moment)}.xml?apikey=${API_KEY}&page=${page}`;
+  return apiRequest(url).then(xmlParser).then(rejectHtml);
+}
+
 module.exports = {
   SYNDICATION_HTML_PAGE_ERROR,
   getPharmacyAllPage,
+  getModifiedSincePage,
 };

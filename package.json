@@ -1,6 +1,6 @@
 {
   "name": "pharmacy-data-etl",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "ETL to extract data from Syndication/Organisations and store as JSON",
   "main": "app.js",
   "scripts": {
@@ -14,9 +14,6 @@
     "precommit": "yarn git-hook",
     "prepush": "yarn git-hook && yarn snyk test",
     "start": "node schedule.js",
-    "start-clear": "node schedule.js clear",
-    "start-small": "node schedule.js small",
-    "start-small-clear": "node schedule.js small clear",
     "test": "NODE_ENV=test mocha --recursive test",
     "test-ci": "yarn lint && yarn coverage-generate && yarn coverage-check && yarn coverage-upload-coveralls",
     "test-integration": "NODE_ENV=test mocha --recursive test/integration",
@@ -62,6 +59,7 @@
     "async": "^2.5.0",
     "azure-storage": "^2.7.0",
     "google-libphonenumber": "^3.0.3",
+    "moment": "^2.20.1",
     "nhsuk-bunyan-logger": "^1.4.1",
     "node-schedule": "^1.2.5",
     "require-environment-variables": "^1.1.2",

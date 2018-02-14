@@ -1,3 +1,8 @@
+0.5.0 / 2018-01-15
+==================
+- Use Syndications 'modified since' endpoint to perform incremental updates.
+- Use seed ODS code list and the data from last successful run as basis for next scrape.
+
 0.4.0 / 2018-01-09
 ==================
 - Join Contiguous opening times

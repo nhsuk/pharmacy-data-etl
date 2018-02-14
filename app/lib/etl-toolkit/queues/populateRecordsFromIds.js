@@ -35,12 +35,11 @@ function savePeriodically() {
 function processQueueItem(task, callback) {
   count += 1;
   if (pageParsed(task.id)) {
-    log.info(`skipping ${task.id}, already loaded`);
-    callback();
+    callback(false);
   } else {
     savePeriodically();
     log.info(`Populating ID ${task.id} ${count}/${etlStore.getIds().length}`);
-    limiter(hitsPerWorker, () => populateData(task.id), callback);
+    limiter(hitsPerWorker, () => populateData(task.id), () => callback(true));
   }
 }
 function processRetryQueueItem(task, callback) {
@@ -49,10 +48,16 @@ function processRetryQueueItem(task, callback) {
   limiter(hitsPerWorker, () => populateData(task.id), callback);
 }
 
+function writeDoneLog(id, writeLog) {
+  if (writeLog) {
+    log.info(`${id} done`);
+  }
+}
+
 function addToQueue(ids, q) {
   // remove 'undefined's
   ids.filter(id => id).forEach((id) => {
-    q.push({ id }, () => log.info(`${id} done`));
+    q.push({ id }, writeLog => writeDoneLog(id, writeLog));
   });
 }
 
