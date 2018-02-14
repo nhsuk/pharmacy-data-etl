@@ -48,11 +48,9 @@ The files uploaded to Azure Blob Storage are:
 
 `pharmacy-data.json`
 
- where `YYYYMMDD` is the current year, month and date, and `VERSION` is the current version of the ETL as defined in the `package.json`.
+ where `YYYYMMDD` is the current year, month and date, and `VERSION` is the current major version of the ETL as defined in the `package.json`.
 
 The ETL may also be run locally with `yarn start`.
-
-The ETL is re-entrant - if the process is interrupted via `ctrl + c` while the ODS code list is being built, it will skip the pages or records it has already scanned. State is also persisted every 100 records in case of system failure.
 
 The output JSON will be an array of objects in the format shown in the [Sample Pharmacy Data](sample-pharmacy-data.json)
 

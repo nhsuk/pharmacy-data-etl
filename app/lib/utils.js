@@ -1,7 +1,13 @@
+const config = require('./config');
+
 function getAttribute(member, field) {
   return member && member.$ && member.$[field];
 }
 
+function getMajorVersion() {
+  const parts = config.version.split('.');
+  return `${parts[0]}.${parts[1]}`;
+}
 function getNested(obj, key) {
   // eslint-disable-next-line arrow-body-style
   return key.split('.').reduce((o, x) => {
@@ -27,5 +33,6 @@ module.exports = {
   getAttribute,
   getDuplicates,
   getFilePrefix,
+  getMajorVersion,
   getNested,
 };
