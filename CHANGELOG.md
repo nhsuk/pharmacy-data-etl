@@ -1,4 +1,4 @@
-0.5.1 / 2018-01-15
+0.5.1 / 2018-02-15
 ==================
 - Use Syndications 'modified since' endpoint to perform incremental updates.
 - Use seed ODS code list and the data from last successful run as basis for next scrape.

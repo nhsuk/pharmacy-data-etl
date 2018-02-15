@@ -64,7 +64,7 @@ async function clearUpdatedRecords() {
 }
 
 async function loadLatestEtlData() {
-  const { data, date } = await dataService.getLatestData(utils.getMajorVersion());
+  const { data, date } = await dataService.getLatestData(utils.getMajorMinorVersion());
   if (etlStore.getLastRunDate() > date) {
     etlStore.setLastRunDate(date);
   }

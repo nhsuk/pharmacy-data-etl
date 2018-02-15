@@ -4,7 +4,7 @@ function getAttribute(member, field) {
   return member && member.$ && member.$[field];
 }
 
-function getMajorVersion() {
+function getMajorMinorVersion() {
   const parts = config.version.split('.');
   return `${parts[0]}.${parts[1]}`;
 }
@@ -33,6 +33,6 @@ module.exports = {
   getAttribute,
   getDuplicates,
   getFilePrefix,
-  getMajorVersion,
+  getMajorMinorVersion,
   getNested,
 };

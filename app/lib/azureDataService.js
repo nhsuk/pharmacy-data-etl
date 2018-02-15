@@ -61,7 +61,7 @@ function getDatestamp() {
 }
 
 function getSuffix() {
-  return `-${getDatestamp()}-${utils.getMajorVersion()}.json`;
+  return `-${getDatestamp()}-${utils.getMajorMinorVersion()}.json`;
 }
 
 async function uploadData() {
