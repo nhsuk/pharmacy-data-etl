@@ -1,11 +1,37 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
 version: v1.7.1
-ignore: {}
+# ignores vulnerabilities until expiry date; change duration by modifying expiry date
+ignore:
+  'npm:hoek:20180212':
+    - azure-storage > request > hawk > hoek:
+        reason: no patch available
+        expires: '2018-03-17T09:46:03.451Z'
+    - azure-storage > request > hawk > boom > hoek:
+        reason: no patch available
+        expires: '2018-03-17T09:46:03.451Z'
+    - azure-storage > request > hawk > sntp > hoek:
+        reason: no patch available
+        expires: '2018-03-17T09:46:03.452Z'
+    - azure-storage > request > hawk > cryptiles > boom > hoek:
+        reason: no patch available
+        expires: '2018-03-17T09:46:03.452Z'
+    - node-pre-gyp > request > hawk > hoek:
+        reason: no patch available
+        expires: '2018-03-17T09:46:03.452Z'
+    - node-pre-gyp > request > hawk > boom > hoek:
+        reason: no patch available
+        expires: '2018-03-17T09:46:03.452Z'
+    - node-pre-gyp > request > hawk > sntp > hoek:
+        reason: no patch available
+        expires: '2018-03-17T09:46:03.452Z'
+    - node-pre-gyp > request > hawk > cryptiles > boom > hoek:
+        reason: no patch available
+        expires: '2018-03-17T09:46:03.452Z'
 # patches apply the minimum changes required to fix a vulnerability
 patch:
   'npm:debug:20170905':
     - node-pre-gyp > tar-pack > debug:
-        patched: '2018-01-03T15:26:36.584Z'
+        patched: '2018-02-15T09:44:11.990Z'
   'npm:tough-cookie:20170905':
     - node-pre-gyp > request > tough-cookie:
-        patched: '2018-01-03T15:26:36.584Z'
+        patched: '2018-02-15T09:44:11.990Z'
