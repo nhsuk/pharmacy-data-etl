@@ -1,6 +1,6 @@
 {
   "name": "pharmacy-data-etl",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "ETL to extract data from Syndication/Organisations and store as JSON",
   "main": "app.js",
   "scripts": {
@@ -56,7 +56,7 @@
     "snyk": "^1.40.2"
   },
   "dependencies": {
-    "async": "^2.5.0",
+    "async": "^2.6.0",
     "azure-storage": "^2.7.0",
     "google-libphonenumber": "^3.0.3",
     "moment": "^2.20.1",

@@ -1,5 +1,4 @@
 const etlStore = require('./etl-toolkit/etlStore');
-const config = require('./config');
 const syndicationService = require('./syndicationService');
 const mapTotalPages = require('./mappers/mapTotalPages');
 const populateIdListQueue = require('./etl-toolkit/queues/populateIds');
@@ -65,7 +64,7 @@ async function clearUpdatedRecords() {
 }
 
 async function loadLatestEtlData() {
-  const { data, date } = await dataService.getLatestData(config.version);
+  const { data, date } = await dataService.getLatestData(utils.getMajorMinorVersion());
   if (etlStore.getLastRunDate() > date) {
     etlStore.setLastRunDate(date);
   }
