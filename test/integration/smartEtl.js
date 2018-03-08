@@ -9,6 +9,8 @@ const etl = require('../../app/lib/smartEtl');
 const etlStore = require('../../app/lib/etl-toolkit/etlStore');
 const config = require('../../app/lib/config');
 
+const dateStampFormat = config.dateStampFormat;
+
 function mockDataService(ids, data, idsDate, dataDate) {
   return {
     getLatestIds: () => new Promise(resolve => resolve({ data: ids, date: idsDate })),
@@ -56,7 +58,7 @@ function stubNoModifiedRecords(date) {
 describe('ETL', function test() {
   this.timeout(5000);
   it('should only update changed record', async () => {
-    const idsDate = moment('20180125', 'YYYYMMDD');
+    const idsDate = moment('20180125', dateStampFormat);
     const dataDate = idsDate;
     stubOneModifiedRecord(idsDate);
     stubPharmacyLookup('test/resources/org-one.json', 'one');
@@ -74,8 +76,8 @@ describe('ETL', function test() {
   });
 
   it('if date stamp on data is older than ID list date, should refresh records modified since data date', async () => {
-    const idsDate = moment('20180126', 'YYYYMMDD');
-    const dataDate = moment('20180125', 'YYYYMMDD');
+    const idsDate = moment('20180126', dateStampFormat);
+    const dataDate = moment('20180125', dateStampFormat);
     stubAnotherModifiedRecord(dataDate);
     // nock will throw an error if the other date is called, and the test will fail
     stubPharmacyLookup('test/resources/org-two.json', 'two');
@@ -93,7 +95,7 @@ describe('ETL', function test() {
   });
 
   it('should load record if in ID list but missing from data', async () => {
-    const idsDate = moment('20180126', 'YYYYMMDD');
+    const idsDate = moment('20180126', dateStampFormat);
     const dataDate = idsDate;
     stubNoModifiedRecords(dataDate);
     // nock will throw an error if the other date is called, and the test will fail

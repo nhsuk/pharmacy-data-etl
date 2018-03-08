@@ -3,7 +3,7 @@
 - Use scheduler in `production` mode only
 - Use date embedded within the file name rather than modified date
 - Update npm dependencies
-- Update to latest version of node in container
+- Upgrade Docker container to `node:8.10.0-alpine`
 
 0.5.1 / 2018-02-15
 ==================
