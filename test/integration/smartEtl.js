@@ -11,7 +11,7 @@ const config = require('../../app/lib/config');
 
 function mockDataService(ids, data, idsDate, dataDate) {
   return {
-    getLatestIds: () => new Promise(resolve => resolve({ ids, date: idsDate })),
+    getLatestIds: () => new Promise(resolve => resolve({ data: ids, date: idsDate })),
     getLatestData: () => new Promise(resolve => resolve({ data, date: dataDate })),
     uploadData: () => new Promise(resolve => resolve(true)),
   };

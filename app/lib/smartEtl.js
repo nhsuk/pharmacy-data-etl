@@ -72,9 +72,9 @@ async function loadLatestEtlData() {
 }
 
 async function loadLatestIDList() {
-  const { ids, date } = await dataService.getLatestIds();
+  const { data, date } = await dataService.getLatestIds();
   etlStore.setLastRunDate(date);
-  etlStore.addIds(ids);
+  etlStore.addIds(data);
   log.info(`Total IDs: ${etlStore.getIds().length}`);
 }
 

@@ -1,6 +1,7 @@
-0.5.2 / 2018-03-TBC
+0.6.0 / 2018-03-TBC
 ==================
 - Use scheduler in `production` mode only
+- Use date embedded within the file name rather than modified date
 
 0.5.1 / 2018-02-15
 ==================

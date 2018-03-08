@@ -9,10 +9,8 @@ const outputFile = `${config.outputDir}/${config.outputFile}.json`;
 const idListFile = `${config.outputDir}/ids.json`;
 const summaryFile = `${config.outputDir}/summary.json`;
 
-const datePattern = /.*pharmacy-seed-ids-(\d+).json/i;
-
-function getDate(filename) {
-  const match = datePattern.exec(filename);
+function getDate(filename, regex) {
+  const match = regex.exec(filename);
   if (match && match.length === 2) {
     return match[1];
   }
@@ -30,26 +28,30 @@ async function getLatestSeedIdsBlob() {
 }
 
 async function getLatestIds() {
-  const seedBlob = await getLatestSeedIdsBlob();
-  if (seedBlob) {
-    log.info(`Latest Pharmacy seed IDs file retrieved '${seedBlob.name}'`);
-    const seedTimestamp = getDate(seedBlob.name);
-    const date = moment(seedTimestamp, 'YYYYMMDD');
-    await azureService.downloadFromAzure('./output/seed-ids.json', seedBlob.name);
-    const ids = fsHelper.loadJsonSync('seed-ids');
-    return { ids, date };
+  const blob = await getLatestSeedIdsBlob();
+  if (blob) {
+    log.info(`Latest pharmacy seed ids file '${blob.name}' identified`);
+    await azureService.downloadFromAzure('./output/seed-ids.json', blob.name);
+    log.info(`Latest pharmacy seed ids file '${blob.name}' downloaded`);
+    const dateRegex = /.*pharmacy-seed-ids-(\d+).json/i;
+    const fileDateStamp = getDate(blob.name, dateRegex);
+    const date = moment(fileDateStamp, 'YYYYMMDD');
+    const data = fsHelper.loadJsonSync('seed-ids');
+    return { data, date };
   }
   throw Error('unable to retrieve ID list');
 }
 
 async function getLatestData(version) {
-  const lastScan = await getLatestDataBlob(version);
-  if (lastScan) {
-    log.info(`Latest pharmacy data file '${lastScan.name}' identified`);
-    await azureService.downloadFromAzure('./output/pharmacy-data.json', lastScan.name);
-    log.info(`Latest pharmacy data file '${lastScan.name}' downloaded`);
+  const blob = await getLatestDataBlob(version);
+  if (blob) {
+    log.info(`Latest pharmacy data file '${blob.name}' identified`);
+    await azureService.downloadFromAzure('./output/pharmacy-data.json', blob.name);
+    log.info(`Latest pharmacy data file '${blob.name}' downloaded`);
+    const dateRegex = /.*pharmacy-data-(\d+)-\d+.\d+.json/i;
+    const fileDateStamp = getDate(blob.name, dateRegex);
+    const date = moment(fileDateStamp, 'YYYYMMDD');
     const data = fsHelper.loadJsonSync('pharmacy-data');
-    const date = moment(lastScan.lastModified);
     return { data, date };
   }
   log.info(`unable to retrieve data, no data available for release ${version}?`);
