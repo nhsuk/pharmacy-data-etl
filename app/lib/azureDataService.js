@@ -1,15 +1,18 @@
+const moment = require('moment');
+
 const azureService = require('./azureService');
 const config = require('./config');
 const fsHelper = require('./fsHelper');
 const log = require('./logger');
-const moment = require('moment');
 const utils = require('./utils');
 
 const outputFile = `${config.outputDir}/${config.outputFile}.json`;
 const idListFile = `${config.outputDir}/ids.json`;
 const summaryFile = `${config.outputDir}/summary.json`;
+
 const dateStampFormat = config.dateStampFormat;
 
+// TODO: Refactor this out and use getDateFromFilename
 function getDate(filename, regex) {
   const match = regex.exec(filename);
   if (match && match.length === 2) {
@@ -59,23 +62,23 @@ async function getLatestData(version) {
   return { data: [] };
 }
 
-function getDatestamp() {
-  return moment().format(dateStampFormat);
+function getDatestamp(startMoment) {
+  return startMoment.format(dateStampFormat);
 }
 
-function getSuffix() {
-  return `-${getDatestamp()}-${utils.getMajorMinorVersion()}.json`;
+function getSuffix(startMoment) {
+  return `-${getDatestamp(startMoment)}-${utils.getMajorMinorVersion()}.json`;
 }
 
-async function uploadData() {
+async function uploadData(startMoment) {
   log.info('Saving date stamped version of ID list in Azure');
-  await azureService.uploadToAzure(idListFile, `${utils.getFilePrefix()}pharmacy-seed-ids-${getDatestamp()}.json`);
+  await azureService.uploadToAzure(idListFile, `${utils.getFilePrefix()}pharmacy-seed-ids-${getDatestamp(startMoment)}.json`);
   log.info(`Overwriting '${config.outputFile}' in Azure`);
   await azureService.uploadToAzure(outputFile, `${utils.getFilePrefix()}${config.outputFile}.json`);
   log.info(`Saving date stamped version of '${config.outputFile}' in Azure`);
-  await azureService.uploadToAzure(outputFile, `${utils.getFilePrefix()}${config.outputFile}${getSuffix()}`);
+  await azureService.uploadToAzure(outputFile, `${utils.getFilePrefix()}${config.outputFile}${getSuffix(startMoment)}`);
   log.info('Saving summary file in Azure');
-  await azureService.uploadToAzure(summaryFile, `${utils.getFilePrefix()}summary${getSuffix()}`);
+  await azureService.uploadToAzure(summaryFile, `${utils.getFilePrefix()}summary${getSuffix(startMoment)}`);
 }
 
 module.exports = {

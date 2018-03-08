@@ -1,17 +1,21 @@
+const moment = require('moment');
+
 const etlStore = require('./etl-toolkit/etlStore');
-const syndicationService = require('./syndicationService');
+const getModifiedOdsCodes = require('./actions/getModifiedOdsCodes');
+const getPharmacy = require('./actions/getPharmacy');
+const log = require('./logger');
 const mapTotalPages = require('./mappers/mapTotalPages');
 const populateIdListQueue = require('./etl-toolkit/queues/populateIds');
 const populateRecordsFromIdsQueue = require('./etl-toolkit/queues/populateRecordsFromIds');
-const getModifiedOdsCodes = require('./actions/getModifiedOdsCodes');
-const getPharmacy = require('./actions/getPharmacy');
+const syndicationService = require('./syndicationService');
 const utils = require('./utils');
-const log = require('./logger');
 
 const RECORD_KEY = 'identifier';
 const WORKERS = 1;
+
 let resolvePromise;
 let dataService;
+let startMoment;
 
 etlStore.setIdKey(RECORD_KEY);
 
@@ -29,7 +33,7 @@ async function etlComplete() {
   etlStore.saveRecords();
   etlStore.saveSummary();
   logStatus();
-  await dataService.uploadData();
+  await dataService.uploadData(startMoment);
   if (resolvePromise) {
     resolvePromise();
   }
@@ -88,6 +92,7 @@ async function smartEtl(dataServiceIn) {
 }
 
 function start(dataServiceIn) {
+  startMoment = moment();
   return new Promise((resolve, reject) => {
     try {
       smartEtl(dataServiceIn);

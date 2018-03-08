@@ -1,9 +1,10 @@
 0.6.0 / 2018-03-13
 ==================
 - Use scheduler in `production` mode only
-- Use date embedded within the file name rather than modified date
+- Use date embedded within file name rather than blob modified date for determining latest file
 - Update npm dependencies
 - Upgrade Docker container to `node:8.10.0-alpine`
+- Store files with the date the run was started as opposed to when the run completed
 
 0.5.1 / 2018-02-15
 ==================
