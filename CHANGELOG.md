@@ -1,7 +1,9 @@
-0.6.0 / 2018-03-TBC
+0.6.0 / 2018-03-13
 ==================
 - Use scheduler in `production` mode only
 - Use date embedded within the file name rather than modified date
+- Update npm dependencies
+- Update to latest version of node in container
 
 0.5.1 / 2018-02-15
 ==================
