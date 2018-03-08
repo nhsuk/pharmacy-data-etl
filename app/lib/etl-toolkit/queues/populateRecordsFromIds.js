@@ -22,7 +22,7 @@ function populateData(id) {
     .catch(err => handleError(err, id));
 }
 
-function pageParsed(id) {
+function recordExists(id) {
   return etlStore.getRecord(id);
 }
 
@@ -34,7 +34,7 @@ function savePeriodically() {
 
 function processQueueItem(task, callback) {
   count += 1;
-  if (pageParsed(task.id)) {
+  if (recordExists(task.id)) {
     callback(false);
   } else {
     savePeriodically();
@@ -42,28 +42,28 @@ function processQueueItem(task, callback) {
     limiter(hitsPerWorker, () => populateData(task.id), () => callback(true));
   }
 }
+
 function processRetryQueueItem(task, callback) {
   retryCount += 1;
   log.info(`Retrying ID ${task.id} ${retryCount}/${totalRetries}`);
   limiter(hitsPerWorker, () => populateData(task.id), callback);
 }
 
-function writeDoneLog(id, writeLog) {
-  if (writeLog) {
-    log.info(`${id} done`);
-  }
+function writeDoneLog(id) {
+  log.info(`${id} done`);
 }
 
 function addToQueue(ids, q) {
   // remove 'undefined's
   ids.filter(id => id).forEach((id) => {
-    q.push({ id }, writeLog => writeDoneLog(id, writeLog));
+    q.push({ id }, () => writeDoneLog(id));
   });
 }
 
 function queueIds(q) {
   addToQueue(etlStore.getIds(), q);
 }
+
 function queueErroredIds(q) {
   const failedIds = etlStore.getErorredIds();
   totalRetries = failedIds.length;

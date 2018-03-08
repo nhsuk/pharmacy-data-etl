@@ -55,10 +55,10 @@ async function clearUpdatedRecords() {
   let changeCount = 0;
   for (let page = 1; page <= totalChangedPages; page++) {
     // eslint-disable-next-line no-await-in-loop
-    const pageIds = await getModifiedOdsCodes(etlStore.getLastRunDate(), page);
-    etlStore.addIds(pageIds);
-    pageIds.forEach(etlStore.deleteRecord);
-    changeCount += pageIds.length;
+    const modifiedOdsCodes = await getModifiedOdsCodes(etlStore.getLastRunDate(), page);
+    etlStore.addIds(modifiedOdsCodes);
+    modifiedOdsCodes.forEach(etlStore.deleteRecord);
+    changeCount = modifiedOdsCodes.length;
   }
   log.info(`${changeCount} records modified since ${etlStore.getLastRunDate()}`);
 }
