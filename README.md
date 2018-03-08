@@ -28,9 +28,14 @@ Any pharmacies that have been modified since the ETL previously ran, or are not 
 
 Once the initial scan is complete, failed pharmacies will be revisited. ODS codes for records still failing after the second attempt are listed in a `summary.json` file.
 
-Running `scripts/start` will bring up a docker container hosting a web server and initiate the scrape at a scheduled time, GMT.
-The default is 11pm. To test locally set an environment variable `ETL_SCHEDULE` to a new time,
-i.e. `export ETL_SCHEDULE='25 15 * * *'` to start the processing a 3:25pm. Note: the container time is GMT and does not take account of daylight saving, you may need to subtract an hour from the time if it is currently BST.
+If `NODE_ENV=production` running `scripts/start` will bring up a docker
+container and initiate the scrape at a scheduled time, GMT. The default is
+11pm. If `NODE_ENV` is set to anything but `production` the scrape will begin
+immediately. The time of the scrape can be overridden by setting the
+environment variable `ETL_SCHEDULE`. e.g. `export ETL_SCHEDULE='25 15 * * *'`
+will start the processing at 3:25pm. Note: the container time is GMT and does
+not take account of daylight saving, you may need to subtract an hour from the
+time if it is currently BST.
 
 Further details on node-schedule available [here](https://www.npmjs.com/package/node-schedule)
 

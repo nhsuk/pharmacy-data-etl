@@ -1,8 +1,12 @@
+0.5.2 / 2018-03-TBC
+==================
+- Use scheduler in `production` mode only
+
 0.5.1 / 2018-02-15
 ==================
-- Use Syndications 'modified since' endpoint to perform incremental updates.
-- Use seed ODS code list and the data from last successful run as basis for next scrape.
-- Remove docker volume as no longer required.
+- Use Syndications 'modified since' endpoint to perform incremental updates
+- Use seed ODS code list and the data from last successful run as basis for next scrape
+- Remove docker volume as no longer required
 
 0.4.0 / 2018-01-09
 ==================
