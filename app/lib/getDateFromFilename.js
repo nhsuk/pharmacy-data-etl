@@ -1,6 +1,5 @@
 const moment = require('moment');
 
-const regex = /.*-(\d{8}).*/;
 const minDate = moment(0);
 
 function getMoment(dateString) {
@@ -8,7 +7,7 @@ function getMoment(dateString) {
   return date.isValid() ? date : minDate;
 }
 
-function getDateFromFilename(name) {
+function getDateFromFilename(name, regex) {
   const match = name.match(regex);
   return match && match[1] ? getMoment(match[1]) : minDate;
 }

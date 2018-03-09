@@ -3,6 +3,7 @@ const moment = require('moment');
 const azureService = require('./azureService');
 const config = require('./config');
 const fsHelper = require('./fsHelper');
+const getDateFromFilename = require('./getDateFromFilename');
 const log = require('./logger');
 const utils = require('./utils');
 
@@ -11,15 +12,6 @@ const idListFile = `${config.outputDir}/ids.json`;
 const summaryFile = `${config.outputDir}/summary.json`;
 
 const dateStampFormat = config.dateStampFormat;
-
-// TODO: Refactor this out and use getDateFromFilename
-function getDate(filename, regex) {
-  const match = regex.exec(filename);
-  if (match && match.length === 2) {
-    return match[1];
-  }
-  return undefined;
-}
 
 async function getLatestDataBlob(version) {
   const filter = b => b.name.startsWith(`${utils.getFilePrefix()}pharmacy-data-`) && b.name.endsWith(`${version}.json`);
@@ -38,7 +30,7 @@ async function getLatestIds() {
     await azureService.downloadFromAzure('./output/seed-ids.json', blob.name);
     log.info(`Latest pharmacy seed ids file '${blob.name}' downloaded`);
     const dateRegex = /.*pharmacy-seed-ids-(\d+).json/i;
-    const fileDateStamp = getDate(blob.name, dateRegex);
+    const fileDateStamp = getDateFromFilename(blob.name, dateRegex);
     const date = moment(fileDateStamp, dateStampFormat);
     const data = fsHelper.loadJsonSync('seed-ids');
     return { data, date };
@@ -53,7 +45,7 @@ async function getLatestData(version) {
     await azureService.downloadFromAzure('./output/pharmacy-data.json', blob.name);
     log.info(`Latest pharmacy data file '${blob.name}' downloaded`);
     const dateRegex = /.*pharmacy-data-(\d+)-\d+.\d+.json/i;
-    const fileDateStamp = getDate(blob.name, dateRegex);
+    const fileDateStamp = getDateFromFilename(blob.name, dateRegex);
     const date = moment(fileDateStamp, dateStampFormat);
     const data = fsHelper.loadJsonSync('pharmacy-data');
     return { data, date };
