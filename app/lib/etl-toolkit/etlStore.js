@@ -4,11 +4,16 @@ const config = require('../config');
 
 const ALL_TYPE = 'all';
 
+let cache = {};
+let failedIds = {};
+let idKey = '_id';
 let ids = [];
 let lastRunDate;
-let failedIds = {};
-let cache = {};
-let idKey = '_id';
+let modifiedIds = [];
+
+function setModifiedIds(modified) {
+  modifiedIds = modifiedIds.concat(modified);
+}
 
 function setLastRunDate(date) {
   lastRunDate = date;
@@ -127,9 +132,13 @@ function saveRecords() {
 
 function saveSummary() {
   const summary = {
-    totalScanned: ids.length,
-    totalErroredIds: getErorredIds().length,
     lastWritten: (new Date()).toLocaleString(),
+    totalScanned: ids.length,
+    totalModified: modifiedIds.length,
+    totalErrored: getErorredIds().length,
+    totalFailed: failedIds.length,
+    modifiedIds,
+    erroredIds: getErorredIds(),
     failedIds,
   };
   fsHelper.saveJsonSync(summary, 'summary');
@@ -158,4 +167,5 @@ module.exports = {
   saveSummary,
   setIdKey,
   setLastRunDate,
+  setModifiedIds,
 };

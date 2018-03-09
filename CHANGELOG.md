@@ -5,6 +5,7 @@
 - Update npm dependencies
 - Upgrade Docker container to `node:8.10.0-alpine`
 - Store files with the date the run was started as opposed to when the run completed
+- Include list of modifiedIds in summary
 
 0.5.1 / 2018-02-15
 ==================
