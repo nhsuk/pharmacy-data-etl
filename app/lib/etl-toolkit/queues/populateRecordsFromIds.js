@@ -49,14 +49,16 @@ function processRetryQueueItem(task, callback) {
   limiter(hitsPerWorker, () => populateData(task.id), callback);
 }
 
-function writeDoneLog(id) {
-  log.info(`${id} done`);
+function writeDoneLog(id, writeLog) {
+  if (writeLog) {
+    log.info(`${id} done`);
+  }
 }
 
 function addToQueue(ids, q) {
   // remove 'undefined's
   ids.filter(id => id).forEach((id) => {
-    q.push({ id }, () => writeDoneLog(id));
+    q.push({ id }, writeLog => writeDoneLog(id, writeLog));
   });
 }
 
