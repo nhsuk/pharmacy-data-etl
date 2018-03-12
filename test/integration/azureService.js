@@ -18,7 +18,7 @@ describe('Azure Service', () => {
 
     it('should upload file to azure', function test(done) {
       this.timeout(timeout);
-      azureService.uploadToAzure('test/resources/test-file.json', name)
+      azureService.uploadToAzure('test-file.json', name)
         .then((result) => {
           expect(result.name).to.equal(name);
           done();

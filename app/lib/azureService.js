@@ -24,7 +24,7 @@ function listBlobs() {
 function uploadToAzure(filename, blobName) {
   return new Promise((resolve, reject) => {
     blobSvc.createBlockBlobFromLocalFile(
-      config.containerName, blobName, filename, options,
+      config.containerName, blobName, `${config.outputDir}/${filename}`, options,
       (error, result) => {
         if (!error) {
           resolve(result);

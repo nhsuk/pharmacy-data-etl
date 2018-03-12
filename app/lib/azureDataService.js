@@ -56,9 +56,9 @@ function getSuffix(startMoment) {
 }
 
 async function uploadData(startMoment) {
-  const idListFile = `${config.outputDir}/ids.json`;
-  const outputFile = `${config.outputDir}/${config.outputFile}.json`;
-  const summaryFile = `${config.outputDir}/summary.json`;
+  const idListFile = 'ids.json';
+  const outputFile = `${config.outputFile}.json`;
+  const summaryFile = 'summary.json';
 
   log.info('Saving date stamped version of ID list in Azure');
   await azureService.uploadToAzure(idListFile, `${utils.getFilePrefix()}pharmacy-seed-ids-${getDatestamp(startMoment)}.json`);
