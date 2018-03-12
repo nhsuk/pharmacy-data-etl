@@ -21,10 +21,10 @@ function listBlobs() {
   });
 }
 
-function uploadToAzure(filePath, name) {
+function uploadToAzure(filename, blobName) {
   return new Promise((resolve, reject) => {
     blobSvc.createBlockBlobFromLocalFile(
-      config.containerName, name, filePath, options,
+      config.containerName, blobName, filename, options,
       (error, result) => {
         if (!error) {
           resolve(result);
@@ -35,10 +35,10 @@ function uploadToAzure(filePath, name) {
   });
 }
 
-function downloadFromAzure(filePath, name) {
+function downloadFromAzure(filename, blobName) {
   return new Promise((resolve, reject) => {
     blobSvc.getBlobToLocalFile(
-      config.containerName, name, filePath, options,
+      config.containerName, blobName, `${config.outputDir}/${filename}`, options,
       (error, result) => {
         if (!error) {
           resolve(result);
@@ -49,9 +49,9 @@ function downloadFromAzure(filePath, name) {
   });
 }
 
-function deleteFromAzure(name) {
+function deleteFromAzure(blobName) {
   return new Promise((resolve, reject) => {
-    blobSvc.deleteBlob(config.containerName, name, (error, result) => {
+    blobSvc.deleteBlob(config.containerName, blobName, (error, result) => {
       if (!error) {
         resolve(result);
       }

@@ -7,10 +7,6 @@ const getDateFromFilename = require('./getDateFromFilename');
 const log = require('./logger');
 const utils = require('./utils');
 
-const idListFile = `${config.outputDir}/ids.json`;
-const outputFile = `${config.outputDir}/${config.outputFile}.json`;
-const summaryFile = `${config.outputDir}/summary.json`;
-
 const dateStampFormat = config.dateStampFormat;
 
 async function getLatestDataBlob(version) {
@@ -24,10 +20,10 @@ async function getLatestSeedIdsBlob() {
 }
 
 async function downloadLatestData(blobName, localName) {
-  const downloadedFile = `./${config.outputDir}/${localName}.json`;
-  log.info(`Latest version of '${localName}' file identified - '${blobName}'`);
-  await azureService.downloadFromAzure(downloadedFile, blobName);
-  log.info(`Remote '${blobName}' file downloaded locally - '${downloadedFile}'`);
+  const localFilename = `${localName}.json`;
+  log.info(`Latest version of '${localFilename}' file identified as: '${blobName}'`);
+  await azureService.downloadFromAzure(localFilename, blobName);
+  log.info(`Remote file '${blobName}' downloaded locally as: '${localFilename}'`);
   const fileDateStamp = getDateFromFilename(blobName);
   const date = moment(fileDateStamp, dateStampFormat);
   const data = fsHelper.loadJsonSync(localName);
@@ -60,6 +56,10 @@ function getSuffix(startMoment) {
 }
 
 async function uploadData(startMoment) {
+  const idListFile = `${config.outputDir}/ids.json`;
+  const outputFile = `${config.outputDir}/${config.outputFile}.json`;
+  const summaryFile = `${config.outputDir}/summary.json`;
+
   log.info('Saving date stamped version of ID list in Azure');
   await azureService.uploadToAzure(idListFile, `${utils.getFilePrefix()}pharmacy-seed-ids-${getDatestamp(startMoment)}.json`);
   log.info(`Overwriting '${config.outputFile}' in Azure`);
