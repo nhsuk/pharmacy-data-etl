@@ -11,6 +11,7 @@ describe('sort by filename date in descending order', () => {
       { name: 'data-20180120.json' },
     ];
     const result = files.sort(sortByFilenameDateDesc);
+
     expect(result[0].name).to.be.equal('data-20180320.json');
     expect(result[1].name).to.be.equal('data-20180220.json');
     expect(result[2].name).to.be.equal('data-20180120.json');
@@ -23,6 +24,7 @@ describe('sort by filename date in descending order', () => {
       { name: 'data-20180120.json' },
     ];
     const result = files.sort(sortByFilenameDateDesc);
+
     expect(result[0].name).to.be.equal('data-20180320.json');
     expect(result[1].name).to.be.equal('data-20180120.json');
     expect(result[2].name).to.be.equal('data.json');
@@ -35,6 +37,7 @@ describe('sort by filename date in descending order', () => {
       { name: 'data-20180120.json' },
     ];
     const result = files.sort(sortByFilenameDateDesc);
+
     expect(result[0].name).to.be.equal('data-20180320.json');
     expect(result[1].name).to.be.equal('data-20180120.json');
     expect(result[2].name).to.be.equal('data-20189999.json');

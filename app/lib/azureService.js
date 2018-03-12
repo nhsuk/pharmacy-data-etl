@@ -1,6 +1,6 @@
 const azure = require('azure-storage');
 
-const config = require('./config.js');
+const config = require('./config');
 const sortByFilename = require('./sortByFilenameDateDesc');
 
 const blobSvc = azure.createBlobService();
@@ -67,9 +67,9 @@ async function getLatestBlob(filter) {
 }
 
 module.exports = {
-  uploadToAzure,
-  downloadFromAzure,
   deleteFromAzure,
+  downloadFromAzure,
+  getLatestBlob,
   listBlobs,
-  getLatestBlob
+  uploadToAzure,
 };

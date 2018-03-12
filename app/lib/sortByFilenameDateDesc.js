@@ -1,10 +1,8 @@
 const getDateFromFilename = require('./getDateFromFilename');
 
-const regex = /.*-(\d{8}).*/;
-
 function sortByFilenameDateDesc(first, second) {
-  const a = getDateFromFilename(first.name, regex);
-  const b = getDateFromFilename(second.name, regex);
+  const a = getDateFromFilename(first.name);
+  const b = getDateFromFilename(second.name);
   if (a.isBefore(b)) {
     return 1;
   }

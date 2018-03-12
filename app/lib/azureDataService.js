@@ -7,8 +7,8 @@ const getDateFromFilename = require('./getDateFromFilename');
 const log = require('./logger');
 const utils = require('./utils');
 
-const outputFile = `${config.outputDir}/${config.outputFile}.json`;
 const idListFile = `${config.outputDir}/ids.json`;
+const outputFile = `${config.outputDir}/${config.outputFile}.json`;
 const summaryFile = `${config.outputDir}/summary.json`;
 
 const dateStampFormat = config.dateStampFormat;
@@ -23,17 +23,21 @@ async function getLatestSeedIdsBlob() {
   return azureService.getLatestBlob(filter);
 }
 
+async function downloadLatestData(blobName, localName) {
+  const downloadedFile = `./${config.outputDir}/${localName}.json`;
+  log.info(`Latest version of '${localName}' file identified - '${blobName}'`);
+  await azureService.downloadFromAzure(downloadedFile, blobName);
+  log.info(`Remote '${blobName}' file downloaded locally - '${downloadedFile}'`);
+  const fileDateStamp = getDateFromFilename(blobName);
+  const date = moment(fileDateStamp, dateStampFormat);
+  const data = fsHelper.loadJsonSync(localName);
+  return { data, date };
+}
+
 async function getLatestIds() {
   const blob = await getLatestSeedIdsBlob();
   if (blob) {
-    log.info(`Latest pharmacy seed ids file '${blob.name}' identified`);
-    await azureService.downloadFromAzure('./output/seed-ids.json', blob.name);
-    log.info(`Latest pharmacy seed ids file '${blob.name}' downloaded`);
-    const dateRegex = /.*pharmacy-seed-ids-(\d+).json/i;
-    const fileDateStamp = getDateFromFilename(blob.name, dateRegex);
-    const date = moment(fileDateStamp, dateStampFormat);
-    const data = fsHelper.loadJsonSync('seed-ids');
-    return { data, date };
+    return downloadLatestData(blob.name, 'seed-ids');
   }
   throw Error('unable to retrieve ID list');
 }
@@ -41,14 +45,7 @@ async function getLatestIds() {
 async function getLatestData(version) {
   const blob = await getLatestDataBlob(version);
   if (blob) {
-    log.info(`Latest pharmacy data file '${blob.name}' identified`);
-    await azureService.downloadFromAzure('./output/pharmacy-data.json', blob.name);
-    log.info(`Latest pharmacy data file '${blob.name}' downloaded`);
-    const dateRegex = /.*pharmacy-data-(\d+)-\d+.\d+.json/i;
-    const fileDateStamp = getDateFromFilename(blob.name, dateRegex);
-    const date = moment(fileDateStamp, dateStampFormat);
-    const data = fsHelper.loadJsonSync('pharmacy-data');
-    return { data, date };
+    return downloadLatestData(blob.name, 'pharmacy-data');
   }
   log.info(`unable to retrieve data, no data available for release ${version}?`);
   return { data: [] };
@@ -76,5 +73,5 @@ async function uploadData(startMoment) {
 module.exports = {
   getLatestData,
   getLatestIds,
-  uploadData
+  uploadData,
 };
