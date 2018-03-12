@@ -32,7 +32,7 @@ If no file is found the ETL will not run. Once the IDs are loaded, the most
 recent pharmacy data is retrieved from Azure Blob Storage for the particular
 version of the ETL.
 
-The ETL version is included along with a timestamp to enable a full rescan if
+The ETL version is included along with a datestamp to enable a full rescan if
 the data structure changes. If no file is found, the entire dataset will be
 rebuilt.
 The `modifiedsince` end point of Syndication is used to determine any changed
@@ -47,19 +47,21 @@ codes for records still failing after the second attempt are listed in a
 
 If `NODE_ENV=production` running `scripts/start` will bring up a docker
 container and initiate the scrape at a scheduled time, GMT. The default is
-11pm. If `NODE_ENV` is set to anything but `production` the scrape will begin
-immediately. The time of the scrape can be overridden by setting the
-environment variable `ETL_SCHEDULE`. e.g. `export ETL_SCHEDULE='25 15 * * *'`
-will start the processing at 3:25pm. Note: the container time is GMT and does
-not take account of daylight saving, you may need to subtract an hour from the
-time if it is currently BST.
+11pm. The time of the scrape can be overridden by setting the environment
+variable `ETL_SCHEDULE`. e.g. `export ETL_SCHEDULE='25 15 * * *'` will start
+the processing at 3:25pm. Note: the container time is GMT and does not take
+account of daylight saving, you may need to subtract an hour from the time if
+it is currently BST.
+
+During local development it is useful to run the scrape at any time. This is
+possible by running `node app.js` (with the appropriate env vars set).
 
 Further details on node-schedule available
 [here](https://www.npmjs.com/package/node-schedule)
 
-+ The scheduler can be completely disabled by setting the `DISABLE_SCHEDULER`
-  variable to `true`. This sets the run date to run once in the future on Jan
-  1st, 2100.
+The scheduler can be completely disabled by setting the `DISABLE_SCHEDULER`
+variable to `true`. This sets the run date to run once in the future on Jan
+1st, 2100.
 
 A successful scrape will result in the file `pharmacy-data.json` being written
 to the `output` folder and to the Azure storage location specified in the
