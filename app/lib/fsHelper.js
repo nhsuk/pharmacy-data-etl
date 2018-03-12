@@ -13,12 +13,12 @@ function createDirIfMissing(path) {
 function saveJsonSync(obj, filename) {
   createDirIfMissing(outputDir);
   const json = JSON.stringify(obj);
-  fs.writeFileSync(`${outputDir}/${filename}.json`, json, 'utf8');
-  log.info(`${filename}.json saved`);
+  fs.writeFileSync(`${outputDir}/${filename}`, json, 'utf8');
+  log.info(`${filename} saved`);
 }
 
 function loadJsonSync(filename) {
-  const path = `${outputDir}/${filename}.json`;
+  const path = `${outputDir}/${filename}`;
   const jsonString = fs.existsSync(path) ? fs.readFileSync(path, 'utf8') : undefined;
   return jsonString ? JSON.parse(jsonString) : undefined;
 }

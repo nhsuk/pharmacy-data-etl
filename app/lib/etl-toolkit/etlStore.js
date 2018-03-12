@@ -101,8 +101,8 @@ function addIds(idList) {
 }
 
 function saveState() {
-  fsHelper.saveJsonSync(ids, config.idListFile);
-  fsHelper.saveJsonSync(cache, 'cache');
+  fsHelper.saveJsonSync(ids, config.cacheIdFilename);
+  fsHelper.saveJsonSync(cache, config.cacheDataFilename);
 }
 
 function clearState() {
@@ -114,20 +114,20 @@ function clearState() {
 }
 
 function loadState() {
-  ids = fsHelper.loadJsonSync(config.idListFile) || [];
-  cache = fsHelper.loadJsonSync('cache') || {};
+  ids = fsHelper.loadJsonSync(config.cacheIdFilename) || [];
+  cache = fsHelper.loadJsonSync(config.cacheDataFilename) || {};
 }
 
 function writeStatus() {
   const failedAllIds = getErorredIds();
   log.info(`${failedAllIds.length} IDs failed: ${failedAllIds}`);
-  log.info(`see summary.json file in '${config.outputDir}' for full details`);
+  log.info(`See ${config.summaryFilename} for full details`);
 }
 
 function saveRecords() {
   writeStatus();
-  fsHelper.saveJsonSync(getRecords(), config.outputFile);
-  fsHelper.saveJsonSync(getIds(), config.idListFile);
+  fsHelper.saveJsonSync(getRecords(), config.outputFilename);
+  fsHelper.saveJsonSync(getIds(), config.cacheIdFilename);
 }
 
 function saveSummary() {
@@ -141,7 +141,7 @@ function saveSummary() {
     erroredIds: getErorredIds(),
     failedIds,
   };
-  fsHelper.saveJsonSync(summary, 'summary');
+  fsHelper.saveJsonSync(summary, config.summaryFilename);
 }
 
 loadState();

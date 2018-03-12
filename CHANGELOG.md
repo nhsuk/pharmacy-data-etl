@@ -8,6 +8,7 @@
 - Include list of modifiedIds in summary
 - Format `README`
 - Refactor to common date regex and shared download function
+- Move filenames into config
 
 0.5.1 / 2018-02-15
 ==================

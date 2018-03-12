@@ -15,25 +15,24 @@ async function getLatestDataBlob(version) {
 }
 
 async function getLatestSeedIdsBlob() {
-  const filter = b => b.name.startsWith(`${utils.getFilePrefix()}pharmacy-seed-ids-`);
+  const filter = b => b.name.startsWith(`${utils.getFilePrefix()}${config.seedIdFile}-`);
   return azureService.getLatestBlob(filter);
 }
 
-async function downloadLatestData(blobName, localName) {
-  const localFilename = `${localName}.json`;
+async function downloadLatestData(blobName, localFilename) {
   log.info(`Latest version of '${localFilename}' file identified as: '${blobName}'`);
   await azureService.downloadFromAzure(localFilename, blobName);
   log.info(`Remote file '${blobName}' downloaded locally as: '${localFilename}'`);
   const fileDateStamp = getDateFromFilename(blobName);
   const date = moment(fileDateStamp, dateStampFormat);
-  const data = fsHelper.loadJsonSync(localName);
+  const data = fsHelper.loadJsonSync(localFilename);
   return { data, date };
 }
 
 async function getLatestIds() {
   const blob = await getLatestSeedIdsBlob();
   if (blob) {
-    return downloadLatestData(blob.name, 'seed-ids');
+    return downloadLatestData(blob.name, `${config.seedIdFile}.json`);
   }
   throw Error('unable to retrieve ID list');
 }
@@ -41,7 +40,7 @@ async function getLatestIds() {
 async function getLatestData(version) {
   const blob = await getLatestDataBlob(version);
   if (blob) {
-    return downloadLatestData(blob.name, 'pharmacy-data');
+    return downloadLatestData(blob.name, config.outputFilename);
   }
   log.info(`unable to retrieve data, no data available for release ${version}?`);
   return { data: [] };
@@ -56,18 +55,14 @@ function getSuffix(startMoment) {
 }
 
 async function uploadData(startMoment) {
-  const idListFile = 'ids.json';
-  const outputFile = `${config.outputFile}.json`;
-  const summaryFile = 'summary.json';
-
   log.info('Saving date stamped version of ID list in Azure');
-  await azureService.uploadToAzure(idListFile, `${utils.getFilePrefix()}pharmacy-seed-ids-${getDatestamp(startMoment)}.json`);
-  log.info(`Overwriting '${config.outputFile}' in Azure`);
-  await azureService.uploadToAzure(outputFile, `${utils.getFilePrefix()}${config.outputFile}.json`);
-  log.info(`Saving date stamped version of '${config.outputFile}' in Azure`);
-  await azureService.uploadToAzure(outputFile, `${utils.getFilePrefix()}${config.outputFile}${getSuffix(startMoment)}`);
+  await azureService.uploadToAzure(config.cacheIdFilename, `${utils.getFilePrefix()}${config.seedIdFile}-${getDatestamp(startMoment)}.json`);
+  log.info(`Overwriting '${config.outputFilename}' in Azure`);
+  await azureService.uploadToAzure(config.outputFilename, `${utils.getFilePrefix()}${config.outputFilename}`);
+  log.info(`Saving date stamped version of '${config.outputFilename}' in Azure`);
+  await azureService.uploadToAzure(config.outputFilename, `${utils.getFilePrefix()}${config.outputFile}${getSuffix(startMoment)}`);
   log.info('Saving summary file in Azure');
-  await azureService.uploadToAzure(summaryFile, `${utils.getFilePrefix()}summary${getSuffix(startMoment)}`);
+  await azureService.uploadToAzure(config.summaryFilename, `${utils.getFilePrefix()}summary${getSuffix(startMoment)}`);
 }
 
 module.exports = {
