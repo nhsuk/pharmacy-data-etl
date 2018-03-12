@@ -47,10 +47,10 @@ function pageParsed(pageNo) {
 
 function processQueueItem(task, callback) {
   if (pageParsed(task.pageNo)) {
-    log.info(`skipping ${task.pageNo}, already parsed`);
+    log.info(`Skipping ${task.pageNo}, already parsed`);
     callback();
   } else {
-    log.info(`loading page ${task.pageNo}`);
+    log.info(`Loading page ${task.pageNo}`);
     loadPage(task.pageNo).then(callback);
   }
 }

@@ -42,7 +42,7 @@ async function getLatestData(version) {
   if (blob) {
     return downloadLatestData(blob.name, config.outputFilename);
   }
-  log.info(`unable to retrieve data, no data available for release ${version}?`);
+  log.info(`Unable to retrieve data, no data available for release ${version}?`);
   return { data: [] };
 }
 
@@ -55,13 +55,13 @@ function getSuffix(startMoment) {
 }
 
 async function uploadData(startMoment) {
-  log.info('Saving date stamped version of ID list in Azure');
+  log.info(`Saving date stamped version of '${config.seedIdFile}' in Azure`);
   await azureService.uploadToAzure(config.cacheIdFilename, `${utils.getFilePrefix()}${config.seedIdFile}-${getDatestamp(startMoment)}.json`);
   log.info(`Overwriting '${config.outputFilename}' in Azure`);
   await azureService.uploadToAzure(config.outputFilename, `${utils.getFilePrefix()}${config.outputFilename}`);
   log.info(`Saving date stamped version of '${config.outputFilename}' in Azure`);
   await azureService.uploadToAzure(config.outputFilename, `${utils.getFilePrefix()}${config.outputFile}${getSuffix(startMoment)}`);
-  log.info('Saving summary file in Azure');
+  log.info(`Saving '${config.summaryFilename}' file in Azure`);
   await azureService.uploadToAzure(config.summaryFilename, `${utils.getFilePrefix()}summary${getSuffix(startMoment)}`);
 }
 

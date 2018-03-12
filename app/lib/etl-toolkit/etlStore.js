@@ -121,7 +121,7 @@ function loadState() {
 function writeStatus() {
   const failedAllIds = getErorredIds();
   log.info(`${failedAllIds.length} IDs failed: ${failedAllIds}`);
-  log.info(`See ${config.summaryFilename} for full details`);
+  log.info(`See '${config.summaryFilename}' for full details`);
 }
 
 function saveRecords() {

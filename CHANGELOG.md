@@ -9,6 +9,7 @@
 - Format `README`
 - Refactor to common date regex and shared download function
 - Move filenames into config
+- Removed `seed-pharmacies.json` file as no longer required
 
 0.5.1 / 2018-02-15
 ==================
