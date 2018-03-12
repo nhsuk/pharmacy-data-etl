@@ -7,7 +7,7 @@ const dataService = require('./app/lib/azureDataService');
 
 const nodeEnv = process.env.NODE_ENV;
 
-log.info(`NODE_ENV set to ${nodeEnv}.`);
+log.info(`NODE_ENV set to ${nodeEnv}`);
 if (nodeEnv === 'production') {
   log.info('Running in production mode with a schedule');
   log.info(`Scheduling job with rule '${scheduleConfig.getSchedule()}'`);
@@ -19,6 +19,6 @@ if (nodeEnv === 'production') {
     }
   });
 } else {
-  log.info('Running with no schedule. Execution will start immediately.');
+  log.info('Running with no schedule, execution will start immediately');
   etl.start(dataService);
 }
