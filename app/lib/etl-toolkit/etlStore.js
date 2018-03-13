@@ -4,11 +4,16 @@ const config = require('../config');
 
 const ALL_TYPE = 'all';
 
+let cache = {};
+let failedIds = {};
+let idKey = '_id';
 let ids = [];
 let lastRunDate;
-let failedIds = {};
-let cache = {};
-let idKey = '_id';
+let modifiedIds = [];
+
+function setModifiedIds(modified) {
+  modifiedIds = modifiedIds.concat(modified);
+}
 
 function setLastRunDate(date) {
   lastRunDate = date;
@@ -96,8 +101,8 @@ function addIds(idList) {
 }
 
 function saveState() {
-  fsHelper.saveJsonSync(ids, config.idListFile);
-  fsHelper.saveJsonSync(cache, 'cache');
+  fsHelper.saveJsonSync(ids, config.cacheIdFilename);
+  fsHelper.saveJsonSync(cache, config.cacheDataFilename);
 }
 
 function clearState() {
@@ -109,30 +114,34 @@ function clearState() {
 }
 
 function loadState() {
-  ids = fsHelper.loadJsonSync(config.idListFile) || [];
-  cache = fsHelper.loadJsonSync('cache') || {};
+  ids = fsHelper.loadJsonSync(config.cacheIdFilename) || [];
+  cache = fsHelper.loadJsonSync(config.cacheDataFilename) || {};
 }
 
 function writeStatus() {
   const failedAllIds = getErorredIds();
   log.info(`${failedAllIds.length} IDs failed: ${failedAllIds}`);
-  log.info(`see summary.json file in '${config.outputDir}' for full details`);
+  log.info(`See '${config.summaryFilename}' for full details`);
 }
 
 function saveRecords() {
   writeStatus();
-  fsHelper.saveJsonSync(getRecords(), config.outputFile);
-  fsHelper.saveJsonSync(getIds(), config.idListFile);
+  fsHelper.saveJsonSync(getRecords(), config.outputFilename);
+  fsHelper.saveJsonSync(getIds(), config.cacheIdFilename);
 }
 
 function saveSummary() {
   const summary = {
-    totalScanned: ids.length,
-    totalErroredIds: getErorredIds().length,
     lastWritten: (new Date()).toLocaleString(),
+    totalScanned: ids.length,
+    totalModified: modifiedIds.length,
+    totalErrored: getErorredIds().length,
+    totalFailed: failedIds.length,
+    modifiedIds,
+    erroredIds: getErorredIds(),
     failedIds,
   };
-  fsHelper.saveJsonSync(summary, 'summary');
+  fsHelper.saveJsonSync(summary, config.summaryFilename);
 }
 
 loadState();
@@ -158,4 +167,5 @@ module.exports = {
   saveSummary,
   setIdKey,
   setLastRunDate,
+  setModifiedIds,
 };

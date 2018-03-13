@@ -1,8 +1,21 @@
+0.6.0 / 2018-03-14
+==================
+- Use scheduler in `production` mode only
+- Use date embedded within file name rather than blob modified date for determining latest file
+- Update npm dependencies
+- Upgrade Docker container to `node:8.10.0-alpine`
+- Store files with the date the run was started as opposed to when the run completed
+- Include list of modifiedIds in summary
+- Format `README`
+- Refactor to common date regex and shared download function
+- Move filenames into config
+- Removed `seed-pharmacies.json` file as no longer required
+
 0.5.1 / 2018-02-15
 ==================
-- Use Syndications 'modified since' endpoint to perform incremental updates.
-- Use seed ODS code list and the data from last successful run as basis for next scrape.
-- Remove docker volume as no longer required.
+- Use Syndications 'modified since' endpoint to perform incremental updates
+- Use seed ODS code list and the data from last successful run as basis for next scrape
+- Remove docker volume as no longer required
 
 0.4.0 / 2018-01-09
 ==================
