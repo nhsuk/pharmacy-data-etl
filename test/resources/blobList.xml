@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EnumerationResults ServiceEndpoint="https://nhsukpharmacydataetl.blob.core.windows.net/" ContainerName="etl-output">
+  <Blobs>
+    <Blob>
+      <Name>filter-mismatch-20180312.json</Name>
+    </Blob>
+    <Blob>
+      <Name>filter-match.json</Name>
+    </Blob>
+    <Blob>
+      <Name>filter-match-20180227.json</Name>
+    </Blob>
+    <Blob>
+      <Name>filter-match-20180228.json</Name>
+    </Blob>
+  </Blobs>
+</EnumerationResults>

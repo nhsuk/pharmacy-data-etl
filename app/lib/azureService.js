@@ -1,6 +1,7 @@
 const azure = require('azure-storage');
-const moment = require('moment');
-const config = require('./config.js');
+
+const config = require('./config');
+const sortByFilename = require('./sortByFilenameDateDesc');
 
 const blobSvc = azure.createBlobService();
 
@@ -20,10 +21,10 @@ function listBlobs() {
   });
 }
 
-function uploadToAzure(filePath, name) {
+function uploadToAzure(filename, blobName) {
   return new Promise((resolve, reject) => {
     blobSvc.createBlockBlobFromLocalFile(
-      config.containerName, name, filePath, options,
+      config.containerName, blobName, `${config.outputDir}/${filename}`, options,
       (error, result) => {
         if (!error) {
           resolve(result);
@@ -34,10 +35,10 @@ function uploadToAzure(filePath, name) {
   });
 }
 
-function downloadFromAzure(filePath, name) {
+function downloadFromAzure(filename, blobName) {
   return new Promise((resolve, reject) => {
     blobSvc.getBlobToLocalFile(
-      config.containerName, name, filePath, options,
+      config.containerName, blobName, `${config.outputDir}/${filename}`, options,
       (error, result) => {
         if (!error) {
           resolve(result);
@@ -48,9 +49,9 @@ function downloadFromAzure(filePath, name) {
   });
 }
 
-function deleteFromAzure(name) {
+function deleteFromAzure(blobName) {
   return new Promise((resolve, reject) => {
-    blobSvc.deleteBlob(config.containerName, name, (error, result) => {
+    blobSvc.deleteBlob(config.containerName, blobName, (error, result) => {
       if (!error) {
         resolve(result);
       }
@@ -58,28 +59,17 @@ function deleteFromAzure(name) {
     });
   });
 }
-function sortByDateDesc(first, second) {
-  const a = moment(first.lastModified);
-  const b = moment(second.lastModified);
-  if (a.isBefore(b)) {
-    return 1;
-  }
-  if (b.isBefore(a)) {
-    return -1;
-  }
-  return 0;
-}
 
 async function getLatestBlob(filter) {
   return (await listBlobs())
     .filter(filter)
-    .sort(sortByDateDesc)[0];
+    .sort(sortByFilename)[0];
 }
 
 module.exports = {
-  uploadToAzure,
-  downloadFromAzure,
   deleteFromAzure,
+  downloadFromAzure,
+  getLatestBlob,
   listBlobs,
-  getLatestBlob
+  uploadToAzure,
 };

@@ -1,5 +1,6 @@
 const async = require('async');
 
+const processedPagesFilename = require('../../config').processedPagesFilename;
 const etlStore = require('../etlStore');
 const log = require('../../logger');
 const fsHelper = require('../../fsHelper');
@@ -13,12 +14,12 @@ function pageDone(pageNo) {
 
 function saveState() {
   etlStore.saveState();
-  fsHelper.saveJsonSync(processedPages, 'processedPages');
+  fsHelper.saveJsonSync(processedPages, processedPagesFilename);
 }
 
 function clearState() {
   processedPages = {};
-  fsHelper.saveJsonSync(processedPages, 'processedPages');
+  fsHelper.saveJsonSync(processedPages, processedPagesFilename);
 }
 
 function loadState() {
@@ -26,7 +27,7 @@ function loadState() {
   // if the ETL is cancelled between adding the IDs to the etlStore, and
   // setting the processedPages. Duplicate IDs in the list will be ignored in the next queue
   // so this will not cause problems
-  processedPages = fsHelper.loadJsonSync('processedPages') || {};
+  processedPages = fsHelper.loadJsonSync(processedPagesFilename) || {};
 }
 
 function handleError(err, pageNo) {
@@ -46,10 +47,10 @@ function pageParsed(pageNo) {
 
 function processQueueItem(task, callback) {
   if (pageParsed(task.pageNo)) {
-    log.info(`skipping ${task.pageNo}, already parsed`);
+    log.info(`Skipping ${task.pageNo}, already parsed`);
     callback();
   } else {
-    log.info(`loading page ${task.pageNo}`);
+    log.info(`Loading page ${task.pageNo}`);
     loadPage(task.pageNo).then(callback);
   }
 }

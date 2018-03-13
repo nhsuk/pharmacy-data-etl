@@ -5,6 +5,7 @@ const scheduleConfig = require('./app/lib/scheduleConfig');
 const etl = require('./app/lib/smartEtl');
 const dataService = require('./app/lib/azureDataService');
 
+log.info(`NODE_ENV set to ${process.env.NODE_ENV}`);
 log.info(`Scheduling job with rule '${scheduleConfig.getSchedule()}'`);
 schedule.scheduleJob(scheduleConfig.getSchedule(), async () => {
   try {
