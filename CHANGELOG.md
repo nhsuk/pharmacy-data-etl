@@ -2,6 +2,7 @@
 ==================
 - Upgrade to `eslint-config-nhsuk@0.13.0` and apply fixes
 - Fix change record count tracking
+- Downgrade Docker container to `node:8.9.4-alpine`
 
 0.6.0 / 2018-03-14
 ==================
