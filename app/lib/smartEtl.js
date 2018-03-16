@@ -46,9 +46,9 @@ async function getTotalModifiedSincePages(lastScanDate) {
 
 function startPopulateRecordsFromIdsQueue() {
   const options = {
-    workers: WORKERS,
-    queueComplete: etlComplete,
     populateRecordAction: getPharmacy,
+    queueComplete: etlComplete,
+    workers: WORKERS,
   };
   populateRecordsFromIdsQueue.start(options);
 }

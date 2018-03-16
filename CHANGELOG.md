@@ -1,3 +1,7 @@
+0.7.0 / TBD
+==================
+- Upgrade to `eslint-config-nhsuk@0.13.0` and apply fixes
+
 0.6.0 / 2018-03-14
 ==================
 - Use scheduler in `production` mode only

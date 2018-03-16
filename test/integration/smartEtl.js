@@ -13,8 +13,8 @@ const dateStampFormat = config.dateStampFormat;
 
 function mockDataService(ids, data, idsDate, dataDate) {
   return {
-    getLatestIds: () => new Promise(resolve => resolve({ data: ids, date: idsDate })),
     getLatestData: () => new Promise(resolve => resolve({ data, date: dataDate })),
+    getLatestIds: () => new Promise(resolve => resolve({ data: ids, date: idsDate })),
     uploadData: () => new Promise(resolve => resolve(true)),
   };
 }

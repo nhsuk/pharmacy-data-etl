@@ -6,6 +6,7 @@ const expect = chai.expect;
 
 describe('joinContiguousTimes', () => {
   it('should replace multiple contiguous open and closing times with single first opens and last closes time for general and alterations', () => {
+    /* eslint-disable sort-keys */
     const pharmacy = {
       openingTimes: {
         general: {
@@ -126,6 +127,7 @@ describe('joinContiguousTimes', () => {
         },
       },
     };
+    /* eslint-enable sort-keys */
 
     joinContiguousTimes(pharmacy);
     expect(pharmacy.openingTimes.general.monday.length).to.equal(1);
@@ -160,12 +162,12 @@ describe('joinContiguousTimes', () => {
         general: {
           monday: [
             {
-              opens: '09:00',
               closes: '13:00',
+              opens: '09:00',
             },
             {
-              opens: '14:00',
               closes: '17:00',
+              opens: '14:00',
             },
           ],
         },
@@ -199,20 +201,20 @@ describe('joinContiguousTimes', () => {
         general: {
           monday: [
             {
-              opens: '09:00',
               closes: '12:00',
+              opens: '09:00',
             },
             {
-              opens: '12:00',
               closes: '13:00',
+              opens: '12:00',
             },
             {
-              opens: '14:00',
               closes: '17:00',
+              opens: '14:00',
             },
             {
-              opens: '17:00',
               closes: '19:30',
+              opens: '17:00',
             },
           ],
         },
@@ -231,7 +233,7 @@ describe('joinContiguousTimes', () => {
     const pharmacy = {
       openingTimes: {
         alterations: {
-          '2018-01-01': [{ opens: '09:00', closes: '19:30' }],
+          '2018-01-01': [{ closes: '19:30', opens: '09:00' }],
         },
       },
     };
@@ -244,7 +246,7 @@ describe('joinContiguousTimes', () => {
     const pharmacy = {
       openingTimes: {
         general: {
-          monday: [{ opens: '09:00', closes: '19:30' }],
+          monday: [{ closes: '19:30', opens: '09:00' }],
         },
       },
     };

@@ -37,25 +37,25 @@ describe('Populate ID queue', () => {
 
   it('should populate etlStore with loaded ids', (done) => {
     const options = {
-      workers: 1,
-      totalPages: 2,
       getIdsAction,
       queueComplete: () => {
         assertEtlStore();
         done();
       },
+      totalPages: 2,
+      workers: 1,
     };
     populateIds.start(options);
   });
 
   it('should call queueComplete for zero pages', (done) => {
     const options = {
-      workers: 1,
-      totalPages: 0,
       getIdsAction: () => { done('should not have been called'); },
       queueComplete: () => {
         done();
       },
+      totalPages: 0,
+      workers: 1,
     };
     populateIds.start(options);
   });
@@ -67,10 +67,10 @@ describe('Populate ID queue', () => {
     };
 
     const options = {
-      workers: 1,
-      totalPages: 2,
       getIdsAction: () => { done('should not have been called'); },
       queueComplete,
+      totalPages: 2,
+      workers: 1,
     };
 
     const restartQueue = () => {
@@ -78,10 +78,10 @@ describe('Populate ID queue', () => {
     };
 
     const restartOptions = {
-      workers: 1,
-      totalPages: 2,
       getIdsAction,
       queueComplete: restartQueue,
+      totalPages: 2,
+      workers: 1,
     };
 
     populateIds.start(restartOptions);
@@ -89,14 +89,14 @@ describe('Populate ID queue', () => {
 
   it('should gracefully handle errors', (done) => {
     const options = {
-      workers: 1,
-      totalPages: 3,
       getIdsAction: getIdsWithErrorAction,
       queueComplete: () => {
         const ids = etlStore.getIds();
         expect(ids.length).to.equal(4);
         done();
       },
+      totalPages: 3,
+      workers: 1,
     };
     populateIds.start(options);
   });
