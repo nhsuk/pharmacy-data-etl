@@ -12,119 +12,119 @@ describe('joinContiguousTimes', () => {
           monday: [
             {
               opens: '09:00',
-              closes: '13:00'
+              closes: '13:00',
             },
             {
               opens: '13:00',
-              closes: '17:00'
+              closes: '17:00',
             },
             {
               opens: '17:00',
-              closes: '19:30'
-            }
+              closes: '19:30',
+            },
           ],
           tuesday: [
             {
               opens: '09:01',
-              closes: '13:00'
+              closes: '13:00',
             },
             {
               opens: '13:00',
-              closes: '17:00'
+              closes: '17:00',
             },
             {
               opens: '17:00',
-              closes: '19:31'
-            }
+              closes: '19:31',
+            },
           ],
           wednesday: [
             {
               opens: '09:02',
-              closes: '13:00'
+              closes: '13:00',
             },
             {
               opens: '13:00',
-              closes: '17:00'
+              closes: '17:00',
             },
             {
               opens: '17:00',
-              closes: '19:32'
-            }
+              closes: '19:32',
+            },
           ],
           thursday: [
             {
               opens: '09:03',
-              closes: '13:00'
+              closes: '13:00',
             },
             {
               opens: '13:00',
-              closes: '17:00'
+              closes: '17:00',
             },
             {
               opens: '17:00',
-              closes: '19:33'
-            }
+              closes: '19:33',
+            },
           ],
           friday: [
             {
               opens: '09:04',
-              closes: '13:00'
+              closes: '13:00',
             },
             {
               opens: '13:00',
-              closes: '17:00'
+              closes: '17:00',
             },
             {
               opens: '17:00',
-              closes: '19:34'
-            }
+              closes: '19:34',
+            },
           ],
           saturday: [
             {
               opens: '09:05',
-              closes: '13:00'
+              closes: '13:00',
             },
             {
               opens: '13:00',
-              closes: '17:00'
+              closes: '17:00',
             },
             {
               opens: '17:00',
-              closes: '19:35'
-            }
+              closes: '19:35',
+            },
           ],
           sunday: [
             {
               opens: '09:06',
-              closes: '13:00'
+              closes: '13:00',
             },
             {
               opens: '13:00',
-              closes: '17:00'
+              closes: '17:00',
             },
             {
               opens: '17:00',
-              closes: '19:36'
-            }
-          ]
+              closes: '19:36',
+            },
+          ],
         },
         alterations: {
           '2018-01-01': [
             {
               opens: '09:07',
-              closes: '13:00'
+              closes: '13:00',
             },
             {
               opens: '13:00',
-              closes: '17:00'
+              closes: '17:00',
             },
             {
               opens: '17:00',
-              closes: '19:37'
-            }
-          ]
-        }
-      }
+              closes: '19:37',
+            },
+          ],
+        },
+      },
     };
 
     joinContiguousTimes(pharmacy);
@@ -161,15 +161,15 @@ describe('joinContiguousTimes', () => {
           monday: [
             {
               opens: '09:00',
-              closes: '13:00'
+              closes: '13:00',
             },
             {
               opens: '14:00',
-              closes: '17:00'
-            }
-          ]
-        }
-      }
+              closes: '17:00',
+            },
+          ],
+        },
+      },
     };
 
     joinContiguousTimes(pharmacy);
@@ -184,9 +184,9 @@ describe('joinContiguousTimes', () => {
     const pharmacy = {
       openingTimes: {
         general: {
-          monday: []
-        }
-      }
+          monday: [],
+        },
+      },
     };
 
     joinContiguousTimes(pharmacy);
@@ -200,23 +200,23 @@ describe('joinContiguousTimes', () => {
           monday: [
             {
               opens: '09:00',
-              closes: '12:00'
+              closes: '12:00',
             },
             {
               opens: '12:00',
-              closes: '13:00'
+              closes: '13:00',
             },
             {
               opens: '14:00',
-              closes: '17:00'
+              closes: '17:00',
             },
             {
               opens: '17:00',
-              closes: '19:30'
-            }
-          ]
-        }
-      }
+              closes: '19:30',
+            },
+          ],
+        },
+      },
     };
 
     joinContiguousTimes(pharmacy);
@@ -231,9 +231,9 @@ describe('joinContiguousTimes', () => {
     const pharmacy = {
       openingTimes: {
         alterations: {
-          '2018-01-01': [{ opens: '09:00', closes: '19:30' }]
-        }
-      }
+          '2018-01-01': [{ opens: '09:00', closes: '19:30' }],
+        },
+      },
     };
 
     joinContiguousTimes(pharmacy);
@@ -244,9 +244,9 @@ describe('joinContiguousTimes', () => {
     const pharmacy = {
       openingTimes: {
         general: {
-          monday: [{ opens: '09:00', closes: '19:30' }]
-        }
-      }
+          monday: [{ opens: '09:00', closes: '19:30' }],
+        },
+      },
     };
 
     joinContiguousTimes(pharmacy);

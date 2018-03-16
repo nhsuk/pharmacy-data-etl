@@ -21,7 +21,7 @@ describe('Fix Address', () => {
       line3: 'Walsall Wood',
       city: 'Walsall',
       county: 'West Midlands',
-      postcode: 'WS9 9LR'
+      postcode: 'WS9 9LR',
     };
 
     fixAddress(address);
@@ -36,7 +36,7 @@ describe('Fix Address', () => {
       line3: 'Walsall Wood',
       city: 'Walsall',
       county: 'West Midlands',
-      postcode: 'WS9 9LR'
+      postcode: 'WS9 9LR',
     };
 
     fixAddress(address);
@@ -51,7 +51,7 @@ describe('Fix Address', () => {
       line3: 'Walsall',
       city: 'Walsall',
       county: 'West Midlands',
-      postcode: 'WS9 9LR'
+      postcode: 'WS9 9LR',
     };
 
     fixAddress(address);
@@ -66,7 +66,7 @@ describe('Fix Address', () => {
       line3: 'Walsall',
       city: 'West Midlands',
       county: 'West Midlands',
-      postcode: 'WS9 9LR'
+      postcode: 'WS9 9LR',
     };
 
     fixAddress(address);
@@ -81,7 +81,7 @@ describe('Fix Address', () => {
       line3: 'Walsall',
       city: 'WALSALL',
       county: 'West Midlands',
-      postcode: 'WS9 9LR'
+      postcode: 'WS9 9LR',
     };
 
     fixAddress(address);
@@ -96,7 +96,7 @@ describe('Fix Address', () => {
       line3: 'WalsallWOOD',
       city: '',
       county: 'West Midlands',
-      postcode: 'WS9 9LR'
+      postcode: 'WS9 9LR',
     };
 
     fixAddress(address);

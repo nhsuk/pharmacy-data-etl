@@ -48,7 +48,7 @@ function startPopulateRecordsFromIdsQueue() {
   const options = {
     workers: WORKERS,
     queueComplete: etlComplete,
-    populateRecordAction: getPharmacy
+    populateRecordAction: getPharmacy,
   };
   populateRecordsFromIdsQueue.start(options);
 }
