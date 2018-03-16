@@ -33,7 +33,6 @@ describe('Populate ID queue', () => {
   it('should populate etlStore with pharmacy records', (done) => {
     etlStore.addIds([odsCode1, odsCode2, odsCode3]);
     const options = {
-      workers: 1,
       populateRecordAction: getPharmacyAction,
       queueComplete: () => {
         /* eslint-disable no-underscore-dangle */
@@ -45,6 +44,7 @@ describe('Populate ID queue', () => {
         /* eslint-enable no-underscore-dangle */
         done();
       },
+      workers: 1,
     };
     populateRecordsFromIds.start(options);
   });
@@ -52,11 +52,11 @@ describe('Populate ID queue', () => {
   it('should call queueComplete for empty ID list', (done) => {
     etlStore.addIds([]);
     const options = {
-      workers: 1,
       populateRecordAction: getPharmacyAction,
       queueComplete: () => {
         done();
       },
+      workers: 1,
     };
     populateRecordsFromIds.start(options);
   });
@@ -64,7 +64,6 @@ describe('Populate ID queue', () => {
   it('should skip duplicate IDs', (done) => {
     etlStore.addIds([odsCode1, odsCode2, odsCode3, odsCode1]);
     const options = {
-      workers: 1,
       populateRecordAction: getPharmacyAction,
       queueComplete: () => {
         /* eslint-disable no-underscore-dangle */
@@ -76,6 +75,7 @@ describe('Populate ID queue', () => {
         /* eslint-enable no-underscore-dangle */
         done();
       },
+      workers: 1,
     };
     populateRecordsFromIds.start(options);
   });
@@ -83,7 +83,6 @@ describe('Populate ID queue', () => {
   it('should add failed IDs to list', (done) => {
     etlStore.addIds([odsCode1, odsCode2, odsCode3]);
     const options = {
-      workers: 1,
       populateRecordAction: getPharmacyWithErrorAction,
       queueComplete: () => {
         /* eslint-disable no-underscore-dangle */
@@ -94,6 +93,7 @@ describe('Populate ID queue', () => {
         /* eslint-enable no-underscore-dangle */
         done();
       },
+      workers: 1,
     };
     populateRecordsFromIds.start(options);
   });
@@ -102,7 +102,6 @@ describe('Populate ID queue', () => {
     etlStore.addIds([odsCode1, odsCode2, odsCode3]);
 
     const retryOptions = {
-      workers: 1,
       populateRecordAction: getPharmacyAction,
       queueComplete: () => {
         /* eslint-disable no-underscore-dangle */
@@ -113,16 +112,17 @@ describe('Populate ID queue', () => {
         /* eslint-enable no-underscore-dangle */
         done();
       },
+      workers: 1,
     };
 
     const options = {
-      workers: 1,
       populateRecordAction: getPharmacyWithErrorAction,
       queueComplete: () => {
         expect(etlStore.getRecords().length).to.equal(2);
         expect(etlStore.getErorredIds().length).to.equal(1);
         populateRecordsFromIds.startRetryQueue(retryOptions);
       },
+      workers: 1,
     };
     populateRecordsFromIds.start(options);
   });

@@ -80,6 +80,6 @@ function start(options) {
 loadState();
 
 module.exports = {
-  start,
   clearState,
+  start,
 };

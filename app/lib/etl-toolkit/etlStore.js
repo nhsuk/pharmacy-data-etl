@@ -131,6 +131,7 @@ function saveRecords() {
 }
 
 function saveSummary() {
+  /* eslint-disable sort-keys */
   const summary = {
     lastWritten: (new Date()).toLocaleString(),
     totalScanned: ids.length,
@@ -141,6 +142,7 @@ function saveSummary() {
     erroredIds: getErorredIds(),
     failedIds,
   };
+  /* eslint-enable sort-keys */
   fsHelper.saveJsonSync(summary, config.summaryFilename);
 }
 

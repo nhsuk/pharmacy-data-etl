@@ -46,9 +46,9 @@ async function getTotalModifiedSincePages(lastScanDate) {
 
 function startPopulateRecordsFromIdsQueue() {
   const options = {
-    workers: WORKERS,
+    populateRecordAction: getPharmacy,
     queueComplete: etlComplete,
-    populateRecordAction: getPharmacy
+    workers: WORKERS,
   };
   populateRecordsFromIdsQueue.start(options);
 }
@@ -63,7 +63,7 @@ async function clearUpdatedRecords() {
     etlStore.addIds(modifiedOdsCodes);
     etlStore.setModifiedIds(modifiedOdsCodes);
     modifiedOdsCodes.forEach(etlStore.deleteRecord);
-    changeCount = modifiedOdsCodes.length;
+    changeCount += modifiedOdsCodes.length;
   }
   log.info(`${changeCount} records modified since ${etlStore.getLastRunDate()}`);
 }

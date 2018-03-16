@@ -8,8 +8,8 @@ describe('Fix Phone Numbers', () => {
   it('should correct format of top level contacts of pharmacy', () => {
     const pharmacy = {
       contacts: {
-        telephoneNumber: '01778422007',
         fax: '01778421433',
+        telephoneNumber: '01778422007',
       },
     };
 
@@ -23,12 +23,12 @@ describe('Fix Phone Numbers', () => {
       contacts: {
         additionalContacts: [
           {
-            telephoneNumber: '01778422007',
             fax: '01778421433',
+            telephoneNumber: '01778422007',
           },
           {
-            telephoneNumber: '01778422008',
             fax: '01778421434',
+            telephoneNumber: '01778422008',
           },
         ],
       },

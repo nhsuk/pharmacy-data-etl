@@ -42,7 +42,7 @@ describe('Azure Service', () => {
       const blobList = fs.readFileSync('test/resources/blobList.xml', 'utf8');
       nock('https://nhsukpharmacydataetl.blob.core.windows.net:443')
         .get('/etl-output')
-        .query({ restype: 'container', comp: 'list' })
+        .query({ comp: 'list', restype: 'container' })
         .reply(200, blobList);
 
       const filter = b => b.name.startsWith('filter-match-');

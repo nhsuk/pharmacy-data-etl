@@ -31,6 +31,6 @@ function getModifiedSincePage(moment, page) {
 
 module.exports = {
   SYNDICATION_HTML_PAGE_ERROR,
-  getPharmacyAllPage,
   getModifiedSincePage,
+  getPharmacyAllPage,
 };

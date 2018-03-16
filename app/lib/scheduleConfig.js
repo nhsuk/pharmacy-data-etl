@@ -12,5 +12,5 @@ function getSchedule() {
 module.exports = {
   defaultSchedule,
   farFutureDate,
-  getSchedule
+  getSchedule,
 };
