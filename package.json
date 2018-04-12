@@ -12,7 +12,7 @@
     "lint": "eslint --ext .js,.json .",
     "postrewrite": "yarn git-hook",
     "precommit": "yarn git-hook",
-    "prepush": "yarn git-hook && yarn snyk test",
+    "prepush": "yarn git-hook",
     "start": "node schedule.js",
     "test": "NODE_ENV=test mocha --recursive test",
     "test-ci": "yarn lint && yarn coverage-generate && yarn coverage-check && yarn coverage-upload-coveralls",
@@ -43,7 +43,7 @@
     "coveralls": "^3.0.0",
     "eslint": "^4.6.1",
     "eslint-config-airbnb-base": "^12.0.0",
-    "eslint-config-nhsuk": "^0.13.0",
+    "eslint-config-nhsuk": "^0.14.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-json": "^1.2.0",
     "eslint-plugin-mocha": "^5.0.0",
@@ -52,8 +52,7 @@
     "istanbul": "^1.1.0-alpha.1",
     "mocha": "^5.0.0",
     "nock": "^9.0.14",
-    "nodemon": "^1.11.0",
-    "snyk": "^1.40.2"
+    "nodemon": "^1.11.0"
   },
   "dependencies": {
     "async": "^2.6.0",
