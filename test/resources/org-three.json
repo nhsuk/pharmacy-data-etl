@@ -1,0 +1,98 @@
+{
+  "identifierType": "Pharmacy Contract",
+  "openingTimes": {
+    "general": {
+      "monday": [
+        {
+          "opens": "08:30",
+          "closes": "17:30"
+        }
+      ],
+      "tuesday": [
+        {
+          "opens": "08:30",
+          "closes": "17:30"
+        }
+      ],
+      "wednesday": [
+        {
+          "opens": "08:30",
+          "closes": "17:30"
+        }
+      ],
+      "thursday": [
+        {
+          "opens": "08:30",
+          "closes": "17:30"
+        }
+      ],
+      "friday": [
+        {
+          "opens": "08:30",
+          "closes": "17:30"
+        }
+      ],
+      "saturday": [
+        {
+          "opens": "08:30",
+          "closes": "17:30"
+        }
+      ],
+      "sunday": []
+    },
+    "alterations": {}
+  },
+  "outOfHours": "",
+  "hasEps": true,
+  "address": {
+    "line1": "22-28 Market Pl",
+    "line2": null,
+    "line3": null,
+    "city": "Knaresborough",
+    "county": "North Yorkshire",
+    "postcode": "HG5 8AG"
+  },
+  "contacts": {
+    "website": "",
+    "additionalContacts": [],
+    "telephoneNumber": "01423863171",
+    "isNonGeographicPhoneNumber": false,
+    "phoneChargeMethod": "unknown method",
+    "phoneChargeAmount": null,
+    "telephoneExtension": null,
+    "fax": "01423869373",
+    "email": ""
+  },
+  "directionsInformation": null,
+  "externalProfileUrl": null,
+  "identifier": "three",
+  "name": "Three Updated",
+  "organisationType": "Pharmacy",
+  "parkingInformation": null,
+  "provider": "North Yorkshire And Humber Area Team",
+  "summary": "<p><strong>For Boots stores special opening hours, e.g. Christmas and Bank Holidays, please click on this link to Boots.com for more detail...   <a href=\"http://www.boots.com/webapp/wcs/stores/servlet/StoreLocator?requiredAction=displayStoreLookupPage&displayView=StoreLookupView&langId=-1&storeId=10052&catalogId=11051&langId=-1&storeId=10052&catalogId=11051\">Boots store locator</a></strong></p>",
+  "links": [
+    {
+      "rel": "NoFollow",
+      "href": "http://statse.webtrendslive.com/dcss9yzisf9xjyg74mgbihg8p_8d2u/njs.gif?dcsuri=%2Fexternalservices%2Forganisationapi%2Forganisations%2Ffg011&amp;wt.js=no&amp;wt.cg_n=InwardAPI&amp;wt.z_SyndicationDomain={YourDomainName}",
+      "name": "Tracking pixel"
+    },
+    {
+      "rel": "Self",
+      "href": "http://www.nhs.uk/externalservices/organisationapi/organisations/fg011",
+      "name": "Link to self"
+    },
+    {
+      "rel": "Alternate",
+      "href": "http://www.nhs.uk/services/pharmacies/overview/defaultview.aspx?id=fg011",
+      "name": "NHS Choices profile"
+    }
+  ],
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -1.4669631719589233,
+      54.008201599121094
+    ]
+  }
+}

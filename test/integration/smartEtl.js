@@ -6,7 +6,7 @@ const nock = require('nock');
 const expect = chai.expect;
 
 const etl = require('../../app/lib/smartEtl');
-const etlStore = require('../../app/lib/etl-toolkit/etlStore');
+const etlStore = require('etl-toolkit').etlStore;
 const config = require('../../app/lib/config');
 
 const dateStampFormat = config.dateStampFormat;
@@ -16,6 +16,8 @@ function mockDataService(ids, data, idsDate, dataDate) {
     getLatestData: () => new Promise(resolve => resolve({ data, date: dataDate })),
     getLatestIds: () => new Promise(resolve => resolve({ data: ids, date: idsDate })),
     uploadData: () => new Promise(resolve => resolve(true)),
+    uploadIds: () => new Promise(resolve => resolve(true)),
+    uploadSummary: () => new Promise(resolve => resolve(true)),
   };
 }
 
@@ -39,6 +41,12 @@ function stubPharmacyLookup(filePath, odsCode) {
     .reply(200, stubbedData);
 }
 
+function stubPharmacy404(odsCode) {
+  nock(config.orgApiUrl)
+    .get(`/${odsCode}`)
+    .reply(404, '404 error - page not found');
+}
+
 beforeEach(() => {
   etlStore.clearState();
 });
@@ -57,30 +65,13 @@ function stubNoModifiedRecords(date) {
 
 describe('ETL', function test() {
   this.timeout(5000);
-  it('should only update changed record', async () => {
+  it('should update all records if one modified', async () => {
     const idsDate = moment('20180125', dateStampFormat);
     const dataDate = idsDate;
     stubOneModifiedRecord(idsDate);
     stubPharmacyLookup('test/resources/org-one.json', 'one');
-    const ids = ['one', 'two', 'three'];
-    const data = [
-      { identifier: ids[0], name: 'One' },
-      { identifier: ids[1], name: 'Two' },
-      { identifier: ids[2], name: 'Three' },
-    ];
-
-    await etl.start(mockDataService(ids, data, idsDate, dataDate));
-    expect(etlStore.getRecord('one').name).to.equal('One Updated');
-    expect(etlStore.getRecord('two').name).to.equal('Two');
-    expect(etlStore.getRecord('three').name).to.equal('Three');
-  });
-
-  it('if date stamp on data is older than ID list date, should refresh records modified since data date', async () => {
-    const idsDate = moment('20180126', dateStampFormat);
-    const dataDate = moment('20180125', dateStampFormat);
-    stubAnotherModifiedRecord(dataDate);
-    // nock will throw an error if the other date is called, and the test will fail
     stubPharmacyLookup('test/resources/org-two.json', 'two');
+    stubPharmacyLookup('test/resources/org-three.json', 'three');
     const ids = ['one', 'two', 'three'];
     const data = [
       { identifier: ids[0], name: 'One' },
@@ -89,27 +80,76 @@ describe('ETL', function test() {
     ];
 
     await etl.start(mockDataService(ids, data, idsDate, dataDate));
-    expect(etlStore.getRecord('one').name).to.equal('One');
+    expect(etlStore.getIds().length).to.equal(3);
+    expect(etlStore.getRecord('one').name).to.equal('One Updated');
     expect(etlStore.getRecord('two').name).to.equal('Two Updated');
-    expect(etlStore.getRecord('three').name).to.equal('Three');
+    expect(etlStore.getRecord('three').name).to.equal('Three Updated');
   });
 
-  it('should load record if in ID list but missing from data', async () => {
-    const idsDate = moment('20180126', dateStampFormat);
+  it('should reload all data even if no records modified', async () => {
+    const idsDate = moment('20180125', dateStampFormat);
     const dataDate = idsDate;
     stubNoModifiedRecords(dataDate);
-    // nock will throw an error if the other date is called, and the test will fail
     stubPharmacyLookup('test/resources/org-one.json', 'one');
+    stubPharmacyLookup('test/resources/org-two.json', 'two');
+    stubPharmacyLookup('test/resources/org-three.json', 'three');
     const ids = ['one', 'two', 'three'];
     const data = [
+      { identifier: ids[0], name: 'One' },
       { identifier: ids[1], name: 'Two' },
       { identifier: ids[2], name: 'Three' },
     ];
 
     await etl.start(mockDataService(ids, data, idsDate, dataDate));
+    expect(etlStore.getIds().length).to.equal(3);
     expect(etlStore.getRecord('one').name).to.equal('One Updated');
-    expect(etlStore.getRecord('two').name).to.equal('Two');
-    expect(etlStore.getRecord('three').name).to.equal('Three');
+    expect(etlStore.getRecord('two').name).to.equal('Two Updated');
+    expect(etlStore.getRecord('three').name).to.equal('Three Updated');
+  });
+
+  it('should add new records from lastModified end point to ID list', async () => {
+    const idsDate = moment('20180125', dateStampFormat);
+    const dataDate = idsDate;
+    stubAnotherModifiedRecord(idsDate);
+    stubPharmacyLookup('test/resources/org-one.json', 'one');
+    stubPharmacyLookup('test/resources/org-two.json', 'two');
+    stubPharmacyLookup('test/resources/org-three.json', 'three');
+    stubPharmacyLookup('test/resources/org-four.json', 'four');
+    const ids = ['one', 'two', 'three'];
+    const data = [
+      { identifier: ids[0], name: 'One' },
+      { identifier: ids[1], name: 'Two' },
+      { identifier: ids[2], name: 'Three' },
+    ];
+
+    await etl.start(mockDataService(ids, data, idsDate, dataDate));
+    expect(etlStore.getIds().length).to.equal(4);
+    expect(etlStore.getRecord('one').name).to.equal('One Updated');
+    expect(etlStore.getRecord('two').name).to.equal('Two Updated');
+    expect(etlStore.getRecord('three').name).to.equal('Three Updated');
+    expect(etlStore.getRecord('four').name).to.equal('Four is new');
+  });
+
+  it('should remove 404ing records from etl store', async () => {
+    const idsDate = moment('20180125', dateStampFormat);
+    const dataDate = idsDate;
+    stubNoModifiedRecords(dataDate);
+    stubPharmacy404('one');
+    stubPharmacyLookup('test/resources/org-two.json', 'two');
+    stubPharmacy404('two');
+    const ids = ['one', 'two', 'three'];
+    const data = [
+      { identifier: ids[0], name: 'One' },
+      { identifier: ids[1], name: 'Two' },
+      { identifier: ids[2], name: 'Three' },
+    ];
+
+    await etl.start(mockDataService(ids, data, idsDate, dataDate));
+    expect(etlStore.getIds().length).to.equal(3);
+    expect(etlStore.getErorredIds().length).to.equal(2);
+    expect(etlStore.getRecord('one')).to.be.undefined;
+    expect(etlStore.getRecord('two').name).to.equal('Two Updated');
+    expect(etlStore.getRecord('three')).to.be.undefined;
   });
 
   afterEach(() => {

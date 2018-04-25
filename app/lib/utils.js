@@ -24,14 +24,9 @@ function asArray(obj) {
   return obj.constructor === Array ? obj : [obj];
 }
 
-function getDuplicates(arr) {
-  return arr.filter((value, index, self) => self.indexOf(value) !== index);
-}
-
 module.exports = {
   asArray,
   getAttribute,
-  getDuplicates,
   getFilePrefix,
   getMajorMinorVersion,
   getNested,

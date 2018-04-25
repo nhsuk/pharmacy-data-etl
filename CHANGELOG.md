@@ -1,3 +1,8 @@
+0.8.0 / TBA
+==================
+- Refresh all records nightly to ensure removed/added records are picked up
+- Use azure-data-service and etl-toolkit packages
+
 0.7.0 / 2018-04-13
 ==================
 - Upgrade to `eslint-config-nhsuk@0.14.0` and apply fixes
