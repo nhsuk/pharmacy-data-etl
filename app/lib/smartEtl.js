@@ -4,7 +4,6 @@ const etlStore = require('etl-toolkit').etlStore;
 const getModifiedOdsCodes = require('./actions/getModifiedOdsCodes');
 const getPharmacy = require('./actions/getPharmacy');
 const log = require('./logger');
-const config = require('./config');
 const mapTotalPages = require('./mappers/mapTotalPages');
 const populateRecordsFromIdsQueue = require('etl-toolkit').queues.populateRecordsFromIds;
 const syndicationService = require('./syndicationService');
@@ -32,7 +31,7 @@ async function etlComplete() {
   etlStore.saveSummary();
   logStatus();
   await dataService.uploadData(startMoment);
-  await dataService.uploadIds(`${config.outputDir}/${config.seedIdFile}.json`, startMoment);
+  await dataService.uploadIds(startMoment);
   await dataService.uploadSummary(startMoment);
   if (resolvePromise) {
     resolvePromise();

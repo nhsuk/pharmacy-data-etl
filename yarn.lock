@@ -202,9 +202,9 @@ aws4@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.6.0.tgz#83ef5ca860b2b32e4a0deedee8c771b9db57471e"
 
-azure-data-service@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/azure-data-service/-/azure-data-service-0.2.1.tgz#c1ec39b5006e00809cc3f595184328d2a412f36e"
+azure-data-service@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/azure-data-service/-/azure-data-service-0.3.0.tgz#0fb744edf4c2efc4302146e0dcd1470f5ce99c38"
   dependencies:
     azure-storage "^2.8.1"
     moment "^2.21.0"

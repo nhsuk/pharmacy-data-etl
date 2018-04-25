@@ -1,7 +1,6 @@
 const version = require('../../package').version;
 
 const outputFile = process.env.OUTPUT_FILE || 'pharmacy-data';
-const seedIdFile = process.env.SEED_ID_FILE || 'pharmacy-seed-ids';
 
 module.exports = {
   cacheDataFilename: 'cache-data.json',
@@ -15,7 +14,6 @@ module.exports = {
   outputFilename: `${outputFile}.json`,
   processedPagesFilename: 'processed-pages.json',
   saveEvery: 100,
-  seedIdFile,
   summaryFilename: 'summary.json',
   syndicationApiUrl: 'https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies',
   version,

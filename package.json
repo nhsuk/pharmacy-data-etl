@@ -56,7 +56,7 @@
   },
   "dependencies": {
     "async": "^2.6.0",
-    "azure-data-service": "^0.2.1",
+    "azure-data-service": "^0.3.0",
     "azure-storage": "^2.7.0",
     "etl-toolkit": "^0.1.1",
     "google-libphonenumber": "^3.0.3",
