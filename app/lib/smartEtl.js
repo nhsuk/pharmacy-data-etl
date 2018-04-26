@@ -58,7 +58,6 @@ async function addNewRecords() {
   log.info('Looking for new records');
   const idsBefore = etlStore.getIds().length;
   for (let page = 1; page <= totalChangedPages; page++) {
-  // for (let page = 1; page <= 2; page++) {
     // eslint-disable-next-line no-await-in-loop
     const modifiedOdsCodes = await getModifiedOdsCodes(lastRunDate, page);
     etlStore.addIds(modifiedOdsCodes);
@@ -70,7 +69,6 @@ async function loadLatestIDList() {
   const { data, date } = await dataService.getLatestIds();
   lastRunDate = date;
   etlStore.addIds(data);
-  // etlStore.addIds(data.slice(0, 10));
   log.info(`Total IDs: ${etlStore.getIds().length}`);
 }
 

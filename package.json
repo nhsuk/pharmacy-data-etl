@@ -55,10 +55,8 @@
     "nodemon": "^1.11.0"
   },
   "dependencies": {
-    "async": "^2.6.0",
     "azure-data-service": "^0.3.0",
-    "azure-storage": "^2.7.0",
-    "etl-toolkit": "^0.1.1",
+    "etl-toolkit": "^0.2.0",
     "google-libphonenumber": "^3.0.3",
     "moment": "^2.20.1",
     "nhsuk-bunyan-logger": "^1.4.1",

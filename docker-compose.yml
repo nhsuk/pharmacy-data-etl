@@ -19,7 +19,6 @@ services:
       service: base-etl
     environment:
       OUTPUT_FILE: 'dev-pharmacy-data'
-      SEED_ID_FILE: 'dev-pharmacy-seed-ids'
     volumes:
       - etl-node_modules:/code/node_modules
       - pharmacy-etl-output:/code/output
