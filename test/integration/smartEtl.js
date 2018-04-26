@@ -9,7 +9,7 @@ const etl = require('../../app/lib/smartEtl');
 const etlStore = require('etl-toolkit').etlStore;
 const config = require('../../app/lib/config');
 
-const dateStampFormat = config.dateStampFormat;
+const dateStampFormat = 'YYYYMMDD';
 
 function mockDataService(ids, data, idsDate, dataDate) {
   return {

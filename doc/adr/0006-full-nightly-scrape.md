@@ -1,4 +1,4 @@
-# 6. nightly scrape
+# 6. Full nightly scrape
 
 Date: 2018-04-26
 
