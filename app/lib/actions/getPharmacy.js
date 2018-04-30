@@ -1,4 +1,4 @@
-const apiRequest = require('../etl-toolkit/apiRequest');
+const request = require('request-promise-native');
 const fixPhoneNumbers = require('../fixPhoneNumbers');
 const fixAddress = require('../fixAddress');
 const joinContiguousTimes = require('../joinContiguousTimes');
@@ -14,7 +14,7 @@ function toObject(pharmaString) {
 
 function getPharmacy(odsCode) {
   const url = `${config.orgApiUrl}/${odsCode}`;
-  return apiRequest(url).then(toObject);
+  return request.get(url).then(toObject);
 }
 
 module.exports = getPharmacy;

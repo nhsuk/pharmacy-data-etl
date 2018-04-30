@@ -17,6 +17,8 @@ services:
   full-etl:
     extends:
       service: base-etl
+    environment:
+      OUTPUT_FILE: 'dev-pharmacy-data'
     volumes:
       - etl-node_modules:/code/node_modules
       - pharmacy-etl-output:/code/output

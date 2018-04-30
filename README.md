@@ -34,11 +34,13 @@ version of the ETL.
 The ETL version is included along with a datestamp to enable a full rescan if
 the data structure changes. If no file is found, the entire dataset will be
 rebuilt.
-The `modifiedsince` end point of Syndication is used to determine any changed
-or new pharmacies. The oldest date from the ID or the data filenames will be
-used as the `modifiedsince` date. Any pharmacies that have been modified since
-the ETL previously ran, or are not present in the previous data will be
-reloaded from Syndication.
+
+The `modifiedsince` end point of Syndication is used to determine any newly added pharmacies,
+and add any new records to the seed ID file for future scrapes.
+
+All records in the seed ID file will be refreshed from Syndication. If an ID has been deleted,
+the details will be recorded in the summary file as reporting a 404 error, and the record will
+not be present in the output JSON.
 
 Once the initial scan is complete, failed pharmacies will be revisited. ODS
 codes for records still failing after the second attempt are listed in a

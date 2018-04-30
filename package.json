@@ -1,6 +1,6 @@
 {
   "name": "pharmacy-data-etl",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "ETL to extract data from Syndication/Organisations and store as JSON",
   "main": "app.js",
   "scripts": {
@@ -55,12 +55,14 @@
     "nodemon": "^1.11.0"
   },
   "dependencies": {
-    "async": "^2.6.0",
-    "azure-storage": "^2.7.0",
+    "azure-data-service": "^0.3.0",
+    "etl-toolkit": "^0.2.0",
     "google-libphonenumber": "^3.0.3",
     "moment": "^2.20.1",
     "nhsuk-bunyan-logger": "^1.4.1",
     "node-schedule": "^1.2.5",
+    "request": "^2.85.0",
+    "request-promise-native": "^1.0.5",
     "require-environment-variables": "^1.1.2",
     "xml2js": "^0.4.19"
   }
