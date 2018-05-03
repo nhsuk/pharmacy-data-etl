@@ -8,6 +8,7 @@ services:
       SYNDICATION_API_KEY: ${SYNDICATION_API_KEY}
       DISABLE_SCHEDULER: ${DISABLE_SCHEDULER}
       ETL_SCHEDULE: ${ETL_SCHEDULE}
+      OUTPUT_FILE: pharmacy-data
       NODE_ENV: production
     labels:
       io.rancher.container.pull_image: always

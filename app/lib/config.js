@@ -4,7 +4,7 @@ module.exports = {
   containerName: process.env.CONTAINER_NAME || 'etl-output',
   orgApiUrl: 'https://api.nhs.uk/organisations',
   outputDir: './output',
-  outputFile: process.env.OUTPUT_FILE || 'pharmacy-data',
+  outputFile: process.env.OUTPUT_FILE,
   syndicationApiUrl: 'https://v1.syndication.nhschoices.nhs.uk/organisations/pharmacies',
   version,
 };

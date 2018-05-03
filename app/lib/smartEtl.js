@@ -1,4 +1,5 @@
 const moment = require('moment');
+const requireEnv = require('require-environment-variables');
 
 const etlStore = require('etl-toolkit').etlStore;
 const getModifiedOdsCodes = require('./actions/getModifiedOdsCodes');
@@ -16,6 +17,7 @@ let dataService;
 let startMoment;
 let lastRunDate;
 
+requireEnv(['OUTPUT_FILE']);
 etlStore.setIdKey(RECORD_KEY);
 
 function clearState() {

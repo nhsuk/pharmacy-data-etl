@@ -1,3 +1,7 @@
+0.8.0 / 2018-05-04
+==================
+- Add require enviroment var check for OUTPUT_FILE, update rancher config
+
 0.8.0 / 2018-05-01
 ==================
 - Refresh all records nightly to ensure removed/added records are picked up
