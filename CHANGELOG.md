@@ -1,4 +1,4 @@
-0.8.0 / 2018-05-04
+0.8.1 / 2018-05-04
 ==================
 - Add require enviroment var check for OUTPUT_FILE, update rancher config
 
