@@ -15,6 +15,7 @@ function mockDataService(ids, data, idsDate, dataDate) {
   return {
     getLatestData: () => new Promise(resolve => resolve({ data, date: dataDate })),
     getLatestIds: () => new Promise(resolve => resolve({ data: ids, date: idsDate })),
+    localSeedIdFile: `${config.outputDir}/${config.outputFile}-seed-ids.json`,
     uploadData: () => new Promise(resolve => resolve(true)),
     uploadIds: () => new Promise(resolve => resolve(true)),
     uploadSummary: () => new Promise(resolve => resolve(true)),
