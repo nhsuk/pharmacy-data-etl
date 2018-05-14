@@ -1,5 +1,6 @@
 const moment = require('moment');
 const requireEnv = require('require-environment-variables');
+const fs = require('fs');
 
 const etlStore = require('etl-toolkit').etlStore;
 const getModifiedOdsCodes = require('./actions/getModifiedOdsCodes');
@@ -28,8 +29,14 @@ function logStatus() {
   log.info(`${etlStore.getErorredIds().length} errored records`);
 }
 
+function updateSeedIdsFromEtlStore() {
+  const json = JSON.stringify(etlStore.getIds());
+  fs.writeFileSync(dataService.localSeedIdFile, json, 'utf8');
+}
+
 async function etlComplete() {
   etlStore.saveRecords();
+  updateSeedIdsFromEtlStore();
   etlStore.saveSummary();
   logStatus();
   await dataService.uploadData(startMoment);

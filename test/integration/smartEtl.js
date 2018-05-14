@@ -15,6 +15,7 @@ function mockDataService(ids, data, idsDate, dataDate) {
   return {
     getLatestData: () => new Promise(resolve => resolve({ data, date: dataDate })),
     getLatestIds: () => new Promise(resolve => resolve({ data: ids, date: idsDate })),
+    localSeedIdFile: `${config.outputDir}/${config.outputFile}-seed-ids.json`,
     uploadData: () => new Promise(resolve => resolve(true)),
     uploadIds: () => new Promise(resolve => resolve(true)),
     uploadSummary: () => new Promise(resolve => resolve(true)),
@@ -23,6 +24,10 @@ function mockDataService(ids, data, idsDate, dataDate) {
 
 function readFile(path) {
   return fs.readFileSync(path, 'utf8');
+}
+
+function readSeedIds(dataService) {
+  return JSON.parse(readFile(dataService.localSeedIdFile));
 }
 
 function stubResults(filePath, date) {
@@ -122,12 +127,20 @@ describe('ETL', function test() {
       { identifier: ids[2], name: 'Three' },
     ];
 
-    await etl.start(mockDataService(ids, data, idsDate, dataDate));
+    const dataService = mockDataService(ids, data, idsDate, dataDate);
+    await etl.start(dataService);
     expect(etlStore.getIds().length).to.equal(4);
     expect(etlStore.getRecord('one').name).to.equal('One Updated');
     expect(etlStore.getRecord('two').name).to.equal('Two Updated');
     expect(etlStore.getRecord('three').name).to.equal('Three Updated');
     expect(etlStore.getRecord('four').name).to.equal('Four is new');
+
+    const seedIdsFromFile = readSeedIds(dataService);
+    expect(seedIdsFromFile.length).to.equal(4);
+    expect(seedIdsFromFile[0]).to.equal('one');
+    expect(seedIdsFromFile[1]).to.equal('two');
+    expect(seedIdsFromFile[2]).to.equal('three');
+    expect(seedIdsFromFile[3]).to.equal('four');
   });
 
   it('should remove 404ing records from etl store', async () => {

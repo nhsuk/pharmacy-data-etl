@@ -1,3 +1,7 @@
+0.8.2 / 2018-05-16
+==================
+- Reinstate update of seed ID list
+
 0.8.1 / 2018-05-04
 ==================
 - Add require enviroment var check for OUTPUT_FILE, update rancher config
