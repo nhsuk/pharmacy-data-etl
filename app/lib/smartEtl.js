@@ -1,16 +1,25 @@
 const moment = require('moment');
 const requireEnv = require('require-environment-variables');
 const fs = require('fs');
+const EtlStore = require('etl-toolkit').EtlStore;
 
-const etlStore = require('etl-toolkit').etlStore;
+const config = require('./config');
 const getModifiedOdsCodes = require('./actions/getModifiedOdsCodes');
 const getPharmacy = require('./actions/getPharmacy');
 const log = require('./logger');
 const mapTotalPages = require('./mappers/mapTotalPages');
-const populateRecordsFromIdsQueue = require('etl-toolkit').queues.populateRecordsFromIds;
+const PopulateRecordsQueue = require('etl-toolkit').queues.populateRecordsFromIds;
 const syndicationService = require('./syndicationService');
 
-const RECORD_KEY = 'identifier';
+const etlStore = new EtlStore({ idKey: config.idKey, log, outputFile: config.outputFile });
+
+const populateRecordsFromIdsQueue = new PopulateRecordsQueue({
+  etlStore,
+  hitsPerHour: config.hitsPerHour,
+  log,
+  populateRecordAction: getPharmacy,
+});
+
 const WORKERS = 1;
 
 let resolvePromise;
@@ -19,14 +28,13 @@ let startMoment;
 let lastRunDate;
 
 requireEnv(['OUTPUT_FILE']);
-etlStore.setIdKey(RECORD_KEY);
 
 function clearState() {
   etlStore.clearState();
 }
 
 function logStatus() {
-  log.info(`${etlStore.getErorredIds().length} errored records`);
+  log.info(`${etlStore.getErroredIds().length} errored records`);
 }
 
 function updateSeedIdsFromEtlStore() {
@@ -52,10 +60,22 @@ async function getTotalModifiedSincePages(lastScanDate) {
   return mapTotalPages(page);
 }
 
+function startRevisitFailuresQueue() {
+  if (etlStore.getErroredIds().length > 0) {
+    log.info('Revisiting failed IDs');
+    const options = {
+      queueComplete: etlComplete,
+      workers: WORKERS,
+    };
+    populateRecordsFromIdsQueue.startRetryQueue(options);
+  } else {
+    etlComplete();
+  }
+}
+
 function startPopulateRecordsFromIdsQueue() {
   const options = {
-    populateRecordAction: getPharmacy,
-    queueComplete: etlComplete,
+    queueComplete: startRevisitFailuresQueue,
     workers: WORKERS,
   };
   populateRecordsFromIdsQueue.start(options);
@@ -105,5 +125,6 @@ function start(dataServiceIn) {
 }
 
 module.exports = {
+  etlStore,
   start,
 };

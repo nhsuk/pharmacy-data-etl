@@ -2,6 +2,7 @@ const version = require('../../package').version;
 
 module.exports = {
   containerName: process.env.CONTAINER_NAME || 'etl-output',
+  idKey: 'identifier',
   orgApiUrl: 'https://api.nhs.uk/organisations',
   outputDir: './output',
   outputFile: process.env.OUTPUT_FILE,

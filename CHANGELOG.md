@@ -1,3 +1,8 @@
+0.9.0 / TBA
+==================
+- Reinstate retry queue
+- Upgrade to class based etl-toolkit
+
 0.8.2 / 2018-05-16
 ==================
 - Reinstate update of seed ID list

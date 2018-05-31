@@ -6,10 +6,10 @@ const nock = require('nock');
 const expect = chai.expect;
 
 const etl = require('../../app/lib/smartEtl');
-const etlStore = require('etl-toolkit').etlStore;
 const config = require('../../app/lib/config');
 
 const dateStampFormat = 'YYYYMMDD';
+const etlStore = etl.etlStore;
 
 function mockDataService(ids, data, idsDate, dataDate) {
   return {
@@ -159,7 +159,7 @@ describe('ETL', function test() {
 
     await etl.start(mockDataService(ids, data, idsDate, dataDate));
     expect(etlStore.getIds().length).to.equal(3);
-    expect(etlStore.getErorredIds().length).to.equal(2);
+    expect(etlStore.getErroredIds().length).to.equal(2);
     expect(etlStore.getRecord('one')).to.be.undefined;
     expect(etlStore.getRecord('two').name).to.equal('Two Updated');
     expect(etlStore.getRecord('three')).to.be.undefined;
