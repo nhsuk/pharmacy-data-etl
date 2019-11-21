@@ -40,7 +40,7 @@
   "homepage": "https://github.com/nhsuk/pharmacy-data-etl#readme",
   "devDependencies": {
     "chai": "^4.1.2",
-    "coveralls": "^3.0.0",
+    "coveralls": "^3.0.8",
     "eslint": "^4.6.1",
     "eslint-config-airbnb-base": "^12.0.0",
     "eslint-config-nhsuk": "^0.15.0",
