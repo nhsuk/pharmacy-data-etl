@@ -1,3 +1,7 @@
+# **DEPRECATED** - no longer actively maintained
+
+---
+
 # Pharmacy Data ETL
 
 [![GitHub Release](https://img.shields.io/github/release/nhsuk/pharmacy-data-etl.svg)](https://github.com/nhsuk/pharmacy-data-etl/releases/latest/)
